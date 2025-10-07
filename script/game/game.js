@@ -532,12 +532,26 @@ export default class Game {
       "single",
       "double",
       "triple",
-      "tetra",
-      "tetraplus",
-      "tetraplus",
+      "quad",
+      "penta",
+      "hexa",
+	  "hepta",
+	  "octa",
+	  "nona",
+	  "deca",
+	  "undeca",
+	  "dodeca",
+	  "trideca",
+	  "tetradeca",
+	  "pentadeca",
+	  "hexadeca",
+	  "octadeca",
+	  "octadeca",
+	  "enneadeca",
+	  "icosa",
     ][lineClear]
-    if (lineClear > 6) {
-      clearName = "tetraplus"
+    if (lineClear >= 21) {
+      clearName = "impossibla"
     }
     const spinName = isSpin ? "spin" : ""
     const miniName = isMini ? "mini" : ""

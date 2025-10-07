@@ -35,14 +35,12 @@
     {
       "string": "audioLabel",
       "stringDesc": "audioDescription",
-      "width": "half",
       "action": "submenu",
       "submenu": "audio"
     },
     {
       "string": "videoLabel",
       "stringDesc": "videoDescription",
-      "width": "half",
       "action": "submenu",
       "submenu": "video"
     },

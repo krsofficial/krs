@@ -504,17 +504,10 @@ body {
   animation-timing-function: ease-in-out;
 }
 
-#myVideo {
-  position: fixed;
-  vertical-align: middle;
-  height: 100%;
-  margin: 0;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition-duration: 1s;
+#arcadeBackground {
+  transition-property: opacity;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
 }
 
 #main {
@@ -535,9 +528,12 @@ body {
 }
 
 #menu-container {
+  text-shadow: 1px 1px 5px #000000;
   font-size: 2rem;
-  margin-left: 1rem;
   color: #fff;
+  transition-property: opacity;
+  transition-duration: .25s;
+  transition-timing-function: ease-in-out;
 }
 
 #menu-container.hidden,
@@ -582,6 +578,7 @@ body {
 }
 
 #description {
+  text-shadow: 1px 1px 5px #000000;
   width: 40vh;
   height: 20vh;
   font-size: 2.5vh;
@@ -650,7 +647,6 @@ body {
 }
 
 .modal .header {
-  font-weight: 100;
   text-align: center;
 }
 
@@ -702,11 +698,11 @@ body {
 }
 
 #menu>.toggle-container.selected .bubble {
-  border-color: #000;
+  border-color: #FEAC63;
 }
 
 #menu>.toggle-container.selected .bubble.enabled {
-  background-color: #000;
+  background-color: #FEAC63;
 }
 
 #menu>.select-container .arrow {
@@ -739,7 +735,7 @@ body {
   font-size: .8em;
   text-align: right;
   width: 2em;
-  border-radius: .2em;
+  border-radius: 0em;
   border-color: #fff;
   border-width: .04em;
   border-style: solid;
@@ -749,7 +745,7 @@ body {
 }
 
 #menu>.slider-container.selected .value {
-  border-color: #000;
+  border-color: #FEAC63;
 }
 
 #menu>.slider-container .slider {
@@ -768,7 +764,7 @@ body {
 }
 
 #menu>.slider-container.selected .slider {
-  outline-color: #000;
+  outline-color: #FEAC63;
 }
 
 /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
@@ -788,7 +784,7 @@ body {
 }
 
 #menu>.slider-container.selected .slider::-webkit-slider-thumb {
-  background: #000;
+  background: #FEAC63;
   /* Green background */
 }
 
@@ -804,7 +800,7 @@ body {
 }
 
 #menu>.slider-container.selected .slider::-moz-range-thumb {
-  background: #000;
+  background: #FEAC63;
   /* Green background */
 }
 
@@ -840,8 +836,8 @@ body {
 }
 
 #menu>.control.selected>.control-bay>.set-control.selected {
-  background-color: #fff;
-  color: #000;
+  border-color: #FEAC63;
+  color: #FEAC63;
 }
 
 #menu>.control>.control-bay>.set-control.conflict {
@@ -874,11 +870,11 @@ body {
 }
 
 #menu>.btn {
-  background-color: #000000bf;
+  font-weight: 400;
   border-color: #fff;
-  border-width: 1px;
+  border-width: 0px;
   border-style: solid;
-  border-radius: 5px;
+  border-radius: 0px;
 }
 
 #menu>.btn.short {
@@ -902,7 +898,6 @@ body {
 }
 
 #menu .overline {
-  text-shadow: 1px 1px 5px #000000;
   text-transform: uppercase;
   font-size: .67em;
   font-weight: 500;
@@ -912,14 +907,11 @@ body {
 }
 
 #menu .header {
-  text-shadow: 1px 1px 5px #000000;
   font-size: 1.1999em;
-  font-weight: 100;
   margin-bottom: .2em;
 }
 
 #menu .description {
-  text-shadow: 1px 1px 5px #000000;
   font-size: .5em;
   margin-bottom: .7em;
   text-align: justify;
@@ -936,8 +928,7 @@ body {
 }
 
 #menu>.selected {
-  background-color: #fff;
-  color: #000;
+  color: #FEAC63;
   animation-name: menu-selected;
   animation-duration: .5s;
   animation-iteration-count: infinite;
@@ -946,13 +937,11 @@ body {
 
 @keyframes menu-chosen {
   from {
-    background-color: #fff;
-    color: #000;
-    border-color: #000;
+    color: #FEAC63;
+    border-color: #FEAC63;
   }
 
   to {
-    background-color: #555;
     color: #fff;
     border-color: #fff;
   }
@@ -1074,7 +1063,6 @@ body {
   text-align: right;
   color: #fff;
   font-size: 5em;
-  font-weight: 100;
   position: absolute;
   top: .5em;
   right: .5em;
@@ -1284,7 +1272,7 @@ body {
 
 .medium {
   font-size: 2em;
-  font-weight: 200;
+  
   text-align: right;
   margin-right: 0;
   margin-bottom: 0;
@@ -1315,14 +1303,14 @@ body {
   text-shadow: 1px 1px 5px #000000;
   color: #fff;
   font-size: 2.3em;
-  font-weight: 200;
+  
   margin-bottom: .4em;
   padding-right: .2em;
 }
 
 .stats label {
   display: inline-block;
-  background-color: var(--tetrion-color);
+  background-color: transparent;
   transition-property: background-color;
   transition-duration: 0.5s;
   transition-timing-function: ease-in-out;
@@ -1330,9 +1318,10 @@ body {
   font-size: 1.2em;
   padding: .2em 1em;
   margin-bottom: .4em;
-  margin-right: -.1em;
+  margin-right: -.4em;
   text-shadow: 1px 1px 5px #000000;
   color: #fff;
+  text-align: right;
   text-transform: uppercase;
 }
 
@@ -1349,8 +1338,7 @@ body {
   width: calc(var(--matrix-width) * var(--cell-size));
   height: calc(var(--matrix-height) * var(--cell-size));
   background-size: calc(100% / var(--matrix-width)) calc(100% / var(--matrix-height));
-  background-color: #0003;
-  background-image: var(--grid-image);
+  background-color: #000000bf;
   background-position: left bottom;
   border-color: var(--tetrion-color);
   transition-property: border-color;
@@ -1463,11 +1451,11 @@ body {
 }
 
 .garbage-counter-container {
+  text-shadow: 1px 1px 5px #000000;
   position: absolute;
   color: white;
   text-align: right;
   font-size: 2.5em;
-  font-weight: 100;
   bottom: .1em;
   right: -1.5em;
   animation-name: float;
@@ -1488,6 +1476,7 @@ body {
 }
 
 .delay-time {
+  text-shadow: 1px 1px 5px #000000;
   position: absolute;
   color: white;
   text-align: right;
@@ -1766,14 +1755,12 @@ progress[value]::-moz-progress-bar {
 }
 
 .kill-message-container .kill-message {
-  background-color: #000000bf;
   border-color: #fff;
-  border-radius: 0.2em;
+  border-radius: 0em;
   border-style: solid;
-  border-width: 0.04em;
+  border-width: 0em;
   padding: .2em .8em;
   font-size: 1.8em;
-  font-weight: 100;
   text-transform: uppercase;
   display: inline-block;
 }
@@ -1814,7 +1801,6 @@ progress[value]::-moz-progress-bar {
 
 .end-message-container .end-message {
   font-size: 1.8em;
-  font-weight: 100;
   text-transform: uppercase;
 }
 
@@ -1835,6 +1821,7 @@ progress[value]::-moz-progress-bar {
 
 .game.paused .pause,
 .game.zen-paused .pause {
+  text-transform: uppercase;
   animation-name: pulse-opacity;
   animation-duration: .5s;
   animation-iteration-count: infinite;
@@ -1850,6 +1837,7 @@ progress[value]::-moz-progress-bar {
 
 .game.paused .pause.vertical,
 .game.zen-paused .pause.vertical {
+  text-transform: uppercase;
   writing-mode: vertical-rl;
   display: flex;
   justify-content: center;
@@ -1878,6 +1866,7 @@ progress[value]::-moz-progress-bar {
 }
 
 .game .main-message {
+  text-transform: uppercase;
   animation-name: pulse-darkness-light;
   animation-duration: .3s;
   animation-iteration-count: infinite;
@@ -1942,6 +1931,7 @@ progress[value]::-moz-progress-bar {
 }
 
 .game .timer {
+  text-shadow: 1px 1px 5px #000000;
   text-align: right;
   color: #fff;
   position: absolute;
@@ -1952,6 +1942,7 @@ progress[value]::-moz-progress-bar {
 }
 
 .game .timer-real {
+  text-shadow: 1px 1px 5px #000000;
   bottom: -3.7em;
 }
 
@@ -1970,6 +1961,7 @@ progress[value]::-moz-progress-bar {
 #delay.danger {
   color: #f00;
   animation-name: hurry-up-timer;
+  text-shadow: 1px 1px 5px #000000;
   animation-duration: .4s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
@@ -1988,6 +1980,7 @@ progress[value]::-moz-progress-bar {
 
 .game .timer.pace,
 .garbage-counter-container.negative .garbage-counter {
+  text-shadow: 1px 1px 5px #000000;
   color: #ffd700;
   animation-name: pace-timer;
   animation-duration: .08s;
@@ -2007,6 +2000,7 @@ progress[value]::-moz-progress-bar {
 }
 
 .game .timer.paused {
+  text-shadow: 1px 1px 5px #000000;
   animation-name: paused-timer;
   animation-duration: .2s;
   animation-iteration-count: infinite;
@@ -2274,6 +2268,7 @@ progress[value]::-moz-progress-bar {
 }
 
 .ready-animation {
+  text-transform: uppercase;
   animation-name: ready-text;
   display: inline-block;
   animation-fill-mode: backwards;
