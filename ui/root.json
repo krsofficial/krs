@@ -1,0 +1,57 @@
+{
+  "properties": {
+    "parent": null
+  },
+  "data": [
+    {
+      "fixedText": true,
+      "label": "GAME MODES",
+      "type": "overline"
+    },
+	{
+      "fixedText": true,
+      "label": "Beginner",
+      "description": "A slow game that progressively gets faster. Perfect for beginners.",
+      "action": "submenu",
+      "submenu": "mode/krsproofofconcept"
+    },
+    {
+      "fixedText": true,
+      "label": "SETTINGS",
+      "type": "overline"
+    },
+    {
+      "string": "controlsLabel",
+      "stringDesc": "controlsDescription",
+      "action": "submenu",
+      "submenu": "controls"
+    },
+    {
+      "string": "tuningLabel",
+      "stringDesc": "tuningDescription",
+      "action": "submenu",
+      "submenu": "tuning"
+    },
+    {
+      "string": "audioLabel",
+      "stringDesc": "audioDescription",
+      "width": "half",
+      "action": "submenu",
+      "submenu": "audio"
+    },
+    {
+      "string": "videoLabel",
+      "stringDesc": "videoDescription",
+      "width": "half",
+      "action": "submenu",
+      "submenu": "video"
+    },
+    {
+      "fixedText": true,
+      "label": "Advanced",
+      "description": "Import and export your settings here",
+      "action": "submenu",
+      "submenu": "settings"
+    },
+  ]
+}

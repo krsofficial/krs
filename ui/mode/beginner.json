@@ -1,0 +1,15 @@
+{
+  "properties": {
+    "parent": "root",
+    "langOverride": "mode-options",
+    "game": "beginner"
+  },
+  "data": [
+    {
+      "label": "Beginner",
+	  "description": "",
+      "fixedText": true,
+      "type": "header"
+    }
+  ]
+}

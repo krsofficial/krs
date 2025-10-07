@@ -1,0 +1,36 @@
+{
+  "properties": {
+    "parent": "root",
+    "vox": "menuaudio"
+  },
+  "data": [
+    {
+      "string": "audioLabel",
+      "langOverride": "menu_root",
+      "type": "header"
+    },
+    {
+      "string": "sfxLabel",
+      "stringDesc": "sfxDescription",
+      "default": true,
+      "type": "slider",
+      "action": "slider",
+      "max": 100,
+      "min": 0,
+      "discrete": 5,
+      "setting": "sfxVolume",
+      "settingType": "setting"
+    },
+    {
+      "string": "musicLabel",
+      "stringDesc": "musicDescription",
+      "type": "slider",
+      "action": "slider",
+      "max": 100,
+      "min": 0,
+      "discrete": 5,
+      "setting": "musicVolume",
+      "settingType": "setting"
+    }
+  ]
+}

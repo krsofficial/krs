@@ -1,0 +1,38 @@
+{
+  "variationsOverline": {
+    "message": "Variaciones",
+    "description": "Variation, Version, Type"
+  },
+  "consoleLabel": {
+    "message": "Consola",
+    "description": "A mode based on NES Tet"
+  },
+  "consoleDescription": {
+    "message": "¡La versión clásica del juego más utilizada a nivel competitivo en el mundo!",
+    "description": "Feel free to take any liberties as long you can accurately describe the mode in a way that's localized to the language."
+  },
+  "handheldLabel": {
+    "message": "Portatil",
+    "description": "A mode based on the GB version of Tet"
+  },
+  "handheldDescription": {
+    "message": "Una versión nostálgica y lenta que muchos jugaron en dispositivos portátiles",
+    "description": "Feel free to take any liberties as long you can accurately describe the mode in a way that's localized to the language."
+  },
+  "deluxeLabel": {
+    "message": "Portatil DX",
+    "description": "A mode based on the GBC version of Tet"
+  },
+  "deluxeDescription": {
+    "message": "Una buena mezcla de elementos clásicos y modernos",
+    "description": "Feel free to take any liberties as long you can accurately describe the mode in a way that's localized to the language."
+  },
+  "segaLabel": {
+    "message": "Arcade",
+    "description": "A mode based on the System 16 version of Tet"
+  },
+  "segaDescription": {
+    "message": "A version of the puzzle that was way ahead of it's time.",
+    "description": "Feel free to take any liberties as long you can accurately describe the mode in a way that's localized to the language."
+  }
+}
