@@ -10,7 +10,7 @@
     },
 	{
       "fixedText": true,
-      "label": "Beginner",
+      "label": "Normal",
       "description": "A slow game that progressively gets faster. Perfect for beginners.",
       "action": "submenu",
       "submenu": "mode/beginner"

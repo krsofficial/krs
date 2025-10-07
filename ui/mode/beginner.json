@@ -6,7 +6,7 @@
   },
   "data": [
     {
-      "label": "Beginner",
+      "label": "Normal",
 	  "description": "",
       "fixedText": true,
       "type": "header"
