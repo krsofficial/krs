@@ -1,0 +1,28 @@
+{
+  "usesReadyGoVoices": true,
+  "files": [
+    "alarm",
+    "bravo",
+    "collapse",
+    "erase4",
+    "erasenot4",
+	"endingstart",
+    "excellent",
+    "gameover",
+	"gradeup",
+	"garbage",
+    "initialrotate",
+    "land",
+    "levelup",
+	"hurryup",
+    "lock",
+    "ready",
+    "start",
+    "tspin"
+  ],
+  "ren": [
+    1,
+	2
+  ],
+  "nextSoundbank": "tgm"
+}
