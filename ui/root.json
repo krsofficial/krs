@@ -52,6 +52,6 @@
       "description": "Import and export your settings here",
       "action": "submenu",
       "submenu": "settings"
-    },
+    }
   ]
 }
