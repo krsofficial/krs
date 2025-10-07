@@ -13,7 +13,7 @@
       "label": "Beginner",
       "description": "A slow game that progressively gets faster. Perfect for beginners.",
       "action": "submenu",
-      "submenu": "mode/krsproofofconcept"
+      "submenu": "mode/beginner"
     },
     {
       "fixedText": true,
