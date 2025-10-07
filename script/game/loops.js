@@ -163,7 +163,6 @@ export const loops = {
   beginner: {
     update: (arg) => {
 	  const game = gameHandler.game
-	  updateAceBg(game)
       collapse(arg)
       if (arg.piece.inAre) {
         initialDas(arg)
