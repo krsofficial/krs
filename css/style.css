@@ -345,11 +345,11 @@
 
 @keyframes matrix-warning {
   from {
-    background-color: #f003
+    background-color: #000000bf
   }
 
   to {
-    background-color: #f009
+    background-color: #bf0000bf
   }
 }
 
@@ -698,11 +698,11 @@ body {
 }
 
 #menu>.toggle-container.selected .bubble {
-  border-color: #FEAC63;
+  border-color: #A4F7B5;
 }
 
 #menu>.toggle-container.selected .bubble.enabled {
-  background-color: #FEAC63;
+  background-color: #A4F7B5;
 }
 
 #menu>.select-container .arrow {
@@ -745,7 +745,7 @@ body {
 }
 
 #menu>.slider-container.selected .value {
-  border-color: #FEAC63;
+  border-color: #A4F7B5;
 }
 
 #menu>.slider-container .slider {
@@ -764,7 +764,7 @@ body {
 }
 
 #menu>.slider-container.selected .slider {
-  outline-color: #FEAC63;
+  outline-color: #A4F7B5;
 }
 
 /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
@@ -784,7 +784,7 @@ body {
 }
 
 #menu>.slider-container.selected .slider::-webkit-slider-thumb {
-  background: #FEAC63;
+  background: #A4F7B5;
   /* Green background */
 }
 
@@ -800,7 +800,7 @@ body {
 }
 
 #menu>.slider-container.selected .slider::-moz-range-thumb {
-  background: #FEAC63;
+  background: #A4F7B5;
   /* Green background */
 }
 
@@ -836,8 +836,8 @@ body {
 }
 
 #menu>.control.selected>.control-bay>.set-control.selected {
-  border-color: #FEAC63;
-  color: #FEAC63;
+  border-color: #A4F7B5;
+  color: #A4F7B5;
 }
 
 #menu>.control>.control-bay>.set-control.conflict {
@@ -898,6 +898,7 @@ body {
 }
 
 #menu .overline {
+  color: #84F78C;
   text-transform: uppercase;
   font-size: .67em;
   font-weight: 500;
@@ -909,6 +910,8 @@ body {
 #menu .header {
   font-size: 1.1999em;
   margin-bottom: .2em;
+  text-transform: uppercase;
+  color: #A4F7B5;
 }
 
 #menu .description {
@@ -928,7 +931,7 @@ body {
 }
 
 #menu>.selected {
-  color: #FEAC63;
+  color: #A4F7B5;
   animation-name: menu-selected;
   animation-duration: .5s;
   animation-iteration-count: infinite;
@@ -937,8 +940,8 @@ body {
 
 @keyframes menu-chosen {
   from {
-    color: #FEAC63;
-    border-color: #FEAC63;
+    color: #A4F7B5;
+    border-color: #A4F7B5;
   }
 
   to {
@@ -1119,7 +1122,8 @@ body {
 
 #press-container {
   text-shadow: 1px 1px 5px #000000;
-  color: white;
+  color: #84F78C;
+  text-transform: uppercase;
   font-size: 3em;
   text-align: center;
   animation-name: pulse-opacity;
@@ -1320,7 +1324,7 @@ body {
   margin-bottom: .4em;
   margin-right: -.4em;
   text-shadow: 1px 1px 5px #000000;
-  color: #fff;
+  color: #A4F7B5;
   text-align: right;
   text-transform: uppercase;
 }
@@ -1340,7 +1344,11 @@ body {
   background-size: calc(100% / var(--matrix-width)) calc(100% / var(--matrix-height));
   background-color: #000000bf;
   background-position: left bottom;
-  border-color: var(--tetrion-color);
+  border-top-color: #B5BDB5; /* Lighter top */
+  border-left-color: #B5BDB5; /* Lighter left */
+  border-bottom-color: #5B524A; /* Darker bottom */
+  border-right-color: #5B524A; /* Darker right */
+  border-style: ridge;
   transition-property: border-color;
   transition-duration: 0.5s;
   transition-timing-function: ease-in-out;
@@ -1371,7 +1379,7 @@ body {
   opacity: 1;
 }
 .next-matrix.immediate-death {
-  animation-name: pulse-darkness;
+  animation-name: pulse-darkness-light;
   animation-duration: .2s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
@@ -1421,7 +1429,7 @@ body {
 
 .next-label,
 .hold-label {
-  color: #fff;
+  color: #84F78C;
   margin: 0;
   font-size: 2em;
   font-weight: 500;
@@ -1430,6 +1438,7 @@ body {
 }
 
 .next-label {
+  color: #84F78C;
   text-shadow: 1px 1px 5px #000000;
   text-align: left;
 }
@@ -1492,7 +1501,7 @@ body {
   width: 6em;
   bottom: -1.2em;
   left: -7em;
-  animation-name: pulse-darkness;
+  animation-name: pulse-red;
   animation-duration: .2s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
@@ -1581,7 +1590,7 @@ progress[value] {
 }
 
 progress[value="0"] {
-  animation-name: pulse-darkness;
+  animation-name: pulse-darkness-light;
   animation-duration: .2s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
@@ -1618,7 +1627,7 @@ progress[value]::-moz-progress-bar {
   text-transform: uppercase;
   letter-spacing: .2em;
   /* animation-name: pulse-darkness2; */
-  animation-name: pulse-darkness;
+  animation-name: pulse-darkness-light;
   animation-duration: 0.202675s;
   /* 0.1013375 * 2 = 0.202675 */
   animation-iteration-count: infinite;
@@ -1627,7 +1636,6 @@ progress[value]::-moz-progress-bar {
 }
 
 .clutch-message-container {
-  color: #fff5;
   /* position: absolute; */
   font-weight: 500;
   text-transform: uppercase;
@@ -1731,7 +1739,7 @@ progress[value]::-moz-progress-bar {
 .kill-message-container {
   position: absolute;
   text-shadow: 1px 1px 5px #000000;
-  color: #fff;
+  color: #84F78C;
   left: 50%;
   margin-left: -10em;
   top: 50%;
@@ -1769,7 +1777,7 @@ progress[value]::-moz-progress-bar {
   text-align: center;
   position: absolute;
   text-shadow: 1px 1px 5px #000000;
-  color: #fff;
+  color: #84F78C;
   left: 50%;
   margin-left: -10em;
   top: 40%;
@@ -1785,6 +1793,7 @@ progress[value]::-moz-progress-bar {
 }
 
 .end-message-container .end-stats {
+  color: #fff;
   text-align: right;
   width: 15em;
   margin: auto;
@@ -1804,7 +1813,12 @@ progress[value]::-moz-progress-bar {
   text-transform: uppercase;
 }
 
+.end-message-container .return {
+  color: #fff;
+}
+
 .end-message-container .icon {
+  border-color: #fff;
   font-family: 'Material Icons';
   border-color: white;
   border-style: solid;
