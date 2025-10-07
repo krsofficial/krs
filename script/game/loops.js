@@ -159,10 +159,43 @@ const krsGradingSystem = (
 	lastGrade = game.stat.grade
 }
 
+const updateKrsBackground = (game) => {
+	let backgroundTable = []
+	backgroundTable[0] = ``
+	backgroundTable[1] = `url('bgs/back0.png')`
+	backgroundTable[2] = `url('bgs/back1.png')`
+	backgroundTable[3] = `url('bgs/back2.png')`
+	backgroundTable[4] = `url('bgs/back3.png')`
+	backgroundTable[5] = `url('bgs/back4.png')`
+	backgroundTable[6] = `url('bgs/back5.png')`
+	backgroundTable[7] = `url('bgs/back6.png')`
+	backgroundTable[8] = `url('bgs/back7.png')`
+	backgroundTable[9] = `url('bgs/back8.png')`
+	backgroundTable[10] = `url('bgs/back9.png')`
+	backgroundTable[11] = `url('bgs/back10.png')`
+	backgroundTable[12] = `url('bgs/back11.png')`
+	backgroundTable[13] = `url('bgs/back12.png')`
+	backgroundTable[14] = `url('bgs/back13.png')`
+	backgroundTable[15] = `url('bgs/back14.png')`
+	backgroundTable[16] = `url('bgs/back15.png')`
+	backgroundTable[17] = `url('bgs/back16.png')`
+	backgroundTable[18] = `url('bgs/back17.png')`
+	backgroundTable[19] = `url('bgs/back18.png')`
+	backgroundTable[20] = `url('bgs/back19.png')`
+	let backgroundUrl = backgroundTable[0]
+	if (game.stat.level >= 20) {
+		backgroundUrl = backgroundTable[game.stat.level]
+	} else {
+		backgroundUrl = backgroundTable[20]
+	}
+	document.getElementById("arcadeBackground").style.setProperty("background-image", backgroundUrl)
+}
+
 export const loops = {
   beginner: {
     update: (arg) => {
 	  const game = gameHandler.game
+	  updateKrsBackground(game)
       collapse(arg)
       if (arg.piece.inAre) {
         initialDas(arg)

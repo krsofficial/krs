@@ -36,7 +36,7 @@ class Settings {
       outline: "on",
       ghost: "color",
       backgroundOpacity: 30,
-      gridStyle: "off",
+      gridStyle: "krs",
       lockFlash: "shine",
       actionText: true,
       matrixSwayScale: 50,
