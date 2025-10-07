@@ -1,13 +1,16 @@
 {
   "files": [
+    "alarm",
     "b2b",
 	"bravo",
     "collapse",
+	"clutch",
     "erase1",
     "erase2",
     "erase3",
     "erase4",
 	"garbage",
+	"garbagerecieve",
     "excellent",
 	"gameover",
 	"gradeup",
@@ -17,14 +20,20 @@
     "ko",
     "land",
     "levelup",
+	"hurryup",
     "lock",
+	"lockforce",
     "move",
     "pause",
     "ready",
     "rotate",
     "start",
     "step",
-    "tspinbonus"
+	"tspin0",
+	"tspin1",
+	"tspin2",
+	"tspin3",
+	"tspin4"
   ],
   "ren": []
 }

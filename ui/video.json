@@ -12,6 +12,7 @@
     {
       "string": "particleSettingsLabel",
       "stringDesc": "particleSettingsDescription",
+	  "default": true,
       "action": "submenu",
       "submenu": "particles"
     },

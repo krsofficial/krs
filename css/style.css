@@ -1344,10 +1344,10 @@ body {
   background-size: calc(100% / var(--matrix-width)) calc(100% / var(--matrix-height));
   background-color: #000000bf;
   background-position: left bottom;
-  border-top-color: #B5BDB5; /* Lighter top */
-  border-left-color: #B5BDB5; /* Lighter left */
-  border-bottom-color: #5B524A; /* Darker bottom */
-  border-right-color: #5B524A; /* Darker right */
+  border-top-color: #B5BAB5; /* Lighter top */
+  border-left-color: #D6CBC6; /* Lighter left */
+  border-bottom-color: #7B716B; /* Darker bottom */
+  border-right-color: #A59A94; /* Darker right */
   border-style: ridge;
   transition-property: border-color;
   transition-duration: 0.5s;
@@ -1799,6 +1799,10 @@ progress[value]::-moz-progress-bar {
   margin: auto;
   margin-right: 50%;
   white-space: nowrap;
+}
+
+.end-message-container .end-stats b {
+  color: #A4F7B5;
 }
 
 .end-message-container.hidden {

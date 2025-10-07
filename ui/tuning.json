@@ -10,6 +10,29 @@
       "type": "header"
     },
     {
+      "string": "dasLabel",
+      "stringDesc": "dasDescription",
+      "default": true,
+      "type": "slider",
+      "action": "slider",
+      "max": 300,
+      "min": 0,
+      "discrete": 10,
+      "setting": "DAS",
+      "settingType": "setting"
+    },
+    {
+      "string": "arrLabel",
+      "stringDesc": "arrDescription",
+      "type": "slider",
+      "action": "slider",
+      "max": 100,
+      "min": 0,
+      "discrete": 5,
+      "setting": "ARR",
+      "settingType": "setting"
+    },
+    {
       "string": "irsLabel",
       "stringDesc": "irsDescription",
       "type": "select",
