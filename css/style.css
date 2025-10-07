@@ -874,6 +874,7 @@ body {
 }
 
 #menu>.btn {
+  background-color: ##000000bf;
   border-color: #fff;
   border-width: 1px;
   border-style: solid;
@@ -901,6 +902,7 @@ body {
 }
 
 #menu .overline {
+  text-shadow: 1px 1px 5px #000000;
   text-transform: uppercase;
   font-size: .67em;
   font-weight: 500;
@@ -910,12 +912,14 @@ body {
 }
 
 #menu .header {
+  text-shadow: 1px 1px 5px #000000;
   font-size: 1.1999em;
   font-weight: 100;
   margin-bottom: .2em;
 }
 
 #menu .description {
+  text-shadow: 1px 1px 5px #000000;
   font-size: .5em;
   margin-bottom: .7em;
   text-align: justify;
@@ -1126,6 +1130,7 @@ body {
 }
 
 #press-container {
+  text-shadow: 1px 1px 5px #000000;
   color: white;
   font-size: 3em;
   text-align: center;
@@ -1293,17 +1298,13 @@ body {
   margin-right: -.4em;
 }
 
-body[theme="tetrjs"] .stats {
-  transform: none !important;
-  margin-right: 0em
-}
-
 .stats div.stat-group {
   text-align: right;
   margin-right: .45em;
 }
 
 .stats div.stat-group div {
+  text-shadow: 1px 1px 5px #000000;
   color: #fff;
   font-size: 1.1em;
   margin-bottom: 1em;
@@ -1311,6 +1312,7 @@ body[theme="tetrjs"] .stats {
 }
 
 .stats div.stat-group div.big {
+  text-shadow: 1px 1px 5px #000000;
   color: #fff;
   font-size: 2.3em;
   font-weight: 200;
@@ -1329,23 +1331,9 @@ body[theme="tetrjs"] .stats {
   padding: .2em 1em;
   margin-bottom: .4em;
   margin-right: -.1em;
-  color: #111;
-  text-transform: uppercase;
-}
-
-body[theme="tetrjs"] .stats label {
+  text-shadow: 1px 1px 5px #000000;
   color: #fff;
-  background-color: transparent;
-  display: block;
-  font-weight: 400;
-  margin: 0;
-  margin-right: 0;
-  padding: .05em;
-  padding-left: 1em;
-  font-size: 1.55em;
-  border-left-width: .1em;
-  border-left-color: white;
-  border-left-style: solid;
+  text-transform: uppercase;
 }
 
 .game-left,
@@ -1381,10 +1369,6 @@ body[theme="tetrjs"] .stats label {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   animation-direction: alternate;
-}
-
-body[theme="tetrjs"] .game-center {
-  border-width: .1em;
 }
 
 .next-matrix {
@@ -1458,22 +1442,14 @@ body[theme="tetrjs"] .game-center {
 }
 
 .next-label {
+  text-shadow: 1px 1px 5px #000000;
   text-align: left;
 }
 
 .hold-label {
+  text-shadow: 1px 1px 5px #000000;
   text-align: right;
   margin-right: -.3em;
-}
-
-body[theme="tetrjs"] .next-label,
-body[theme="tetrjs"] .hold-label {
-  font-weight: 300;
-  letter-spacing: normal;
-  text-align: center;
-  border-left-width: .1em;
-  border-left-color: white;
-  border-left-style: solid;
 }
 
 @keyframes float {
@@ -1765,6 +1741,7 @@ progress[value]::-moz-progress-bar {
 
 .kill-message-container {
   position: absolute;
+  text-shadow: 1px 1px 5px #000000;
   color: #fff;
   left: 50%;
   margin-left: -10em;
@@ -1789,6 +1766,7 @@ progress[value]::-moz-progress-bar {
 }
 
 .kill-message-container .kill-message {
+  background-color: ##000000bf;
   border-color: #fff;
   border-radius: 0.2em;
   border-style: solid;
@@ -1803,6 +1781,7 @@ progress[value]::-moz-progress-bar {
 .end-message-container {
   text-align: center;
   position: absolute;
+  text-shadow: 1px 1px 5px #000000;
   color: #fff;
   left: 50%;
   margin-left: -10em;

@@ -183,7 +183,7 @@ const updateKrsBackground = (game) => {
 	backgroundTable[19] = `url('bgs/back18.png')`
 	backgroundTable[20] = `url('bgs/back19.png')`
 	let backgroundUrl = backgroundTable[0]
-	if (game.stat.level >= 20) {
+	if (game.stat.level <= 20) {
 		backgroundUrl = backgroundTable[game.stat.level]
 	} else {
 		backgroundUrl = backgroundTable[20]
