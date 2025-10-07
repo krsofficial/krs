@@ -874,7 +874,7 @@ body {
 }
 
 #menu>.btn {
-  background-color: ##000000bf;
+  background-color: #000000bf;
   border-color: #fff;
   border-width: 1px;
   border-style: solid;
@@ -1766,7 +1766,7 @@ progress[value]::-moz-progress-bar {
 }
 
 .kill-message-container .kill-message {
-  background-color: ##000000bf;
+  background-color: #000000bf;
   border-color: #fff;
   border-radius: 0.2em;
   border-style: solid;
