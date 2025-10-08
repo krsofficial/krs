@@ -165,7 +165,7 @@ const krsGradingSystem = (
 
 const updateKrsBackground = (game) => {
 	let backgroundTable = [
-		"",
+		"back0",
 		"back0",
 		"back1",
 		"back2",
@@ -188,14 +188,14 @@ const updateKrsBackground = (game) => {
 		"back19",
 	]
 	for (const name of backgroundTable) {
-		if (game.stat.level <= 20 && name !== "") {
+		if (game.stat.level <= 20) {
 			if (backgroundTable[game.stat.level] === name) {
 				document.getElementById(name).style.opacity = 1
 			} else {
 				document.getElementById(name).style.opacity = 0
 			}
 		} else {
-			if (backgroundTable[20] === name && name !== "") {
+			if (backgroundTable[20] === name) {
 				document.getElementById(name).style.opacity = 1
 			} else {
 				document.getElementById(name).style.opacity = 0
