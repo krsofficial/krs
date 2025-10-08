@@ -383,7 +383,7 @@
   --grid-image: url("../img/tetrion/grid-bg-cross.svg");
   --tetrion-color: #fff;
   /* --current-background: url("https://wallpaperaccess.com/full/28488.jpg"); */
-  --main-font: "Noto Sans", sans-serif;
+  --main-font: "Noto Sans";
   --cell-size: 2em;
   --peek-zone: .25;
   --matrix-width: 10;
@@ -562,7 +562,7 @@ body {
   user-select: none;
   margin: 0;
   padding: 0;
-  font-family: var(--main-font);
+  font-family: "Noto Sans";
   /* background-color: #034efc; */
   background-color: #000;
   /* background-blend-mode: luminosity; */
@@ -574,20 +574,6 @@ body {
   animation-iteration-count: infinite;
   animation-direction: alternate;
   animation-timing-function: ease-in-out;
-}
-
-#gameBackground {
-  position:fixed;
-  right:0;
-  bottom:0;
-  min-width:100%;
-  min-height:100%;
-  background-color:#000000;
-  background-repeat:no-repeat;
-  background-size:100% 100%;
-  transition-property: opacity;
-  transition-duration: 0.5s;
-  transition-timing-function: ease-in-out;
 }
 
 #main {
