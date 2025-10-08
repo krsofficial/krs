@@ -299,6 +299,78 @@
 }
 
 @font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Noto Sans Thin'), local('NotoSans-Thin'), url('../fonts/NotoSans-Thin.woff2') format('woff2'),
+    url('../fonts/NotoSans-Thin.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 200;
+  src: local('Noto Sans ExtraLight'), local('NotoSans-ExtraLight'), url('../fonts/NotoSans-ExtraLight.woff2') format('woff2'),
+    url('../fonts/NotoSans-ExtraLight.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Noto Sans Light'), local('NotoSans-Light'), url('../fonts/NotoSans-Light.woff2') format('woff2'),
+    url('../fonts/NotoSans-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Noto Sans Regular'), local('NotoSans-Regular'), url('../fonts/NotoSans-Regular.woff2') format('woff2'),
+    url('../fonts/NotoSans-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Noto Sans Medium'), local('NotoSans-Medium'), url('../fonts/NotoSans-Medium.woff2') format('woff2'),
+    url('../fonts/NotoSans-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Noto Sans SemiBold'), local('NotoSans-SemiBold'), url('../fonts/NotoSans-SemiBold.woff2') format('woff2'),
+    url('../fonts/NotoSans-SemiBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Noto Sans Bold'), local('NotoSans-Bold'), url('../fonts/NotoSans-Bold.woff2') format('woff2'),
+    url('../fonts/NotoSans-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Noto Sans ExtraBold'), local('NotoSans-ExtraBold'), url('../fonts/NotoSans-ExtraBold.woff2') format('woff2'),
+    url('../fonts/NotoSans-ExtraBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Noto Sans Black'), local('NotoSans-Black'), url('../fonts/NotoSans-Black.woff2') format('woff2'),
+    url('../fonts/NotoSans-Black.woff') format('woff');
+}
+
+@font-face {
   font-family: 'Material Icons';
   font-style: normal;
   font-weight: 400;
@@ -311,7 +383,7 @@
   --grid-image: url("../img/tetrion/grid-bg-cross.svg");
   --tetrion-color: #fff;
   /* --current-background: url("https://wallpaperaccess.com/full/28488.jpg"); */
-  --main-font: "Roboto", sans-serif;
+  --main-font: "Noto Sans", sans-serif;
   --cell-size: 2em;
   --peek-zone: .25;
   --matrix-width: 10;
@@ -504,7 +576,15 @@ body {
   animation-timing-function: ease-in-out;
 }
 
-#arcadeBackground {
+#gameBackground {
+  position:fixed;
+  right:0;
+  bottom:0;
+  min-width:100%;
+  min-height:100%;
+  background-color:#000000;
+  background-repeat:no-repeat;
+  background-size:100% 100%;
   transition-property: opacity;
   transition-duration: 0.5s;
   transition-timing-function: ease-in-out;
@@ -1358,7 +1438,7 @@ body {
   border-width: .5em;
 }
 
-.gameover-early-warning-bgflash {
+.game-center gameover-early-warning-bgflash {
   animation-name: matrix-warning;
   animation-duration: 0.1013375s;
   /* 0.1013375 * 2 = 0.202675 */
@@ -1839,15 +1919,16 @@ progress[value]::-moz-progress-bar {
 
 .game.paused .pause,
 .game.zen-paused .pause {
+  text-shadow: 1px 1px 5px #000000;
+  font-weight: 500;
   text-transform: uppercase;
   animation-name: pulse-opacity;
   animation-duration: .5s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
   display: block;
-  color: white;
+  color: #84F78C;
   font-size: 3em;
-  font-weight: 300;
   position: absolute;
   top: 2em;
   width: 100%;
@@ -1884,16 +1965,17 @@ progress[value]::-moz-progress-bar {
 }
 
 .game .main-message {
+  text-shadow: 1px 1px 5px #000000;
   text-transform: uppercase;
+  font-weight: 500;
   animation-name: pulse-darkness-light;
   animation-duration: .3s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
   animation-timing-function: ease-in-out;
   display: block;
-  color: white;
+  color: #84F78C;
   font-size: 3em;
-  font-weight: 300;
   position: absolute;
   top: 6em;
   left: -150%;
@@ -2027,7 +2109,8 @@ progress[value]::-moz-progress-bar {
 }
 
 .combo-counter-container {
-  color: #fff;
+  color: #A4F7B5;
+  text-shadow: 1px 1px 5px #000000;
   position: absolute;
   bottom: 8em;
   margin-left: 1.2em;
@@ -2035,6 +2118,10 @@ progress[value]::-moz-progress-bar {
   animation-duration: var(--combo-flash-speed);
   animation-iteration-count: infinite;
   width: 20em;
+}
+
+.combo-counter-container b {
+  color: #fff;
 }
 
 .combo-counter {
@@ -2118,7 +2205,8 @@ progress[value]::-moz-progress-bar {
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.635, 0.005, 0.940, 0.080);
   display: block;
-  color: white;
+  color: #A4F7B5;
+  text-shadow: 1px 1px 5px #000000;
   font-size: 2.3em;
   font-weight: 500;
   position: absolute;
@@ -2286,6 +2374,9 @@ progress[value]::-moz-progress-bar {
 }
 
 .ready-animation {
+  text-shadow: 1px 1px 5px #000000;
+  color: #84F78C;
+  font-weight: 500;
   text-transform: uppercase;
   animation-name: ready-text;
   display: inline-block;

@@ -427,7 +427,7 @@ export default class Game {
           $("#end-stats").innerHTML += `<b>Avg. PPS:</b> ${
             Math.round(
               (gameHandler.game.stat.piece /
-                (gameHandler.game.timePassed / 1000)) *
+                ((gameHandler.game.timePassed + gameHandler.game.timePassedOffset) / 1000)) *
                 100
             ) / 100
           }<br>`

@@ -125,12 +125,16 @@ const levelUpdateSega = (game) => {
   lastLevel = game.stat.level
   return returnValue
 }
-const krsLevelSystem = (game, pieceRequirement) => {
+const krsLevelSystem = (game, pieceRequirement = 40, levelGoal = 20) => {
 	let returnValue = false
 	game.stat.level = Math.floor(game.stat.piece / pieceRequirement) + 1
 	if (game.stat.level !== lastLevel) {
-		sound.add("levelup")
-		sound.add("levelupmajor")
+		if (game.stat.level >= levelGoal) {
+			sound.add("levelup")
+			sound.add("levelupmajor")
+		} else {
+			game.stat.level = levelGoal
+		}
 		returnValue = true
 	}
 	lastLevel = game.stat.level
@@ -160,35 +164,44 @@ const krsGradingSystem = (
 }
 
 const updateKrsBackground = (game) => {
-	let backgroundTable = []
-	backgroundTable[0] = ``
-	backgroundTable[1] = `url('bgs/back0.png')`
-	backgroundTable[2] = `url('bgs/back1.png')`
-	backgroundTable[3] = `url('bgs/back2.png')`
-	backgroundTable[4] = `url('bgs/back3.png')`
-	backgroundTable[5] = `url('bgs/back4.png')`
-	backgroundTable[6] = `url('bgs/back5.png')`
-	backgroundTable[7] = `url('bgs/back6.png')`
-	backgroundTable[8] = `url('bgs/back7.png')`
-	backgroundTable[9] = `url('bgs/back8.png')`
-	backgroundTable[10] = `url('bgs/back9.png')`
-	backgroundTable[11] = `url('bgs/back10.png')`
-	backgroundTable[12] = `url('bgs/back11.png')`
-	backgroundTable[13] = `url('bgs/back12.png')`
-	backgroundTable[14] = `url('bgs/back13.png')`
-	backgroundTable[15] = `url('bgs/back14.png')`
-	backgroundTable[16] = `url('bgs/back15.png')`
-	backgroundTable[17] = `url('bgs/back16.png')`
-	backgroundTable[18] = `url('bgs/back17.png')`
-	backgroundTable[19] = `url('bgs/back18.png')`
-	backgroundTable[20] = `url('bgs/back19.png')`
-	let backgroundUrl = backgroundTable[0]
-	if (game.stat.level <= 20) {
-		backgroundUrl = backgroundTable[game.stat.level]
-	} else {
-		backgroundUrl = backgroundTable[20]
+	let backgroundTable = [
+		"",
+		"back0",
+		"back1",
+		"back2",
+		"back3",
+		"back4",
+		"back5",
+		"back6",
+		"back7",
+		"back8",
+		"back9",
+		"back10",
+		"back11",
+		"back12",
+		"back13",
+		"back14",
+		"back15",
+		"back16",
+		"back17",
+		"back18",
+		"back19",
+	]
+	for (const name of backgroundTable) {
+		if (game.stat.level >= 20) {
+			if (backgroundTable[game.stat.level] === name) {
+				document.getElementById(name).style.opacity = 1
+			} else {
+				document.getElementById(name).style.opacity = 1
+			}
+		} else {
+			if (backgroundTable[20] === name) {
+				document.getElementById(name).style.opacity = 1
+			} else {
+				document.getElementById(name).style.opacity = 1
+			}
+		}
 	}
-	document.getElementById("arcadeBackground").style.setProperty("background-image", backgroundUrl)
 }
 
 export const loops = {
@@ -224,7 +237,10 @@ export const loops = {
           game.playedHurryUp = true
         }
       } else {
-        game.playedHurryUp = false
+		if (game.playedHurryUp) {
+			$("#timer").classList.remove("hurry-up")
+		}
+		game.playedHurryUp = false
       }
 	  testModeUpdate()
       /* Might use this code later
@@ -234,7 +250,7 @@ export const loops = {
       */
     },
     onPieceSpawn: (game) => {
-	  const pieceRequirement = 50
+	  const pieceRequirement = 40
 	  const levelGoal = 20
       const x = game.stat.level
       const gravityEquation = (0.8 - (x - 1) * 0.007) ** (x - 1)
@@ -244,7 +260,7 @@ export const loops = {
 		  game.piece.gravity = framesToMs(1 / 20)
 	  }
       updateFallSpeed(game)
-      if (krsLevelSystem(game, pieceRequirement)) {
+      if (krsLevelSystem(game, pieceRequirement, levelGoal)) {
 		game.timePassedOffset += game.timePassed
 		game.timePassed = 0
 	  }
@@ -399,7 +415,6 @@ export const loops = {
         }
       }
 	  if (game.stat.piece >= pieceRequirement * levelGoal) {
-		game.stat.level = levelGoal
 		game.stat.piece = pieceRequirement * levelGoal
 		$("#kill-message").textContent = locale.getString("ui", "excellent")
         sound.killVox()
