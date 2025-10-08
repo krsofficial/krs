@@ -135,6 +135,38 @@ class Menu {
         })
       })
   }
+  updateBackground() {
+	let backgroundTable = [
+		"back0",
+		"back0",
+		"back1",
+		"back2",
+		"back3",
+		"back4",
+		"back5",
+		"back6",
+		"back7",
+		"back8",
+		"back9",
+		"back10",
+		"back11",
+		"back12",
+		"back13",
+		"back14",
+		"back15",
+		"back16",
+		"back17",
+		"back18",
+		"back19",
+	]
+	for (const name of backgroundTable) {
+		if (name === backgroundTable[0]) {
+			document.getElementById(name).style.opacity = 1
+		} else {
+			document.getElementById(name).style.opacity = 0
+		}
+	}
+  }
   close() {
     this.isLocked = true
     this.isEnabled = false
