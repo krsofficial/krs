@@ -188,17 +188,17 @@ const updateKrsBackground = (game) => {
 		"back19",
 	]
 	for (const name of backgroundTable) {
-		if (game.stat.level >= 20) {
+		if (game.stat.level <= 20 && name !== "") {
 			if (backgroundTable[game.stat.level] === name) {
 				document.getElementById(name).style.opacity = 1
 			} else {
-				document.getElementById(name).style.opacity = 1
+				document.getElementById(name).style.opacity = 0
 			}
 		} else {
-			if (backgroundTable[20] === name) {
+			if (backgroundTable[20] === name && name !== "") {
 				document.getElementById(name).style.opacity = 1
 			} else {
-				document.getElementById(name).style.opacity = 1
+				document.getElementById(name).style.opacity = 0
 			}
 		}
 	}
