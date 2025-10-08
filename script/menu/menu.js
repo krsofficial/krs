@@ -180,6 +180,7 @@ class Menu {
         hasDangerBgm: false,
         hasPaceBgm: false,
       }
+	  this.updateBackground()
       if (this.current.properties.pgmusic) {
         sound.killBgm()
         sound.loadBgm([this.current.properties.pgmusic], "menu")
