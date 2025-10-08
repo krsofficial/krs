@@ -129,7 +129,7 @@ const krsLevelSystem = (game, pieceRequirement = 40, levelGoal = 20) => {
 	let returnValue = false
 	game.stat.level = Math.floor(game.stat.piece / pieceRequirement) + 1
 	if (game.stat.level !== lastLevel) {
-		if (game.stat.level >= levelGoal) {
+		if (game.stat.level <= levelGoal) {
 			sound.add("levelup")
 			sound.add("levelupmajor")
 		} else {
