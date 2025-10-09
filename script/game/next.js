@@ -186,7 +186,7 @@ export default class Next extends GameModule {
           const isFilled = shape[y][x]
           if (isFilled) {
             const yPos = y * cellSize + offset[1] * cellSize
-            const yPos =
+            const xPos =
               x * cellSize +
               offset[0] * cellSize +
               nextSpace * cellSize * multiplier
