@@ -997,7 +997,7 @@ class Menu {
         const fileContent = localStorage.getItem(`tetraSettings`)
         const bb = new Blob([fileContent], { type: "JSON" })
         const a = document.createElement("a")
-        a.download = "tetraSettings.json"
+        a.download = "krsSettings.json"
         a.href = window.URL.createObjectURL(bb)
         a.click()
         a.remove()
