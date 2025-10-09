@@ -22,8 +22,8 @@ class Settings {
       brokenLineLimit: 40,
       // Graphics
       theme: "default",
-      size: 100,
-      nextLength: 6,
+      size: 75,
+      nextLength: 3,
       skin: "auto",
       color: "auto",
       colorI: "auto",
