@@ -1309,13 +1309,14 @@ body {
 
 .game {
   margin-top: 5em;
+  margin-left: -2.5em;
   display: inline-block;
   transition-property: filter, transform;
   transition-duration: .8s;
 }
 
 .game.dead {
-  filter: grayscale(100%) brightness(0.3) blur(.5em);
+  filter: grayscale(100%) brightness(1) blur(.5em);
   transform: scale(0.8);
 }
 
@@ -1516,7 +1517,7 @@ body {
 .hold-label {
   text-shadow: 1px 1px 5px #000000;
   text-align: right;
-  margin-right: -3.25em;
+  margin-right: -3.2em;
 }
 
 @keyframes float {
@@ -1575,6 +1576,7 @@ body {
   animation-duration: .2s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+  opacity: 0;
 }
 
 .infinity-symbol {
@@ -1743,6 +1745,7 @@ progress[value]::-moz-progress-bar {
   position: absolute;
   top: -1.45em;
   right: 1em;
+  opacity: 0;
 }
 
 .warning-message-container img,
@@ -1754,6 +1757,7 @@ progress[value]::-moz-progress-bar {
 .warning-message-container-hold .warning-message,
 .warning-message-container img,
 .clutch-message-container .clutch-message {
+  opacity: 0;
   display: inline-block;
 }
 
@@ -2102,7 +2106,7 @@ progress[value]::-moz-progress-bar {
   color: #A4F7B5;
   text-shadow: 1px 1px 5px #000000;
   position: absolute;
-  bottom: -30em;
+  bottom: 0em;
   margin-left: 1.2em;
   animation-name: pulse-opacity;
   animation-duration: var(--combo-flash-speed);
