@@ -1309,7 +1309,7 @@ body {
 
 .game {
   margin-top: 5em;
-  margin-left: -.5em;
+  margin-left: .5em;
   display: inline-block;
   transition-property: filter, transform;
   transition-duration: .8s;
@@ -1485,7 +1485,7 @@ body {
 
 .sub-next-container {
   --next-count: 3;
-  margin-left: -5em;
+  margin-left: -5.75em;
   margin-top: -7.5em;
   padding: 0;
 }
@@ -1938,6 +1938,7 @@ progress[value]::-moz-progress-bar {
 }
 
 .game .load-message {
+  text-shadow: 1px 1px 5px #000000;
   animation-name: pulse-opacity;
   animation-duration: .5s;
   animation-iteration-count: infinite;
