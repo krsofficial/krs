@@ -2106,7 +2106,7 @@ progress[value]::-moz-progress-bar {
   color: #A4F7B5;
   text-shadow: 1px 1px 5px #000000;
   position: absolute;
-  bottom: 0em;
+  bottom: 22em;
   margin-left: 1.2em;
   animation-name: pulse-opacity;
   animation-duration: var(--combo-flash-speed);
