@@ -185,9 +185,9 @@ export default class Next extends GameModule {
           const img = document.getElementById(`mino-${color}${suffix}`)
           const isFilled = shape[y][x]
           if (isFilled) {
-            const yPos = y * cellSize + offset[0] * cellSize
-            const xPos =
-              x * cellSize +
+            const xPos = x * cellSize + offset[0] * cellSize
+            const yPos =
+              y * cellSize +
               offset[1] * cellSize +
               nextSpace * cellSize * multiplier
             img.height = cellSize
