@@ -1309,7 +1309,6 @@ body {
 
 .game {
   margin-top: 5em;
-  margin-left: -.5em;
   display: inline-block;
   transition-property: filter, transform;
   transition-duration: .8s;
@@ -1486,7 +1485,7 @@ body {
 .sub-next-container {
   --next-count: 2;
   margin-left: -5em;
-  margin-top: -12.5em;
+  margin-top: -10em;
   padding: 0;
 }
 
