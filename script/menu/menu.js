@@ -137,7 +137,7 @@ class Menu {
   }
   updateBackground() {
 	let backgroundTable = [
-		"back0",
+		"backmenu",
 		"back0",
 		"back1",
 		"back2",

@@ -165,7 +165,7 @@ const krsGradingSystem = (
 
 const updateKrsBackground = (game) => {
 	let backgroundTable = [
-		"back0",
+		"backmenu",
 		"back0",
 		"back1",
 		"back2",

@@ -1309,6 +1309,7 @@ body {
 
 .game {
   margin-top: 5em;
+  margin-left: -13.75em;
   display: inline-block;
   transition-property: filter, transform;
   transition-duration: .8s;
@@ -1339,7 +1340,6 @@ body {
 
 .medium {
   font-size: 2em;
-  
   text-align: right;
   margin-right: 0;
   margin-bottom: 0;
@@ -1358,12 +1358,18 @@ body {
   margin-right: .45em;
 }
 
+.stats div.stat-group {
+  text-align: right;
+  margin-right: .45em;
+}
+
 .stats div.stat-group div {
   text-shadow: 1px 1px 5px #000000;
   color: #fff;
   font-size: 1.1em;
   margin-bottom: 0em;
   padding-right: .5em;
+  resize: none;
 }
 
 .stats div.stat-group div.big {
@@ -1390,6 +1396,7 @@ body {
   color: #A4F7B5;
   text-align: right;
   text-transform: uppercase;
+  width: 20em;
 }
 
 .game-left,
