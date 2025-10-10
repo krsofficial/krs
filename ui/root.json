@@ -3,6 +3,13 @@
     "parent": null
   },
   "data": [
+	{
+      "label": "文/A",
+      "fixedText": true,
+      "description": "",
+      "action": "submenu",
+      "submenu": "languages"
+    },
     {
       "fixedText": true,
       "label": "GAME MODES",

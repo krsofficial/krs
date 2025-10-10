@@ -1,0 +1,24 @@
+{
+  "properties": {
+    "parent": "root"
+  },
+  "data": [
+    {
+      "label": "English",
+      "default": true,
+      "fixedText": true,
+      "description": "",
+      "action": "lang",
+      "isShort": true,
+      "lang": "en_US"
+    },
+    {
+      "label": "日本語",
+      "fixedText": true,
+      "description": "",
+      "action": "lang",
+      "isShort": true,
+      "lang": "ja_JP"
+    }
+  ]
+}
