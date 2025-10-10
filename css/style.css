@@ -1309,7 +1309,6 @@ body {
 
 .game {
   margin-top: 5em;
-  margin-left: .5em;
   display: inline-block;
   transition-property: filter, transform;
   transition-duration: .8s;
