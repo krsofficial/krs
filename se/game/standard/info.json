@@ -29,11 +29,7 @@
     "rotate",
     "start",
     "step",
-	"tspin0",
-	"tspin1",
-	"tspin2",
-	"tspin3",
-	"tspin4"
+	"tspinbonus"
   ],
   "ren": []
 }

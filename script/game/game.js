@@ -674,12 +674,12 @@ export default class Game {
         window.innerWidth / gameAspectRatio,
         window.innerHeight
       )
-	  let cellSize1 = Math.floor(((base / 1.2 / game.settings.height) * (game.userSettings.size * 0.9)) / 100)
-	  let cellSize2 = Math.floor(((base / 1.2 / game.settings.height) * (game.userSettings.size * 0.9)) / 100)
+	  let cellSize1 = Math.floor(((base / 1.2 / game.settings.height) * (game.userSettings.size * 0.85)) / 100)
+	  let cellSize2 = Math.floor(((base / 1.2 / game.settings.height) * (game.userSettings.size * 0.85)) / 100)
 	  if (game.settings.height <= 10 && game.settings.width <= 5) {
-	    cellSize2 = Math.floor(((base / 1.2 / (game.settings.height * 2)) * (game.userSettings.size * 0.9)) / 100)
+	    cellSize2 = Math.floor(((base / 1.2 / (game.settings.height * 2)) * (game.userSettings.size * 0.85)) / 100)
 	  } else {
-	    cellSize2 = Math.floor(((base / 1.2 / game.settings.height) * (game.userSettings.size * 0.9)) / 100)
+	    cellSize2 = Math.floor(((base / 1.2 / game.settings.height) * (game.userSettings.size * 0.85)) / 100)
 	  }
 	  let cellSizeRatio = cellSize1 / cellSize2
 	  console.log(cellSizeRatio)
@@ -916,11 +916,11 @@ export default class Game {
       window.innerWidth / gameAspectRatio,
       window.innerHeight
     )
-	let resultingCellSize = Math.floor(((base / 1.2 / this.settings.height) * (this.userSettings.size * 0.9)) / 100)
+	let resultingCellSize = Math.floor(((base / 1.2 / this.settings.height) * (this.userSettings.size * 0.85)) / 100)
 	if (this.settings.height <= 10 && this.settings.width <= 5) {
-	resultingCellSize = Math.floor(((base / 1.2 / (this.settings.height * 2)) * (this.userSettings.size * 0.9)) / 100)
+	resultingCellSize = Math.floor(((base / 1.2 / (this.settings.height * 2)) * (this.userSettings.size * 0.85)) / 100)
 	} else {
-	resultingCellSize = Math.floor(((base / 1.2 / this.settings.height) * (this.userSettings.size * 0.9)) / 100)
+	resultingCellSize = Math.floor(((base / 1.2 / this.settings.height) * (this.userSettings.size * 0.85)) / 100)
 	}
     return resultingCellSize
   }

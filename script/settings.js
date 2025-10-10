@@ -64,46 +64,12 @@ class Settings {
       voicebank: "off",
     }
     switch (navigator.language.substr(0, 2)) {
-      case "fr":
-        this.defaultSettings.language = "fr_FR"
-        break
-      case "nl":
-        this.defaultSettings.language = "nl_NL"
-        break
-      case "de":
-        this.defaultSettings.language = "de_DE"
-        break
-      case "vi":
-        this.defaultSettings.language = "vi_VN"
-        break
-      case "it":
-        this.defaultSettings.language = "it_IT"
-        break
-      case "zh":
-        this.defaultSettings.language = "zh_CN"
-        break
-      case "es":
-        this.defaultSettings.language = "es_ES"
-        break
       case "ja":
         this.defaultSettings.language = "ja_JP"
         break
-      case "ko":
-        this.defaultSettings.language = "ko_KR"
-        break
-      case "pl":
-        this.defaultSettings.language = "pl_PL"
-        break
-      case "ru":
-        this.defaultSettings.language = "ru_RU"
-        break
     }
     switch (this.defaultSettings.language) {
-      case "en_GB":
       case "en_US":
-        this.defaultSettings.voicebank = "off"
-        break
-      case "de_DE":
         this.defaultSettings.voicebank = "off"
         break
       case "ja_JP":
