@@ -217,6 +217,7 @@ export default class Stack extends GameModule {
       }
     }
 	
+	let playGemSound = false
     for (let y = 0; y < this.grid[0].length; y++) {
       for (let x = 0; x <= this.grid.length; x++) {
         if (x === this.grid.length) {
@@ -229,6 +230,9 @@ export default class Stack extends GameModule {
           }
 
 		  let underwaterHeightPosition = this.height + this.hiddenHeight - this.underwaterHeight
+		  if (this.grid[x][y].includes("gem")) {
+			  playGemSound = true
+		  }
           for (let x = 0; x < this.grid.length; x++) {
             if (this.isFrozen) {
 				if (this.grid[x][y] !== "frozen") {
@@ -261,6 +265,9 @@ export default class Stack extends GameModule {
           break
         }
       }
+    }
+	if (playGemSound) {
+      sound.add("gembonus")
     }
     if (isSpin) {
       sound.add("tspinbonus")
@@ -789,8 +796,20 @@ export default class Stack extends GameModule {
     }
     this.grid = cells
   }
-  endRollStart() {
+  endRollStart(hideStack = false) {
 	  sound.add("endingstart")
+	  if (hideStack === true) {
+		  this.isHidden = true
+		  this.redrawOnHidden = true
+	  } else {
+		  this.isHidden = false
+		  this.redrawOnHidden = false
+	  }
+	  this.new()
+	  this.makeAllDirty()
+	  this.isDirty = true
+  }
+  makeMap() {
 	  this.new()
 	  this.makeAllDirty()
 	  this.isDirty = true
