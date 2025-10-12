@@ -201,6 +201,7 @@ export default class Stack extends GameModule {
           this.dirtyCells.push([xLocation, yLocation])
           this.flashX.unshift(xLocation)
           this.flashY.unshift(yLocation)
+		  console.log(`${xLocation},${yLocation}`)
         }
       }
     }
@@ -809,8 +810,28 @@ export default class Stack extends GameModule {
 	  this.makeAllDirty()
 	  this.isDirty = true
   }
-  makeMap() {
+  loadMap(
+	map = [
+		[1, 1, "white"],
+		[1, 2, "white"],
+		[1, 3, "white"],
+		[1, 4, "white"],
+		[1, 5, "white"],
+		[1, 6, "white"],
+		[1, 7, "white"],
+		[1, 8, "white"],
+		[1, 9, "white"],
+	]
+  ) {
 	  this.new()
+	  for (const cell of map) {
+		  const x = map[1]
+		  const y = map[0]
+		  const color = map[2]
+		  let xPos = this.width - x
+		  let yPos = this.height + this.hiddenHeight - y
+		  this.grid[xPos][yPos] = color
+	  }
 	  this.makeAllDirty()
 	  this.isDirty = true
   }
