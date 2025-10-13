@@ -124,6 +124,10 @@ const resetTimeLimit = (game) => {
 	game.timePassedOffset += game.timePassed
 	game.timePassed = 0
 }
+const resetTimePassed = (game) => {
+	game.timePassedOffset = 0
+	game.timePassed = 0
+}
 const krsLevelSystem = (game, pieceRequirement = 40, levelGoal = 20) => {
 	let returnValue = false
 	game.stat.level = Math.floor(game.stat.piece / pieceRequirement) + 1
@@ -146,14 +150,15 @@ const krsGradingSystem = (
 	],
 	firstGrade = "N/A",
 ) => {
+	let currentGrade = ""
 	for (const pair of gradingTable) {
         const score = pair[0]
         const grade = pair[1]
         if (game.stat.score >= score) {
-			game.stat.grade = grade
-			break
+			currentGrade = grade
         }
     }
+	game.stat.grade = currentGrade
 	if (lastGrade !== game.stat.grade && game.stat.grade !== "N/A") {
 		if (game.stat.grade !== firstGrade) {
 			sound.add("gradeup")
@@ -404,8 +409,7 @@ export const loops = {
       updateFallSpeed(game)
       game.updateStats()
 	  game.isRaceMode = true
-	  game.timePassed = 0
-	  game.timePassedOffset = 0
+	  resetTimePassed(game)
 	  game.timeGoal = 100000
 	  game.musicProgression = 0
     },
@@ -417,7 +421,7 @@ export const loops = {
 	  krsGradingSystem(
 		game,
 		[
-			[1000, "1"],
+			[0, "1"],
 			[4000, "2"],
 			[8000, "3"],
 			[14000, "4"],
@@ -644,10 +648,10 @@ export const loops = {
       updateFallSpeed(game)
       game.updateStats()
 	  game.isRaceMode = true
-	  game.timePassed = 0
-	  game.timePassedOffset = 0
+	  resetTimePassed(game)
 	  game.timeGoal = 100000
 	  game.musicProgression = 0
+	  game.stat.grade = ""
     },
   },
 }

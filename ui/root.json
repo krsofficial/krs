@@ -25,7 +25,7 @@
 	{
       "fixedText": true,
       "label": "Trial",
-      "description": "You're graded based on how well you play. Meant for casual players.",
+      "description": "You're ranked based on how well you play. Meant for players of all skill level.",
       "action": "trial"
     },
 	{
