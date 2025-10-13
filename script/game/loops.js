@@ -104,7 +104,7 @@ const levelUpdateAce = (game) => {
   lastLevel = game.stat.level
   return returnValue
 }
-const testModeUpdate = () => {
+const updateTestMode = () => {
 	if (input.getGamePress("testModeKey")) {
 		if (testMode !== false) {
 			testMode = false
@@ -113,17 +113,16 @@ const testModeUpdate = () => {
 		}
 	}
 }
-const levelUpdateSega = (game) => {
-  let returnValue = false
-  if (game.stat.level !== lastLevel) {
-    if (game.stat.level % 2 === 0 || game.stat.level > 15) {
-      sound.add("levelup")
-	  sound.add("levelupmajor")
-    }
-    returnValue = true
-  }
-  lastLevel = game.stat.level
-  return returnValue
+const updateLockDelay = (game, lockDelay) => {
+	if (testMode === false) {
+		game.piece.lockDelayLimit = Math.ceil(framesToMs(lockDelay))
+	} else {
+		game.piece.lockDelayLimit = Math.ceil(framesToMs(60))
+	}
+}
+const resetTimeLimit = (game) => {
+	game.timePassedOffset += game.timePassed
+	game.timePassed = 0
 }
 const krsLevelSystem = (game, pieceRequirement = 40, levelGoal = 20) => {
 	let returnValue = false
@@ -205,7 +204,7 @@ const updateKrsBackground = (game) => {
 }
 
 export const loops = {
-  beginner: {
+  novice: {
     update: (arg) => {
 	  const game = gameHandler.game
 	  updateKrsBackground(game)
@@ -242,7 +241,236 @@ export const loops = {
 		}
 		game.playedHurryUp = false
       }
-	  testModeUpdate()
+	  updateTestMode()
+      /* Might use this code later
+      $('#das').max = arg.piece.dasLimit;
+      $('#das').value = arg.piece.das;
+      $('#das').style.setProperty('--opacity', ((arg.piece.arr >= arg.piece.arrLimit) || arg.piece.inAre) ? 1 : 0);
+      */
+    },
+    onPieceSpawn: (game) => {
+	  const pieceRequirement = 40
+	  const levelGoal = 20
+      const x = game.stat.level
+      const gravityEquation = (0.8 - (x - 1) * 0.007) ** (x - 1)
+      if (game.stat.level < 15) {
+		  game.piece.gravity = Math.max((gravityEquation * 1000) / Math.max(((game.stat.level - 1) * 2), 1), framesToMs(1 / 20))
+	  } else {
+		  game.piece.gravity = framesToMs(1 / 20)
+	  }
+      updateFallSpeed(game)
+      if (krsLevelSystem(game, pieceRequirement, levelGoal)) {
+		resetTimeLimit(game)
+	  }
+	  const timeLimitTable = [
+		[1, 100],
+		[2, 100],
+		[3, 100],
+        [4, 100],
+        [5, 100],
+        [6, 100],
+        [7, 100],
+        [8, 100],
+		[9, 100],
+		[10, 100],
+		[11, 100],
+		[12, 100],
+		[13, 100],
+	  ]
+	  const areTable = [
+		[1, 30],
+		[2, 30],
+		[3, 30],
+        [4, 30],
+        [5, 30],
+        [6, 30],
+        [7, 30],
+        [8, 30],
+		[9, 30],
+		[10, 30],
+		[11, 30],
+		[12, 30],
+      ]
+	  const areLineModifierTable = [
+        [10, -4],
+        [13, -4],
+        [15, -4],
+      ]
+      const areLineTable = [
+		[1, 30],
+		[2, 30],
+		[3, 30],
+        [4, 30],
+        [5, 30],
+        [6, 30],
+        [7, 30],
+        [8, 30],
+		[9, 30],
+		[10, 30],
+		[11, 30],
+		[12, 30],
+      ]
+	  const lockDelayTable = [
+		[10, 30],
+		[11, 30],
+		[12, 30],
+		[13, 30],
+		[14, 30],
+		[15, 30],
+		[16, 30],
+		[17, 30],
+		[18, 30],
+		[19, 30],
+		[20, 30],
+      ]
+	  const musicProgressionTable = [
+        [9.8, 1],
+        [10, 2],
+		[20.8, 3],
+      ]
+	  for (const pair of musicProgressionTable) {
+        const level = pair[0]
+        const entry = pair[1]
+        if (game.stat.piece >= Math.floor((level - 1) * pieceRequirement) && game.musicProgression < entry) {
+          switch (entry) {
+            case 1:
+			  sound.killBgm()
+			  break
+			case 3:
+			  sound.killBgm()
+			  break
+            case 2:
+			  sound.loadBgm(["novice2"], "novice")
+              sound.killBgm()
+              sound.playBgm(["novice2"], "novice")
+			  break
+          }
+          game.musicProgression = entry
+        }
+      }
+	  for (const pair of timeLimitTable) {
+        const level = pair[0]
+        const entry = pair[1]
+        if (game.stat.level <= level) {
+          game.timeGoal = entry * 1000
+          break
+        }
+      }
+	  for (const pair of areTable) {
+        const level = pair[0]
+        const entry = pair[1]
+        if (game.stat.level <= level) {
+          game.piece.areLimit = framesToMs(entry)
+          break
+        }
+      }
+	  for (const pair of areLineModifierTable) {
+        const level = pair[0]
+        const entry = pair[1]
+        if (game.stat.level <= level) {
+          game.piece.areLimitLineModifier = framesToMs(entry)
+          break
+        }
+      }
+      for (const pair of areLineTable) {
+        const level = pair[0]
+        const entry = pair[1]
+        if (game.stat.level <= level) {
+          game.piece.areLineLimit = framesToMs(entry)
+          break
+        }
+      }
+	  for (const pair of lockDelayTable) {
+        const level = pair[0]
+        const entry = pair[1]
+        if (game.stat.level <= level) {
+          updateLockDelay(game, entry)
+          break
+        }
+      }
+	  if (game.stat.piece >= pieceRequirement * levelGoal) {
+		game.stat.piece = pieceRequirement * levelGoal
+		$("#kill-message").textContent = locale.getString("ui", "excellent")
+        sound.killVox()
+        sound.add("voxexcellent")
+        game.end(true)
+	  }
+    },
+    onInit: (game) => {
+      game.lineGoal = null
+      game.stat.level = 1
+      lastLevel = 1
+      game.piece.gravity = 1000
+      updateFallSpeed(game)
+      game.updateStats()
+	  game.isRaceMode = true
+	  game.timePassed = 0
+	  game.timePassedOffset = 0
+	  game.timeGoal = 100000
+	  game.musicProgression = 0
+    },
+  },
+  trial: {
+    update: (arg) => {
+	  const game = gameHandler.game
+	  updateKrsBackground(game)
+	  krsGradingSystem(
+		game,
+		[
+			[1000, "1"],
+			[4000, "2"],
+			[8000, "3"],
+			[14000, "4"],
+			[20000, "5"],
+			[55000, "6"],
+			[80000, "7"],
+			[120000, "8"],
+			[160000, "9"],
+			[220000, "10"],
+			[300000, "11"],
+			[400000, "12"],
+			[520000, "D"],
+			[660000, "C"],
+			[820000, "B"],
+			[1000000, "A"],
+			[1200000, "S"],
+			[1500000, "SS"],
+		],
+		"1"
+      collapse(arg)
+      if (arg.piece.inAre) {
+        initialDas(arg)
+        initialRotation(arg)
+        initialHold(arg)
+        arg.piece.are += arg.ms
+      } else {
+        respawnPiece(arg)
+        rotate(arg)
+        rotate180(arg)
+        shifting(arg)
+      }
+      gravity(arg)
+      krsHardDrop(arg)
+	  krsSoftDrop(arg)
+      krsLockdown(arg)
+      if (!arg.piece.inAre) {
+        hold(arg)
+      }
+      lockFlash(arg)
+      updateLasts(arg)
+	  if (game.timePassed >= game.timeGoal - 10000) {
+        if (!game.playedHurryUp) {
+          sound.add("hurryup")
+          $("#timer").classList.add("hurry-up")
+          game.playedHurryUp = true
+        }
+      } else {
+		if (game.playedHurryUp) {
+			$("#timer").classList.remove("hurry-up")
+		}
+		game.playedHurryUp = false
+      }
+	  updateTestMode()
       /* Might use this code later
       $('#das').max = arg.piece.dasLimit;
       $('#das').value = arg.piece.das;
@@ -261,8 +489,7 @@ export const loops = {
 	  }
       updateFallSpeed(game)
       if (krsLevelSystem(game, pieceRequirement, levelGoal)) {
-		game.timePassedOffset += game.timePassed
-		game.timePassed = 0
+		resetTimeLimit(game)
 	  }
 	  const timeLimitTable = [
 		[1, 100],
@@ -328,11 +555,9 @@ export const loops = {
 	  const musicProgressionTable = [
         [4.8, 1],
         [5, 2],
-        [9.8, 3],
-        [10, 4],
-		[14.8, 5],
-        [15, 6],
-		[20.8, 7],
+		[9.8, 3],
+		[10, 4],
+		[20.8, 5],
       ]
 	  for (const pair of musicProgressionTable) {
         const level = pair[0]
@@ -342,29 +567,21 @@ export const loops = {
             case 1:
 			  sound.killBgm()
 			  break
-            case 3:
-              sound.killBgm()
-              break
+			case 3:
+			  sound.killBgm()
+			  break
 			case 5:
 			  sound.killBgm()
 			  break
-			case 7:
-			  sound.killBgm()
-			  break
             case 2:
-			  sound.loadBgm(["krs2"], "beginner")
+			  sound.loadBgm(["trial2"], "trial")
               sound.killBgm()
-              sound.playBgm(["krs2"], "beginner")
+              sound.playBgm(["trial2"], "trial")
 			  break
-            case 4:
-			  sound.loadBgm(["krs3"], "beginner")
+			case 4:
+			  sound.loadBgm(["trial3"], "trial")
               sound.killBgm()
-              sound.playBgm(["krs3"], "beginner")
-			  break
-			case 6:
-			  sound.loadBgm(["krs4"], "beginner")
-              sound.killBgm()
-              sound.playBgm(["krs4"], "beginner")
+              sound.playBgm(["trial3"], "trial")
 			  break
           }
           game.musicProgression = entry
@@ -406,11 +623,7 @@ export const loops = {
         const level = pair[0]
         const entry = pair[1]
         if (game.stat.level <= level) {
-          if (testMode === false) {
-			game.piece.lockDelayLimit = Math.ceil(framesToMs(entry))
-		  } else {
-			game.piece.lockDelayLimit = Math.ceil(framesToMs(60))
-		  }
+          updateLockDelay(game, entry)
           break
         }
       }

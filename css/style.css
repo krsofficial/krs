@@ -1309,7 +1309,6 @@ body {
 
 .game {
   margin-top: 5em;
-  margin-left: -13.75em;
   display: inline-block;
   transition-property: filter, transform;
   transition-duration: .8s;
@@ -1396,12 +1395,12 @@ body {
   color: #A4F7B5;
   text-align: right;
   text-transform: uppercase;
-  width: 20em;
 }
 
 .game-left,
 .game-right {
   margin-top: -5em;
+  width: 20em;
 }
 
 .game-center {

@@ -838,20 +838,6 @@ class Menu {
       case "back":
         this.back()
         break
-      case "quick":
-        $(`#option-${this.selected}`).classList.add("chosen")
-        sound.killBgm()
-        this.isLocked = true
-        this.hideMenu()
-        sound.playMenuSe("select")
-        $("#menu").classList.add("slow")
-        setTimeout(() => {
-          gameHandler.newGame("marathon")
-          $(`#option-${this.selected}`).classList.remove("chosen")
-          this.showMenu()
-          $("#menu").classList.remove("slow")
-        }, 1000)
-        break
       case "game":
         sound.killBgm()
         $(`#option-${this.selected}`).classList.add("chosen")
@@ -1011,7 +997,18 @@ class Menu {
         settings.load()
         break
       default:
-        // TODO wtf error
+        sound.killBgm()
+        $(`#option-${this.selected}`).classList.add("chosen")
+        this.isLocked = true
+        this.hideMenu()
+        $("#menu").classList.add("slow")
+        sound.playMenuSe("select")
+        setTimeout(() => {
+          gameHandler.newGame(this.selectedData.action)
+          $(`#option-${this.selected}`).classList.remove("chosen")
+          $("#menu").classList.remove("slow")
+          this.showMenu()
+        }, 1000)
         break
     }
   }

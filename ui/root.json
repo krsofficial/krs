@@ -16,11 +16,29 @@
       "type": "overline"
     },
 	{
+	  "default" true,
       "fixedText": true,
-      "label": "Normal",
-      "description": "A slow game that progressively gets faster. Perfect for beginners.",
-      "action": "submenu",
-      "submenu": "mode/beginner"
+      "label": "Novice",
+      "description": "Starts off slow, but progressively gets faster. Meant for beginners.",
+      "action": "novice"
+    },
+	{
+      "fixedText": true,
+      "label": "Trial",
+      "description": "You're graded based on how well you play. Meant for casual players.",
+      "action": "trial"
+    },
+	{
+      "fixedText": true,
+      "label": "Virtuoso",
+      "description": "Insanely fast stacking and dangerous obstacles. Can you keep up? Meant for professional players.",
+	  "disabled": true,
+    },
+	{
+      "fixedText": true,
+      "label": "Excavator",
+      "description": "Clear all the gems before the time runs out! Meant for players of all skill level.",
+	  "disabled": true,
     },
     {
       "fixedText": true,
