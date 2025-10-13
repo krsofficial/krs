@@ -32,13 +32,13 @@
       "fixedText": true,
       "label": "Virtuoso",
       "description": "Insanely fast stacking and dangerous obstacles. Can you keep up? Meant for professional players.",
-	  "disabled": true,
+	  "disabled": true
     },
 	{
       "fixedText": true,
       "label": "Excavator",
       "description": "Clear all the gems before the time runs out! Meant for players of all skill level.",
-	  "disabled": true,
+	  "disabled": true
     },
     {
       "fixedText": true,
