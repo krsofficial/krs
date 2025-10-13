@@ -437,6 +437,7 @@ export const loops = {
 			[1500000, "SS"],
 		],
 		"1"
+	  )
       collapse(arg)
       if (arg.piece.inAre) {
         initialDas(arg)
