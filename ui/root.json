@@ -16,7 +16,7 @@
       "type": "overline"
     },
 	{
-	  "default" true,
+	  "default": true,
       "fixedText": true,
       "label": "Novice",
       "description": "Starts off slow, but progressively gets faster. Meant for beginners.",
