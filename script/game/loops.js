@@ -652,6 +652,7 @@ export const loops = {
 	  game.timeGoal = 100000
 	  game.musicProgression = 0
 	  game.stat.grade = ""
+	  game.endingStats.grade = true
     },
   },
 }

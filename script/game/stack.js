@@ -39,6 +39,7 @@ export default class Stack extends GameModule {
 	this.isUnderwater = false
 	this.cleanUnderwaterRows = false
 	this.isFrozen = false
+	this.isFading = false
 	this.toCollapseUnderwater = []
 	this.redrawOnHidden = false
 	this.underwaterHeight = 10
@@ -72,11 +73,21 @@ export default class Stack extends GameModule {
 		this.isDirty = true
 	}
   }
-  makeAllFrozen() {
+  freezePlacedMinos() {
     for (let x = 0; x < this.grid.length; x++) {
       for (let y = 0; y < this.grid[x].length; y++) {
         if (this.grid[x][y] != null) {
 			this.grid[x][y] = "frozen"
+		}
+      }
+    }
+	this.reRenderStack()
+  }
+  hidePlacedMinos() {
+    for (let x = 0; x < this.grid.length; x++) {
+      for (let y = 0; y < this.grid[x].length; y++) {
+        if (this.grid[x][y] != null) {
+			this.grid[x][y] = "hidden"
 		}
       }
     }
@@ -156,6 +167,12 @@ export default class Stack extends GameModule {
     this.flashY = []
     this.flashTime = 0
     let passedLockOut = shape.length
+	if (this.isFrozen && this.wouldCauseLineClear() <= 0) {
+		this.freezePlacedMinos()
+	}
+	if (this.isFading && this.isHidden === false) {
+		this.hidePlacedMinos()
+	}
     for (let y = 0; y < shape.length; y++) {
       for (let x = 0; x < shape[y].length; x++) {
         const isFilled = shape[y][x]
@@ -191,9 +208,6 @@ export default class Stack extends GameModule {
 				this.grid[xLocation][yLocation] = `${this.parent.piece.boneColor}bone`
 			} else if (this.isHidden && this.isFrozen !== true) {
 				this.grid[xLocation][yLocation] = "hidden"
-			} else if (this.isFrozen && this.wouldCauseLineClear() <= 0) {
-				this.grid[xLocation][yLocation] = "frozen"
-				this.makeAllFrozen()
 			} else {
 				this.grid[xLocation][yLocation] = color
 			}
@@ -201,7 +215,6 @@ export default class Stack extends GameModule {
           this.dirtyCells.push([xLocation, yLocation])
           this.flashX.unshift(xLocation)
           this.flashY.unshift(yLocation)
-		  console.log(`${xLocation},${yLocation}`)
         }
       }
     }
@@ -234,6 +247,7 @@ export default class Stack extends GameModule {
           for (let x = 0; x < this.grid.length; x++) {
 			if (this.grid[x][y].includes("gem")) {
 				playGemSound = true
+				this.parent.stat.score += 1000
 			}
             if (this.isFrozen) {
 				if (this.grid[x][y] !== "frozen") {
@@ -709,7 +723,7 @@ export default class Stack extends GameModule {
 	for (const y of this.toCollapse) {
       for (let x = 0; x < this.grid.length; x++) {
         for (let shiftY = y; shiftY >= 0; shiftY--) {
-          if (this.grid[x][shiftY] !== "frozen") {
+//          if (this.grid[x][shiftY] !== "frozen") {
 //			this.grid[x][shiftY] = this.grid[x][shiftY - 1]
 //			if (
 //				this.grid[x][shiftY] != null &&
@@ -717,8 +731,9 @@ export default class Stack extends GameModule {
 //			) {
 //				fallenBlocks++
 //			}
-			this.dirtyCells.push([x, shiftY + 1])
-		  } else if (y === bottomLine && this.lineClear >= 4) {
+//			this.dirtyCells.push([x, shiftY + 1])
+//		  } else 
+			if (y === bottomLine && this.lineClear >= 4) {
 			this.grid[x][shiftY] = this.grid[x][shiftY - 1]
 			if (
 				this.grid[x][shiftY] != null &&
@@ -797,41 +812,9 @@ export default class Stack extends GameModule {
     }
     this.grid = cells
   }
-  endRollStart(hideStack = false) {
+  endRollStart() {
 	  sound.add("endingstart")
-	  if (hideStack === true) {
-		  this.isHidden = true
-		  this.redrawOnHidden = true
-	  } else {
-		  this.isHidden = false
-		  this.redrawOnHidden = false
-	  }
 	  this.new()
-	  this.makeAllDirty()
-	  this.isDirty = true
-  }
-  loadMap(
-	map = [
-		[1, 1, "white"],
-		[1, 2, "white"],
-		[1, 3, "white"],
-		[1, 4, "white"],
-		[1, 5, "white"],
-		[1, 6, "white"],
-		[1, 7, "white"],
-		[1, 8, "white"],
-		[1, 9, "white"],
-	]
-  ) {
-	  this.new()
-	  for (const cell of map) {
-		  const x = map[1]
-		  const y = map[0]
-		  const color = map[2]
-		  let xPos = this.width - x
-		  let yPos = this.height + this.hiddenHeight - y
-		  this.grid[xPos][yPos] = color
-	  }
 	  this.makeAllDirty()
 	  this.isDirty = true
   }
