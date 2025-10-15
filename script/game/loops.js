@@ -329,8 +329,8 @@ export const loops = {
 		[20, 30],
       ]
 	  const musicProgressionTable = [
-        [9.8, 1],
-        [10, 2],
+        [4.8, 1],
+        [5, 2],
 		[20.8, 3],
       ]
 	  for (const pair of musicProgressionTable) {
@@ -400,6 +400,7 @@ export const loops = {
         sound.add("voxexcellent")
         game.end(true)
 	  }
+	  game.piece.ghostIsVisible = true
     },
     onInit: (game) => {
       game.lineGoal = null
@@ -638,6 +639,11 @@ export const loops = {
         sound.killVox()
         sound.add("voxexcellent")
         game.end(true)
+	  }
+	  if (game.stat.level >= 2) {
+		  game.piece.ghostIsVisible = false
+	  } else {
+		  game.piece.ghostIsVisible = true
 	  }
     },
     onInit: (game) => {
