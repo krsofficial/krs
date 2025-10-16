@@ -417,6 +417,7 @@ export const loops = {
 	  resetTimePassed(game)
 	  game.timeGoal = 100000
 	  game.musicProgression = 0
+	  updateLockFlash()
     },
   },
   trial: {
@@ -670,6 +671,7 @@ export const loops = {
 	  game.musicProgression = 0
 	  game.stat.grade = ""
 	  game.endingStats.grade = true
+	  updateLockFlash()
     },
   },
   novice2: {
@@ -877,6 +879,7 @@ export const loops = {
 	  resetTimePassed(game)
 	  game.timeGoal = 100000
 	  game.musicProgression = 0
+	  updateLockFlash()
     },
   },
   trial2: {
@@ -1134,6 +1137,7 @@ export const loops = {
 	  game.musicProgression = 0
 	  game.stat.grade = ""
 	  game.endingStats.grade = true
+	  updateLockFlash()
     },
   },
 }
