@@ -128,6 +128,13 @@ const resetTimePassed = (game) => {
 	game.timePassedOffset = 0
 	game.timePassed = 0
 }
+const updateLockFlash = () => {
+	if (settings.settings.useLockFlash) {
+		settings.settings.lockFlash = "dim"
+	} else {
+		settings.settings.lockFlash = "none"
+	}
+}
 const krsLevelSystem = (game, pieceRequirement = 40, levelGoal = 20) => {
 	let returnValue = false
 	game.stat.level = Math.floor(game.stat.piece / pieceRequirement) + 1
@@ -234,6 +241,7 @@ export const loops = {
       }
       lockFlash(arg)
       updateLasts(arg)
+	  updateLockFlash()
 	  if (game.timePassed >= game.timeGoal - 10000) {
         if (!game.playedHurryUp) {
           sound.add("hurryup")
@@ -460,6 +468,7 @@ export const loops = {
       }
       lockFlash(arg)
       updateLasts(arg)
+	  updateLockFlash()
 	  if (game.timePassed >= game.timeGoal - 10000) {
         if (!game.playedHurryUp) {
           sound.add("hurryup")
@@ -688,6 +697,7 @@ export const loops = {
       }
       lockFlash(arg)
       updateLasts(arg)
+	  updateLockFlash()
 	  if (game.timePassed >= game.timeGoal - 10000) {
         if (!game.playedHurryUp) {
           sound.add("hurryup")
@@ -918,6 +928,7 @@ export const loops = {
       }
       lockFlash(arg)
       updateLasts(arg)
+	  updateLockFlash()
 	  if (game.timePassed >= game.timeGoal - 10000) {
         if (!game.playedHurryUp) {
           sound.add("hurryup")

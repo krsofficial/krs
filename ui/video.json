@@ -32,24 +32,9 @@
 	{
       "string": "lockFlashLabel",
       "stringDesc": "lockFlashDesription",
-      "type": "select",
-      "action": "select",
-      "selectOptions": [
-        {
-          "string": "flashDimLFOption",
-          "value": "dim"
-        },
-        {
-          "string": "flashLFOption",
-          "value": "flash"
-        },
-        {
-          "string": "offOption",
-          "value": "off",
-          "langOverride": "mode-options"
-        }
-      ],
-      "setting": "lockFlash",
+      "type": "toggle",
+      "action": "toggle",
+      "setting": "useLockFlash",
       "settingType": "setting"
     }
   ]
