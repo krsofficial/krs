@@ -132,7 +132,7 @@ const updateLockFlash = () => {
 	if (settings.settings.useLockFlash === true) {
 		settings.settings.lockFlash = "dim"
 	} else {
-		settings.settings.lockFlash = "none"
+		settings.settings.lockFlash = "off"
 	}
 }
 const krsLevelSystem = (game, pieceRequirement = 40, levelGoal = 20) => {
