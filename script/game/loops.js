@@ -329,8 +329,8 @@ export const loops = {
 		[20, 30],
       ]
 	  const musicProgressionTable = [
-        [4.8, 1],
-        [5, 2],
+        [9.8, 1],
+        [10, 2],
 		[20.8, 3],
       ]
 	  for (const pair of musicProgressionTable) {
@@ -559,8 +559,10 @@ export const loops = {
 		[20, 10],
       ]
 	  const musicProgressionTable = [
-        [4.8, 1],
-        [5, 2],
+		[2.8, 1],
+        [3, 2],
+        [5.8, 1],
+        [6, 2],
 		[9.8, 3],
 		[10, 4],
 		[20.8, 5],
@@ -579,12 +581,20 @@ export const loops = {
 			case 5:
 			  sound.killBgm()
 			  break
+			case 7:
+			  sound.killBgm()
+			  break
             case 2:
 			  sound.loadBgm(["trial2"], "trial")
               sound.killBgm()
               sound.playBgm(["trial2"], "trial")
 			  break
 			case 4:
+			  sound.loadBgm(["trial3"], "trial")
+              sound.killBgm()
+              sound.playBgm(["trial3"], "trial")
+			  break
+			case 6:
 			  sound.loadBgm(["trial3"], "trial")
               sound.killBgm()
               sound.playBgm(["trial3"], "trial")
@@ -640,7 +650,7 @@ export const loops = {
         sound.add("voxexcellent")
         game.end(true)
 	  }
-	  if (game.stat.level >= 2) {
+	  if (game.stat.level >= 3) {
 		  game.piece.ghostIsVisible = false
 	  } else {
 		  game.piece.ghostIsVisible = true
