@@ -18,7 +18,7 @@
 	{
 	  "default": true,
       "fixedText": true,
-      "label": "Novice",
+      "label": "Normal",
       "description": "Starts off slow, but progressively gets faster. Meant for beginners.",
 	  "action": "novice"
     },
@@ -42,8 +42,8 @@
     },
 	{
       "fixedText": true,
-      "label": "Novice II",
-      "description": "If you beat Novice, try this.",
+      "label": "Normal II",
+      "description": "If you beat Normal, try this.",
       "action": "novice2"
     },
 	{
