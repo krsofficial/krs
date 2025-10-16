@@ -349,9 +349,9 @@ export const loops = {
 			  sound.killBgm()
 			  break
             case 2:
-			  sound.loadBgm(["novice2"], "novice")
+			  sound.loadBgm(["normal2"], "normal")
               sound.killBgm()
-              sound.playBgm(["novice2"], "novice")
+              sound.playBgm(["normal2"], "normal")
 			  break
           }
           game.musicProgression = entry
@@ -797,9 +797,9 @@ export const loops = {
 			  sound.killBgm()
 			  break
             case 2:
-			  sound.loadBgm(["novice2"], "novice")
+			  sound.loadBgm(["normal2"], "normal")
               sound.killBgm()
-              sound.playBgm(["novice2"], "novice")
+              sound.playBgm(["normal2"], "normal")
 			  break
           }
           game.musicProgression = entry
