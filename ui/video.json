@@ -13,15 +13,7 @@
       "setting": "particles",
       "settingType": "setting"
     },
-    {
-      "string": "lockdownBarLabel",
-      "stringDesc": "lockdownBarDescription",
-      "type": "toggle",
-      "action": "toggle",
-      "setting": "useLockdownBar",
-      "settingType": "setting"
-    },
-    {
+	{
       "string": "actionTextLabel",
       "stringDesc": "actionTextDescription",
       "type": "toggle",
@@ -29,7 +21,15 @@
       "setting": "displayActionText",
       "settingType": "setting"
     },
-    {
+	{
+      "string": "lockdownBarLabel",
+      "stringDesc": "lockdownBarDescription",
+      "type": "toggle",
+      "action": "toggle",
+      "setting": "useLockdownBar",
+      "settingType": "setting"
+    },
+	{
       "string": "lockFlashLabel",
       "stringDesc": "lockFlashDesription",
       "type": "select",
