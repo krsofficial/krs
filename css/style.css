@@ -998,10 +998,10 @@ body {
 
 #menu>.selected {
   color: #A4F7B5;
-  animation-name: menu-selected;
+  /*animation-name: menu-selected;
   animation-duration: .5s;
   animation-iteration-count: infinite;
-  animation-direction: alternate;
+  animation-direction: alternate;*/
 }
 
 @keyframes menu-chosen {
@@ -1648,6 +1648,7 @@ body {
   width: 80%;
   left: 10%;
   top: 22em;
+  opacity: 0;
 }
 
 .infinity-symbol.hidden,
@@ -2222,7 +2223,7 @@ progress[value]::-moz-progress-bar {
 
 .game .action-text.perfect-clear-text {
   font-size: 3.5em;
-  font-weight: 300;
+  font-weight: 500;
   top: 4em;
 }
 

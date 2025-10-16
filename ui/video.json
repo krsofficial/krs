@@ -5,16 +5,13 @@
   },
   "data": [
     {
-      "string": "videoLabel",
-      "langOverride": "menu_root",
-      "type": "header"
-    },
-    {
-      "string": "particleSettingsLabel",
-      "stringDesc": "particleSettingsDescription",
-	  "default": true,
-      "action": "submenu",
-      "submenu": "particles"
+      "string": "particlesLabel",
+      "stringDesc": "particlesDescription",
+      "default": true,
+      "type": "toggle",
+      "action": "toggle",
+      "setting": "particles",
+      "settingType": "setting"
     },
     {
       "string": "lockdownBarLabel",
@@ -33,37 +30,11 @@
       "settingType": "setting"
     },
     {
-      "string": "swayScaleLabel",
-      "stringDesc": "swayScaleDescription",
-      "type": "slider",
-      "action": "slider",
-      "max": 100,
-      "min": 0,
-      "discrete": 5,
-      "setting": "matrixSwayScale",
-      "settingType": "setting"
-    },
-    {
-      "string": "swaySpeedLabel",
-      "stringDesc": "swaySpeedDescription",
-      "type": "slider",
-      "action": "slider",
-      "max": 100,
-      "min": 1,
-      "discrete": 5,
-      "setting": "matrixSwaySpeed",
-      "settingType": "setting"
-    },
-    {
       "string": "lockFlashLabel",
       "stringDesc": "lockFlashDesription",
       "type": "select",
       "action": "select",
       "selectOptions": [
-        {
-          "string": "shineLFOption",
-          "value": "shine"
-        },
         {
           "string": "flashDimLFOption",
           "value": "dim"
