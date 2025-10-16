@@ -68,12 +68,15 @@ class Settings {
       case "ja":
         this.defaultSettings.language = "ja_JP"
         break
+	  default:
+        this.defaultSettings.language = "en_US"
+        break
     }
     switch (this.defaultSettings.language) {
-      case "en_US":
+      case "ja_JP":
         this.defaultSettings.voicebank = "off"
         break
-      case "ja_JP":
+	  default:
         this.defaultSettings.voicebank = "off"
         break
     }
