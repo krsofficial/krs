@@ -9,7 +9,7 @@
     "rotationSystem": "krs",
     "skin": "standard",
     "soundbank": "krs",
-    "music": "trial1",
+    "music": "../trial/trial1",
     "scoreTable": "krs",
     "background": "marathon.jpg"
   },
