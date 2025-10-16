@@ -216,7 +216,7 @@ const updateKrsBackground = (game) => {
 }
 
 export const loops = {
-  novice: {
+  normal: {
     update: (arg) => {
 	  const game = gameHandler.game
 	  updateKrsBackground(game)
@@ -565,11 +565,9 @@ export const loops = {
 		[20, 10],
       ]
 	  const musicProgressionTable = [
-		[2.8, 1],
-        [3, 2],
-        [5.8, 1],
-        [6, 2],
-		[9.8, 3],
+		[4.8, 1],
+        [5, 2],
+        [9.8, 3],
 		[10, 4],
 		[15.8, 5],
       ]
@@ -587,20 +585,12 @@ export const loops = {
 			case 5:
 			  sound.killBgm()
 			  break
-			case 7:
-			  sound.killBgm()
-			  break
             case 2:
 			  sound.loadBgm(["trial2"], "trial")
               sound.killBgm()
               sound.playBgm(["trial2"], "trial")
 			  break
 			case 4:
-			  sound.loadBgm(["trial3"], "trial")
-              sound.killBgm()
-              sound.playBgm(["trial3"], "trial")
-			  break
-			case 6:
 			  sound.loadBgm(["trial3"], "trial")
               sound.killBgm()
               sound.playBgm(["trial3"], "trial")
@@ -674,7 +664,7 @@ export const loops = {
 	  updateLockFlash()
     },
   },
-  novice2: {
+  normal2: {
     update: (arg) => {
 	  const game = gameHandler.game
 	  updateKrsBackground(game)
@@ -724,11 +714,7 @@ export const loops = {
 	  const levelGoal = 20
       const x = game.stat.level
       const gravityEquation = (0.8 - (x - 1) * 0.007) ** (x - 1)
-      if (game.stat.level < 15) {
-		  game.piece.gravity = Math.max((gravityEquation * 1000) / Math.max(((game.stat.level - 1) * 5), 1), framesToMs(1 / 20))
-	  } else {
-		  game.piece.gravity = framesToMs(1 / 20)
-	  }
+      game.piece.gravity = Math.max((gravityEquation * 1000) / Math.max(((game.stat.level - 1) * 5), 1), framesToMs(1 / 20))
       updateFallSpeed(game)
       if (krsLevelSystem(game, pieceRequirement, levelGoal)) {
 		resetTimeLimit(game)
@@ -1027,11 +1013,9 @@ export const loops = {
 		[20, 10],
       ]
 	  const musicProgressionTable = [
-		[2.8, 1],
-        [3, 2],
-        [5.8, 1],
-        [6, 2],
-		[9.8, 3],
+		[4.8, 1],
+        [5, 2],
+        [9.8, 3],
 		[10, 4],
 		[20.8, 5],
       ]
@@ -1049,20 +1033,12 @@ export const loops = {
 			case 5:
 			  sound.killBgm()
 			  break
-			case 7:
-			  sound.killBgm()
-			  break
             case 2:
 			  sound.loadBgm(["trial2"], "trial")
               sound.killBgm()
               sound.playBgm(["trial2"], "trial")
 			  break
 			case 4:
-			  sound.loadBgm(["trial3"], "trial")
-              sound.killBgm()
-              sound.playBgm(["trial3"], "trial")
-			  break
-			case 6:
 			  sound.loadBgm(["trial3"], "trial")
               sound.killBgm()
               sound.playBgm(["trial3"], "trial")
