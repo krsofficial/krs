@@ -4,9 +4,9 @@
   },
   "data": [
     {
-      "string": "settingsLabel",
+      "string": "settingsTitle",
       "type": "header",
-	  "langOverride": "menu_root"
+	  "langOverride": "menu_settings"
     },
     {
 	  "default": true,

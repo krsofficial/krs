@@ -1,4 +1,7 @@
 {
+  "settingsTitle": {
+    "message": "Settings"
+  },
   "exportLabel": {
     "message": "Export"
   },
