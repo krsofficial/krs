@@ -6,9 +6,8 @@
   "quickDescription": {
     "message": "現在の設定でマラソンをプレイ"
   },
-  "gameStylesOverline": {
-    "message": "モード選択",
-    "description": "Header for the various types of games (Guideline, Retro, etc)"
+  "gameModesOverline": {
+    "message": "ゲームモード"
   },
   "guidelineLabel": {
     "message": "ガイドライン"
@@ -65,22 +64,16 @@
     "message": "その他",
     "description": "Miscellaneous, other"
   },
-  "soundtrackLabel": {
-    "message": "サウンドトラック"
-  },
-  "soundtrackDescription": {
-    "message": "ゲーム内で使用されている音楽を聞く。"
-  },
   "translateLabel": {
     "message": "翻訳に協力する"
   },
   "translateDescription": {
     "message": "ゲームの翻訳に協力する。"
   },
-  "discordLabel": {
-    "message": "Discord (オフ)"
+  "settingsLabel": {
+    "message": "設定"
   },
-  "discordDescription": {
-    "message": "ゲームについて話し合ったり、アイデアを提案したり、翻訳に協力したりできます。"
+  "settingsDescription": {
+    "message": "設定のインポートとエクスポートはこちらで行ってください"
   }
 }

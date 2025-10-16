@@ -1,0 +1,20 @@
+{
+  "exportLabel": {
+    "message": "輸出"
+  },
+  "exportDescription": {
+    "message": "現在の設定をJSONファイルにエクスポートする"
+  },
+  "importLabel": {
+    "message": "インポート"
+  },
+  "importDescription": {
+    "message": "JSONファイルから設定をインポートする"
+  },
+  "resetLabel": {
+    "message": "リセット"
+  },
+  "resetDescription": {
+    "message": "すべての設定をデフォルト値にリセットします。現在の設定は失われます！"
+  }
+}

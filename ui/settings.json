@@ -4,30 +4,30 @@
   },
   "data": [
     {
-      "fixedText": true,
-      "label": "Advanced",
+      "string": "settingsLabel",
       "type": "header"
+	  "langOverride": "menu_root"
     },
     {
-      "label": "Import",
-      "description": "Import settings from a JSON file",
+      "string": "importLabel",
+      "stringDesc": "importDescription",
       "action": "settingsimport",
       "isShort": true,
-      "fixedText": true
+      "langOverride": "menu_settings"
     },
     {
-      "label": "Export",
-      "description": "Export your current settings to a JSON file",
+      "string": "exportLabel",
+      "stringDesc": "exportDescription",
       "action": "settingsexport",
       "isShort": true,
-      "fixedText": true
+      "langOverride": "menu_settings"
     },
     {
-      "label": "Reset",
-      "description": "Reset all settings to their default values. You will lose your current configuration!",
+      "string": "resetLabel",
+      "stringDesc": "resetDescription",
       "action": "settingsreset",
       "isShort": true,
-      "fixedText": true
+      "langOverride": "menu_settings"
     }
   ]
 }

@@ -1,0 +1,50 @@
+{
+  "normalLabel": {
+    "message": "Normal"
+  },
+  "normalDescription": {
+    "message": "Starts off slow, but progressively gets faster. Meant for beginners."
+  },
+  "trialLabel": {
+    "message": "Trial"
+  },
+  "trialDescription": {
+    "message": "You're ranked based on how well you play. Meant for players of all skill level."
+  },
+  "virtuosoLabel": {
+    "message": "Virtuoso"
+  },
+  "virtuosoDescription": {
+    "message": "Insanely fast stacking and dangerous obstacles. Can you keep up? Meant for experienced players."
+  },
+  "excavatorLabel": {
+    "message": "Excavator"
+  },
+  "excavatorDescription": {
+    "message": "Clear all the gems before the time runs out! Meant for players of all skill level."
+  },
+  "normal2Label": {
+    "message": "Normal II"
+  },
+  "normal2Description": {
+    "message": "If you beat Normal, try this."
+  },
+  "trial2Label": {
+    "message": "Trial II"
+  },
+  "trial2Description": {
+    "message": "If you beat Trial, try this."
+  },
+  "virtuoso2Label": {
+    "message": "Virtuoso II"
+  },
+  "virtuoso2Description": {
+    "message": "If you beat Virtuoso, try this."
+  },
+  "excavator2Label": {
+    "message": "Excavator II"
+  },
+  "excavator2Description": {
+    "message": "If you beat Excavator, try this."
+  }
+}

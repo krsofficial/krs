@@ -11,62 +11,60 @@
       "submenu": "languages"
     },
     {
-      "fixedText": true,
-      "label": "GAME MODES",
+      "string": "gameModesOverline",
       "type": "overline"
     },
 	{
 	  "default": true,
-      "fixedText": true,
-      "label": "Normal",
-      "description": "Starts off slow, but progressively gets faster. Meant for beginners.",
+	  "langOverride": "mode-labels",
+      "string": "normalLabel",
+      "stringDesc": "normalDescription",
 	  "action": "normal"
     },
 	{
-      "fixedText": true,
-      "label": "Trial",
-      "description": "You're ranked based on how well you play. Meant for players of all skill level.",
+	  "langOverride": "mode-labels",
+      "string": "trialLabel",
+      "stringDesc": "trialDescription",
 	  "action": "trial"
     },
 	{
-      "fixedText": true,
-      "label": "Virtuoso",
-      "description": "Insanely fast stacking and dangerous obstacles. Can you keep up? Meant for professional players.",
+      "langOverride": "mode-labels",
+	  "string": "virtuosoLabel",
+      "stringDesc": "virtuosoDescription",
 	  "disabled": true
     },
 	{
-      "fixedText": true,
-      "label": "Excavator",
-      "description": "Clear all the gems before the time runs out! Meant for players of all skill level.",
+      "langOverride": "mode-labels",
+	  "string": "excavatorLabel",
+      "stringDesc": "excavatorDescription",
 	  "disabled": true
     },
 	{
-      "fixedText": true,
-      "label": "Normal II",
-      "description": "If you beat Normal, try this.",
+      "langOverride": "mode-labels",
+	  "string": "normal2Label",
+      "stringDesc": "normal2Description",
       "action": "normal2"
     },
 	{
-      "fixedText": true,
-      "label": "Trial II",
-      "description": "If you beat Trial, try this.",
+      "langOverride": "mode-labels",
+	  "string": "trial2Label",
+      "stringDesc": "trial2Description",
       "action": "trial2"
     },
 	{
-      "fixedText": true,
-      "label": "Virtuoso II",
-      "description": "If you beat Virtuoso, try this.",
+      "langOverride": "mode-labels",
+	  "string": "virtuoso2Label",
+      "stringDesc": "virtuoso2Description",
 	  "disabled": true
     },
 	{
-      "fixedText": true,
-      "label": "Excavator II",
-      "description": "If you beat Excavator, try this.",
+      "langOverride": "mode-labels",
+	  "string": "excavator2Label",
+      "stringDesc": "excavator2Description",
 	  "disabled": true
     },
     {
-      "fixedText": true,
-      "label": "SETTINGS",
+      "string": "settingsOverline",
       "type": "overline"
     },
     {
@@ -94,9 +92,8 @@
       "submenu": "video"
     },
     {
-      "fixedText": true,
-      "label": "Advanced",
-      "description": "Import and export your settings here",
+	  "string": "settingsLabel",
+      "stringDesc": "settingsDescription",
       "action": "submenu",
       "submenu": "settings"
     }

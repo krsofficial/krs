@@ -7,35 +7,23 @@ class Locale {
   constructor() {
     this.languages = [
       "en_US",
-      "en_GB",
-      "es_ES",
       "ja_JP",
-      "pl_PL",
-      "zh_CN",
-      "it_IT",
-      "vi_VN",
-      "de_DE",
-      "fr_FR",
-      "nl_NL",
-      "ko_KR",
-      "pl_PL",
-      "ru_RU",
+	  "zh_CN",
     ]
     // this.languages = ['en_US'];
     this.files = [
       "ui",
       "menu_general",
       "menu_root",
-      "menu_guideline",
-      "menu_tetrax",
-      "menu_retro",
       "menu_controls",
       "menu_tuning",
-      "menu_daspresets",
       "menu_audio",
       "menu_video",
+	  "menu_daspresets",
+	  "menu_settings",
       "action-text",
       "mode-options",
+	  "mode-labels",
     ]
     this.test = new Promise(function (resolve, reject) {
       resolve("test")
@@ -134,36 +122,6 @@ class Locale {
       `url("../img/brand/logo/default.svg")`
     )
     return
-    switch (this.currentLanguage) {
-      case "ja_JP":
-        document.title = "テトラレジェンズ"
-        document.documentElement.style.setProperty(
-          "--logo-image",
-          `url("../img/brand/logo/ja_JP.svg")`
-        )
-        break
-      case "ko_KR":
-        document.title = "테트라 레전즈"
-        document.documentElement.style.setProperty(
-          "--logo-image",
-          `url("../img/brand/logo/ko_KR.svg")`
-        )
-        break
-      case "ru_RU":
-        document.title = "Тетра Легенды"
-        document.documentElement.style.setProperty(
-          "--logo-image",
-          `url("../img/brand/logo/ru_RU.svg")`
-        )
-        break
-      default:
-        document.title = "Тetra Legends Ultimate"
-        document.documentElement.style.setProperty(
-          "--logo-image",
-          `url("../img/brand/logo/default.svg")`
-        )
-        break
-    }
   }
   updateFonts() {
     const root = document.documentElement
@@ -178,12 +136,6 @@ class Locale {
         root.style.setProperty(
           "--main-font",
           '"Roboto", "Noto Sans JP", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, メイリオ, Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", "ＭＳ ゴシック" , "MS Gothic", "Noto Sans CJK JP", TakaoPGothic, sans-serif'
-        )
-        break
-      case "ko_KR":
-        root.style.setProperty(
-          "--main-font",
-          '"Roboto", "Noto Sans KR", sans-serif'
         )
         break
       default:
