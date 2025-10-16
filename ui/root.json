@@ -20,13 +20,13 @@
       "fixedText": true,
       "label": "Novice",
       "description": "Starts off slow, but progressively gets faster. Meant for beginners.",
-      "action": "novice"
+	  "action": "novice"
     },
 	{
       "fixedText": true,
       "label": "Trial",
       "description": "You're ranked based on how well you play. Meant for players of all skill level.",
-      "action": "trial"
+	  "action": "trial"
     },
 	{
       "fixedText": true,
@@ -38,6 +38,30 @@
       "fixedText": true,
       "label": "Excavator",
       "description": "Clear all the gems before the time runs out! Meant for players of all skill level.",
+	  "disabled": true
+    },
+	{
+      "fixedText": true,
+      "label": "Novice II",
+      "description": "If you beat Novice, try this.",
+      "action": "novice2"
+    },
+	{
+      "fixedText": true,
+      "label": "Trial II",
+      "description": "If you beat Trial, try this.",
+      "action": "trial2"
+    },
+	{
+      "fixedText": true,
+      "label": "Virtuoso II",
+      "description": "If you beat Virtuoso, try this.",
+	  "disabled": true
+    },
+	{
+      "fixedText": true,
+      "label": "Excavator II",
+      "description": "If you beat Excavator, try this.",
 	  "disabled": true
     },
     {

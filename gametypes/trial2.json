@@ -9,18 +9,12 @@
     "rotationSystem": "krs",
     "skin": "standard",
     "soundbank": "krs",
-    "music": "novice1",
+    "music": "trial1",
     "scoreTable": "krs",
     "background": "marathon.jpg"
   },
   "piece": {
     "spinDetectionType": "3corner"
   },
-  "next": {
-    "nextLimit": 1
-  },
-  "hold": {
-    "isDisabled": true
-  },
-  "stats": ["score", "level", "line", "piece"]
+  "stats": ["score", "level", "grade", "line", "piece"]
 }
