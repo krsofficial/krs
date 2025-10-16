@@ -1,0 +1,26 @@
+{
+  "defaultLabel": {
+    "message": "默认"
+  },
+  "defaultDescription": {
+    "message": "本游戏的默认设置"
+  },
+  "guidelineLabel": {
+    "message": "标准"
+  },
+  "guidelineDescription": {
+    "message": "在大多数游戏中的标准设置"
+  },
+  "quickLabel": {
+    "message": "快速"
+  },
+  "quickDescription": {
+    "message": "需要一些控制技巧的快速预设"
+  },
+  "proLabel": {
+    "message": "专家"
+  },
+  "proDescription": {
+    "message": "需要高阶控制技巧的极速预设"
+  }
+}

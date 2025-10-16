@@ -1,0 +1,23 @@
+{
+  "settingsTitle": {
+    "message": "设置"
+  },
+  "exportLabel": {
+    "message": "导出"
+  },
+  "exportDescription": {
+    "message": "将当前设置导出为 JSON 文件"
+  },
+  "importLabel": {
+    "message": "导入"
+  },
+  "importDescription": {
+    "message": "从JSON文件导入设置"
+  },
+  "resetLabel": {
+    "message": "重置"
+  },
+  "resetDescription": {
+    "message": "将所有设置重置为默认值。您当前的配置将丢失！"
+  }
+}

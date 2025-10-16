@@ -19,6 +19,14 @@
       "action": "lang",
       "isShort": true,
       "lang": "ja_JP"
+    },
+	{
+      "label": "中文（简体）",
+      "fixedText": true,
+      "description": "",
+      "action": "lang",
+      "isShort": true,
+      "lang": "zh_CN"
     }
   ]
 }

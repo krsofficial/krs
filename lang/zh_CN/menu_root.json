@@ -1,0 +1,116 @@
+{
+  "quickLabel": {
+    "message": "快速游戏",
+    "description": "Button to start a game of marathon"
+  },
+  "quickDescription": {
+    "message": "以默认设置开始马拉松模式"
+  },
+  "gameStylesOverline": {
+    "message": "游戏风格",
+    "description": "Header for the various types of games (Guideline, Retro, etc)"
+  },
+  "guidelineLabel": {
+    "message": "标准"
+  },
+  "guidelineDescription": {
+    "message": "和大多数现代方块游戏一样的标准模式"
+  },
+  "retroLabel": {
+    "message": "经典"
+  },
+  "retroDescription": {
+    "message": "老玩家们喜欢的经典变种"
+  },
+  "arcadeLabel": {
+    "message": "街机"
+  },
+  "arcadeDescription": {
+    "message": "面向硬核玩家的困难变种"
+  },
+  "settingsOverline": {
+    "message": "设置"
+  },
+  "tuningLabel": {
+    "message": "游戏参数"
+  },
+  "tuningDescription": {
+    "message": "改变游戏的操作手感"
+  },
+  "controlsLabel": {
+    "message": "控制"
+  },
+  "controlsDescription": {
+    "message": "更改游戏的操作"
+  },
+  "audioLabel": {
+    "message": "音频"
+  },
+  "audioDescription": {
+    "message": "更改音乐与音效"
+  },
+  "videoLabel": {
+    "message": "视频"
+  },
+  "videoDescription": {
+    "message": "更改皮肤和其他视觉效果"
+  },
+  "miscOverline": {
+    "message": "其他",
+    "description": "Miscellaneous, other"
+  },
+  "settingsLabel": {
+    "message": "设置"
+  },
+  "settingsDescription": {
+    "message": "在此导入和导出您的设置"
+  },
+  "normalLabel": {
+    "message": "NORMAL"
+  },
+  "normalDescription": {
+    "message": "起初节奏较慢，但逐渐加快。适合初学者。"
+  },
+  "trialLabel": {
+    "message": "TRIAL"
+  },
+  "trialDescription": {
+    "message": "你的排名取决于你的游戏表现。适合所有技术水平的玩家。"
+  },
+  "virtuosoLabel": {
+    "message": "VIRTUOSO"
+  },
+  "virtuosoDescription": {
+    "message": "疯狂的堆叠速度与致命障碍。你能跟上吗？专为资深玩家设计。"
+  },
+  "excavatorLabel": {
+    "message": "EXCAVATOR"
+  },
+  "excavatorDescription": {
+    "message": "在时间耗尽前清除所有宝石！适合所有技能水平的玩家。"
+  },
+  "normal2Label": {
+    "message": "NORMAL II"
+  },
+  "normal2Description": {
+    "message": "如果你打败了NORMAL，试试这个。"
+  },
+  "trial2Label": {
+    "message": "TRIAL II"
+  },
+  "trial2Description": {
+    "message": "如果你打败了TRIAL，试试这个。"
+  },
+  "virtuoso2Label": {
+    "message": "VIRTUOSO II"
+  },
+  "virtuoso2Description": {
+    "message": "如果你打败了VIRTUOSO，试试这个。"
+  },
+  "excavator2Label": {
+    "message": "EXCAVATOR II"
+  },
+  "excavator2Description": {
+    "message": "如果你打败了EXCAVATOR，试试这个。"
+  }
+}
