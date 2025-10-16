@@ -1094,7 +1094,7 @@ export const loops = {
         sound.add("voxexcellent")
         game.end(true)
 	  }
-	  if (game.stat.level >= 3) {
+	  if (game.stat.level >= 2) {
 		  game.piece.ghostIsVisible = false
 	  } else {
 		  game.piece.ghostIsVisible = true
