@@ -26,16 +26,16 @@
     "message": "Move a piece to the right once or hold for autoshift"
   },
   "hardDropLabel": {
-    "message": "Hard Drop"
+    "message": "Sonic Drop"
   },
   "hardDropDescription": {
-    "message": "Drop a piece instantly to the floor. (may act differently or be disabled in some modes)"
+    "message": "Instantly move a piece to the floor without locking it"
   },
   "softDropLabel": {
-    "message": "Soft Drop"
+    "message": "Fast Drop"
   },
   "softDropDescription": {
-    "message": "Speed up a piece's descent (may act differently in some modes)"
+    "message": "Speed up a piece's descent and lock it when it reaches the floor"
   },
   "rotateLeftLabel": {
     "message": "Rotate Left",
@@ -89,6 +89,6 @@
     "message": "Special"
   },
   "specialKeyDescription": {
-    "message": "Special control used in select modes."
+    "message": "Activate special functions when held down"
   }
 }

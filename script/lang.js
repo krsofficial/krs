@@ -8,7 +8,6 @@ class Locale {
     this.languages = [
       "en_US",
       "ja_JP",
-	  "zh_CN",
     ]
     // this.languages = ['en_US'];
     this.files = [

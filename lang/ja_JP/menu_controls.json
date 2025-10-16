@@ -26,26 +26,26 @@
     "message": "ピースを右に移動します。"
   },
   "hardDropLabel": {
-    "message": "ハードドロップ"
+    "message": "ソニック・ドロップ"
   },
   "hardDropDescription": {
-    "message": "ピースを床に落とします。（機能が異なる場合や、一部のモードで使用できない場合があります）"
+    "message": "即座に駒を固定せずに床に移動させる。"
   },
   "softDropLabel": {
-    "message": "ソフトドロップ"
+    "message": "ファストドロップ"
   },
   "softDropDescription": {
-    "message": "ピースの落下速度を上げます。（一部のモードでは機能が異なる場合があります）"
+    "message": "部品の降下速度を速め、床に到達した時点で固定する。"
   },
   "rotateLeftLabel": {
-    "message": "回転（左）",
+    "message": "左に回転",
     "description": "Could also be called 'rotate counter-clockwise'"
   },
   "rotateLeftDescription": {
     "message": "ピースを反時計回りに90°回転させます。"
   },
   "rotateRightLabel": {
-    "message": "回転（右）",
+    "message": "右に回転",
     "description": "Could also be called 'rotate clockwise'"
   },
   "rotateRightDescription": {
@@ -89,6 +89,6 @@
     "message": "スペシャル"
   },
   "specialKeyDescription": {
-    "message": "特定のモードで使用される特別な制御。"
+    "message": "長押しで特殊機能を起動する。"
   }
 }
