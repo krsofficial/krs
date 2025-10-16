@@ -39,21 +39,12 @@
       "action": "select",
       "selectOptions": [
         {
-          "string": "offOption",
-          "value": "off",
-          "langOverride": "mode-options"
-        },
-        {
           "string": "tapInitOption",
           "value": "tap"
         },
         {
           "string": "holdInitOption",
           "value": "hold"
-        },
-        {
-          "string": "absoluteIrsOption",
-          "value": "absolute"
         }
       ],
       "setting": "IRS",
@@ -65,11 +56,6 @@
       "type": "select",
       "action": "select",
       "selectOptions": [
-        {
-          "string": "offOption",
-          "value": "off",
-          "langOverride": "mode-options"
-        },
         {
           "string": "tapInitOption",
           "value": "tap"
