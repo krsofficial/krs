@@ -16,49 +16,41 @@
     },
 	{
 	  "default": true,
-	  "langOverride": "mode-labels",
       "string": "normalLabel",
       "stringDesc": "normalDescription",
 	  "action": "normal"
     },
 	{
-	  "langOverride": "mode-labels",
       "string": "trialLabel",
       "stringDesc": "trialDescription",
 	  "action": "trial"
     },
 	{
-      "langOverride": "mode-labels",
 	  "string": "virtuosoLabel",
       "stringDesc": "virtuosoDescription",
 	  "disabled": true
     },
 	{
-      "langOverride": "mode-labels",
 	  "string": "excavatorLabel",
       "stringDesc": "excavatorDescription",
 	  "disabled": true
     },
 	{
-      "langOverride": "mode-labels",
 	  "string": "normal2Label",
       "stringDesc": "normal2Description",
       "action": "normal2"
     },
 	{
-      "langOverride": "mode-labels",
 	  "string": "trial2Label",
       "stringDesc": "trial2Description",
       "action": "trial2"
     },
 	{
-      "langOverride": "mode-labels",
 	  "string": "virtuoso2Label",
       "stringDesc": "virtuoso2Description",
 	  "disabled": true
     },
 	{
-      "langOverride": "mode-labels",
 	  "string": "excavator2Label",
       "stringDesc": "excavator2Description",
 	  "disabled": true

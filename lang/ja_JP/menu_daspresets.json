@@ -11,21 +11,6 @@
   "guidelineDescription": {
     "message": "ほとんどのバージョンにある標準設定"
   },
-  "pptLabel": {
-    "message": "ぷよテト",
-    "description": "Based on Puyo Puyo Tetris"
-  },
-  "pptDescription": {
-    "message": "標準設定よりやや速い設定"
-  },
-  "tetraOnlineLabel": {
-    "message": "Tetra Online",
-    "description": "Avoid changing the name 'Tetra Online'"
-  },
-  "tetraOnlineDescription": {
-    "message": "Tetra Onlineの横移動設定と同じ設定",
-    "description": "Avoid changing the name 'Tetra Online'"
-  },
   "quickLabel": {
     "message": "クイック"
   },

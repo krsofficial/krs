@@ -5,10 +5,11 @@
   "data": [
     {
       "string": "settingsLabel",
-      "type": "header"
+      "type": "header",
 	  "langOverride": "menu_root"
     },
     {
+	  "default": true,
       "string": "importLabel",
       "stringDesc": "importDescription",
       "action": "settingsimport",

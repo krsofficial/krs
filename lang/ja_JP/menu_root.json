@@ -75,5 +75,53 @@
   },
   "settingsDescription": {
     "message": "設定のインポートとエクスポートはこちらで行ってください"
+  },
+  "normalLabel": {
+    "message": "NORMAL"
+  },
+  "normalDescription": {
+    "message": "最初はゆっくりですが、次第に速くなります。初心者向けです。"
+  },
+  "trialLabel": {
+    "message": "TRIAL"
+  },
+  "trialDescription": {
+    "message": "あなたのプレイの出来栄えに基づいてランク付けされます。あらゆるスキルレベルのプレイヤーを対象としています。"
+  },
+  "virtuosoLabel": {
+    "message": "VIRTUOSO"
+  },
+  "virtuosoDescription": {
+    "message": "狂気的な速さの積み上げと危険な障害物。ついていけるか？ 熟練プレイヤー向け。"
+  },
+  "excavatorLabel": {
+    "message": "EXCAVATOR"
+  },
+  "excavatorDescription": {
+    "message": "制限時間内にすべての宝石を消せ！あらゆるスキルレベルのプレイヤー向け。"
+  },
+  "normal2Label": {
+    "message": "NORMAL II"
+  },
+  "normal2Description": {
+    "message": "NORMALをクリアしたら、これを試してみてください。"
+  },
+  "trial2Label": {
+    "message": "TRIAL II"
+  },
+  "trial2Description": {
+    "message": "TRIALをクリアしたら、これを試してみてください。"
+  },
+  "virtuoso2Label": {
+    "message": "VIRTUOSO II"
+  },
+  "virtuoso2Description": {
+    "message": "VIRTUOSOをクリアしたら、これを試してみてください。"
+  },
+  "excavator2Label": {
+    "message": "EXCAVATOR II"
+  },
+  "excavator2Description": {
+    "message": "EXCAVATORをクリアしたら、これを試してみてください。"
   }
 }
