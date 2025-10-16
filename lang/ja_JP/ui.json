@@ -48,11 +48,11 @@
     "description": "The label that indicates that you can discard or skip a piece"
   },
   "secrow": {
-    "message": "%1 秒/ライン",
+    "message": "%1 s/ライン",
     "description": "The unit label for 'seconds per row'. %1 is the amount of seconds"
   },
   "sec": {
-    "message": "秒",
+    "message": "s",
     "description": "The unit label for something 'per second'"
   },
   "pause": {
