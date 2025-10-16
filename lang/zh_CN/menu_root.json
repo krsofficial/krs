@@ -6,9 +6,8 @@
   "quickDescription": {
     "message": "以默认设置开始马拉松模式"
   },
-  "gameStylesOverline": {
-    "message": "游戏风格",
-    "description": "Header for the various types of games (Guideline, Retro, etc)"
+  "gameModesOverline": {
+    "message": "游戏模式"
   },
   "guidelineLabel": {
     "message": "标准"
