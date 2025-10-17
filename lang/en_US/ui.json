@@ -100,7 +100,7 @@
     "description": "Displays as a victory message. Any sort of praising line like 'Excellent', 'Awesome', 'Great', 'Good Job' is fine"
   },
   "newRecord": {
-    "message": "New Record!",
+    "message": "YEAH!",
     "description": "Displays when the user beats their previous score or time"
   },
   "returnToMenu": {
