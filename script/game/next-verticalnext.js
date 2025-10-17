@@ -120,10 +120,6 @@ export default class Next extends GameModule {
         if (this.parent.piece.useRetroColors) {
           suffix = `-${this.parent.stat.level % 10}`
         }
-		if (this.parent.piece.useBoneBlocks) {
-		  color = this.parent.piece.boneColor
-		  suffix = "bone"
-		}
         const img = document.getElementById(`mino-${color}${suffix}`)
         const isFilled = shape[y][x]
         if (isFilled) {
@@ -178,10 +174,6 @@ export default class Next extends GameModule {
         for (let x = 0; x < shape[y].length; x++) {
           let color = this.parent.colors[piece]
 		  let suffix = ""
-		  if (this.parent.piece.useBoneBlocks) {
-			color = this.parent.piece.boneColor
-			suffix = "bone"
-		  }
           const img = document.getElementById(`mino-${color}${suffix}`)
           const isFilled = shape[y][x]
           if (isFilled) {

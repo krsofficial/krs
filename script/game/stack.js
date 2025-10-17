@@ -204,9 +204,7 @@ export default class Stack extends GameModule {
           if (this.parent.piece.useSpecialI && this.parent.piece.name === "I") {
             this.grid[xLocation][yLocation] = "i" + shape[y][x]
           } else {
-			if (this.parent.piece.useBoneBlocks && this.isFrozen !== true) {
-				this.grid[xLocation][yLocation] = `${this.parent.piece.boneColor}bone`
-			} else if (this.isHidden && this.isFrozen !== true) {
+			if (this.isHidden && this.isFrozen !== true) {
 				this.grid[xLocation][yLocation] = "hidden"
 			} else {
 				this.grid[xLocation][yLocation] = color
