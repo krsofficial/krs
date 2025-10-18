@@ -29,5 +29,6 @@
     "step",
 	"tspinbonus"
   ],
-  "ren": []
+  "ren": [],
+  "nextSoundbank": "standard"
 }
