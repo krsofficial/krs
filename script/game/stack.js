@@ -181,6 +181,7 @@ export default class Stack extends GameModule {
 	if (this.trialGemInterval <= 0) {
 		this.trialGemInterval = Math.floor(Math.random(8, 10))
 	}
+	console.log(this.trialGemInterval)
     for (let y = 0; y < shape.length; y++) {
       for (let x = 0; x < shape[y].length; x++) {
         const isFilled = shape[y][x]

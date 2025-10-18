@@ -238,6 +238,7 @@ export const loops = {
         }
       }
 	  updateTestMode()
+	  game.stack.trialMode = false
       /* Might use this code later
       $('#das').max = arg.piece.dasLimit;
       $('#das').value = arg.piece.das;
@@ -480,6 +481,7 @@ export const loops = {
         }
       }
 	  updateTestMode()
+	  game.stack.trialMode = true
       /* Might use this code later
       $('#das').max = arg.piece.dasLimit;
       $('#das').value = arg.piece.das;
@@ -714,6 +716,7 @@ export const loops = {
         }
       }
 	  updateTestMode()
+	  game.stack.trialMode = false
       /* Might use this code later
       $('#das').max = arg.piece.dasLimit;
       $('#das').value = arg.piece.das;
@@ -956,6 +959,7 @@ export const loops = {
         }
       }
 	  updateTestMode()
+	  game.stack.trialMode = true
       /* Might use this code later
       $('#das').max = arg.piece.dasLimit;
       $('#das').value = arg.piece.das;
