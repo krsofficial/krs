@@ -1474,14 +1474,15 @@ body {
   padding-right: 1em;
 }
 
-.hold-canvas,
 .main-next-canvas {
   width: calc(4 * var(--cell-size));
   height: calc(4 * var(--cell-size));
 }
 
 .hold-canvas {
-  margin-right: -7.5em;
+  width: calc(4 * var(--cell-size) * 0.62);
+  height: calc(4 * var(--cell-size) * 0.62);
+  margin-right: -6.75em;
 }
 
 .main-next-canvas {
@@ -1529,21 +1530,21 @@ body {
   color: #84F78C;
   text-shadow: 1px 1px 5px #000000;
   text-align: left;
-  margin-left: -6.8em;
+  margin-left: -6.9em;
 }
 
 .next-label.hold-disabled {
   color: #84F78C;
   text-shadow: 1px 1px 5px #000000;
   text-align: left;
-  margin-left: -10.8em;
+  margin-left: -10.7em;
   margin-top: 2.75em;
 }
 
 .hold-label {
   text-shadow: 1px 1px 5px #000000;
   text-align: right;
-  margin-right: -3.2em;
+  margin-right: -3.7em;
 }
 
 @keyframes float {

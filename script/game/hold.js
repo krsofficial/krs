@@ -150,7 +150,7 @@ export default class Hold extends GameModule {
           ]
         break
     }
-    const cellSize = this.parent.cellSize
+    const cellSize = this.parent.cellSize * 0.62
     const offset = this.parent.nextOffsets[this.pieceName]
     const ctx = this.ctx
     for (let y = 0; y < shape.length; y++) {
