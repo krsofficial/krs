@@ -44,6 +44,7 @@ export default class Stack extends GameModule {
 	this.redrawOnHidden = false
 	this.underwaterHeight = 10
 	this.trialMode = false
+	this.gemsCleared = 0
   }
   removeFromArray(array, elementToRemove) {
 	  const indexToRemove = array.indexOf(elementToRemove)
@@ -253,6 +254,7 @@ export default class Stack extends GameModule {
 			if (this.grid[x][y].includes("gem")) {
 				playGemSound = true
 				this.parent.stat.score += 500
+				this.gemsCleared += 1
 			}
             if (this.isFrozen) {
 				if (this.grid[x][y] !== "frozen") {
