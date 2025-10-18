@@ -1529,14 +1529,14 @@ body {
   color: #84F78C;
   text-shadow: 1px 1px 5px #000000;
   text-align: left;
-  margin-left: -10.8em;
+  margin-left: -6.8em;
 }
 
 .next-label.hold-disabled {
   color: #84F78C;
   text-shadow: 1px 1px 5px #000000;
   text-align: left;
-  margin-left: -6.8em;
+  margin-left: -10.8em;
   margin-top: 2.75em;
 }
 
