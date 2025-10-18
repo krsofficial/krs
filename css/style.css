@@ -1485,7 +1485,7 @@ body {
 }
 
 .hold-canvas {
-  margin-right: -7.5em;
+  margin-right: -6.25em;
 }
 
 .main-next-canvas {
@@ -1547,7 +1547,7 @@ body {
 .hold-label {
   text-shadow: 1px 1px 5px #000000;
   text-align: right;
-  margin-right: -3.2em;
+  margin-right: -2.7em;
 }
 
 @keyframes float {
