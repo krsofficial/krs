@@ -220,6 +220,7 @@ export default class Stack extends GameModule {
 					this.grid[xLocation][yLocation] = `${color}gem`
 				} else {
 					this.grid[xLocation][yLocation] = color
+					this.trialGemInterval += 1
 				}
 			} else {
 				this.grid[xLocation][yLocation] = color
