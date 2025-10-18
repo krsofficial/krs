@@ -254,8 +254,14 @@ export default class Stack extends GameModule {
           for (let x = 0; x < this.grid.length; x++) {
 			if (this.grid[x][y].includes("gem")) {
 				playGemSound = true
-				this.parent.stat.score += 500
 				this.gemsCleared += 1
+				if (this.excavatorMode) {
+					this.parent.timePassedOffset += 1000
+					this.parent.timePassed -= 1000
+					this.parent.stat.score += 1000
+				} else {
+					this.parent.stat.score += 500
+				}
 			}
             if (this.isFrozen) {
 				if (this.grid[x][y] !== "frozen") {
