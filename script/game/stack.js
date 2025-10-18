@@ -46,7 +46,7 @@ export default class Stack extends GameModule {
 	this.trialMode = false
 	this.excavatorMode = false
 	this.gemsCleared = 0
-	this.trialGemInterval = 10
+	this.trialGemInterval = 7 + Math.floor(Math.random() * 7)
   }
   removeFromArray(array, elementToRemove) {
 	  const indexToRemove = array.indexOf(elementToRemove)
@@ -179,7 +179,7 @@ export default class Stack extends GameModule {
 	}
 	this.trialGemInterval -= 1
 	if (this.trialGemInterval <= 0) {
-		this.trialGemInterval = 10
+		this.trialGemInterval = 7 + Math.floor(Math.random() * 7)
 	}
 	console.log(this.trialGemInterval)
     for (let y = 0; y < shape.length; y++) {
