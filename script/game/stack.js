@@ -216,7 +216,7 @@ export default class Stack extends GameModule {
 			if (this.isHidden && this.isFrozen !== true) {
 				this.grid[xLocation][yLocation] = "hidden"
 			} else if (this.trialMode && this.isFrozen !== true) {
-				if (this.trialGemInterval <= 1 && this.excavatorMode !== true && this.wouldCauseLineClear <= 0) {
+				if (this.trialGemInterval <= 1 && this.excavatorMode !== true && this.wouldCauseLineClear() <= 0) {
 					this.grid[xLocation][yLocation] = `${color}gem`
 				} else {
 					this.grid[xLocation][yLocation] = color
