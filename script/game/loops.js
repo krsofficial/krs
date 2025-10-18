@@ -72,6 +72,7 @@ let levelTimerLimit = 58000
 let lastPieces = 0
 let onCountdown = false
 let countdownTimer = 0
+let lastGemsCleared = 0
 let testMode = false
 let nonEvents = []
 let bpm
