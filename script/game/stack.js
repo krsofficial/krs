@@ -44,6 +44,7 @@ export default class Stack extends GameModule {
 	this.redrawOnHidden = false
 	this.underwaterHeight = 10
 	this.trialMode = false
+	this.excavatorMode = false
 	this.gemsCleared = 0
   }
   removeFromArray(array, elementToRemove) {
@@ -209,7 +210,7 @@ export default class Stack extends GameModule {
 			if (this.isHidden && this.isFrozen !== true) {
 				this.grid[xLocation][yLocation] = "hidden"
 			} else if (this.trialMode && this.isFrozen !== true) {
-				if (Math.random(1, 10) === 10) {
+				if (Math.random(1, 10) === 10 && this.excavatorMode !== true) {
 					this.grid[xLocation][yLocation] = `${color}gem`
 				} else {
 					this.grid[xLocation][yLocation] = color
