@@ -181,7 +181,7 @@ export default class Next extends GameModule {
             const xPos =
               x * cellSize +
               offset[0] * cellSize +
-              nextSpace * cellSize * (multiplier * 1.5)
+              nextSpace * cellSize * Math.ceil(multiplier * 1.666)
             img.height = cellSize
             ctx.drawImage(
               img,

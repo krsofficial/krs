@@ -270,7 +270,7 @@ export default class Stack extends GameModule {
 			}
 			if (this.grid[x][y] === "gold") {
 				playGoldSound = true
-				this.parent.stat.score += 400
+				this.parent.stat.score += 100
 			}
             if (this.isFrozen) {
 				if (this.grid[x][y] !== "frozen") {

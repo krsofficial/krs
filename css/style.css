@@ -1480,9 +1480,12 @@ body {
 }
 
 .hold-canvas {
-  width: calc(4 * var(--cell-size) * 0.62);
-  height: calc(4 * var(--cell-size) * 0.62);
-  margin-right: -6.75em;
+  width: calc(4 * var(--cell-size));
+  height: calc(4 * var(--cell-size));
+}
+
+.hold-canvas {
+  margin-right: -7.5em;
 }
 
 .main-next-canvas {
@@ -1544,7 +1547,7 @@ body {
 .hold-label {
   text-shadow: 1px 1px 5px #000000;
   text-align: right;
-  margin-right: -3.7em;
+  margin-right: -3.2em;
 }
 
 @keyframes float {
