@@ -41,7 +41,7 @@
         {
           "label": "KRS",
           "fixedText": true,
-          "value": "auto",
+          "value": "auto"
         },
         {
           "label": "TGM",
