@@ -70,40 +70,11 @@ let preEndRollLines = 0
 let levelTimer = 0
 let levelTimerLimit = 58000
 let lastPieces = 0
-let underwaterProgression = 0
+let onCountdown = false
+let countdownTimer = 0
 let testMode = false
 let nonEvents = []
 let bpm
-const levelUpdate = (game) => {
-  let returnValue = false
-  if (game.stat.level !== lastLevel) {
-    sound.add("levelup")
-    game.stack.levelUpAnimation = 0
-    if (game.stat.level % 5 === 0) {
-      sound.add("levelupmajor")
-    } else {
-      sound.add("levelupminor")
-    }
-    returnValue = true
-  }
-  lastLevel = game.stat.level
-  return returnValue
-}
-const levelUpdateAce = (game) => {
-  let returnValue = false
-  if (game.stat.level !== lastLevel) {
-    sound.add("levelup")
-    game.stack.levelUpAnimation = 0
-    if ((game.stat.level - 1) % 5 === 0) {
-      sound.add("levelupmajor")
-    } else {
-      sound.add("levelupminor")
-    }
-    returnValue = true
-  }
-  lastLevel = game.stat.level
-  return returnValue
-}
 const updateTestMode = () => {
 	if (input.getGamePress("testModeKey")) {
 		if (testMode !== false) {
@@ -243,16 +214,27 @@ export const loops = {
       updateLasts(arg)
 	  updateLockFlash()
 	  if (game.timePassed >= game.timeGoal - 10000) {
+		onCountdown = true
         if (!game.playedHurryUp) {
           sound.add("hurryup")
           $("#timer").classList.add("hurry-up")
           game.playedHurryUp = true
         }
       } else {
+		onCountdown = false
 		if (game.playedHurryUp) {
 			$("#timer").classList.remove("hurry-up")
 		}
 		game.playedHurryUp = false
+      }
+	  if (game.piece.startingAre >= game.piece.startingAreLimit) {
+        countdownTimer += arg.ms
+        if (countdownTimer > 1000) {
+          countdownTimer -= 1000
+          if (onCountdown) {
+			  sound.add("countdown")
+		  }
+        }
       }
 	  updateTestMode()
       /* Might use this code later
@@ -418,6 +400,9 @@ export const loops = {
 	  game.timeGoal = 100000
 	  game.musicProgression = 0
 	  updateLockFlash()
+	  onCountdown = false
+	  countdownTimer = 0
+	  game.stack.trialMode = false
     },
   },
   trial: {
@@ -471,16 +456,27 @@ export const loops = {
       updateLasts(arg)
 	  updateLockFlash()
 	  if (game.timePassed >= game.timeGoal - 10000) {
+		onCountdown = true
         if (!game.playedHurryUp) {
           sound.add("hurryup")
           $("#timer").classList.add("hurry-up")
           game.playedHurryUp = true
         }
       } else {
+		onCountdown = false
 		if (game.playedHurryUp) {
 			$("#timer").classList.remove("hurry-up")
 		}
 		game.playedHurryUp = false
+      }
+	  if (game.piece.startingAre >= game.piece.startingAreLimit) {
+        countdownTimer += arg.ms
+        if (countdownTimer > 1000) {
+          countdownTimer -= 1000
+          if (onCountdown) {
+			  sound.add("countdown")
+		  }
+        }
       }
 	  updateTestMode()
       /* Might use this code later
@@ -662,6 +658,9 @@ export const loops = {
 	  game.stat.grade = ""
 	  game.endingStats.grade = true
 	  updateLockFlash()
+	  onCountdown = false
+	  countdownTimer = 0
+	  game.stack.trialMode = true
     },
   },
   normal2: {
@@ -691,16 +690,27 @@ export const loops = {
       updateLasts(arg)
 	  updateLockFlash()
 	  if (game.timePassed >= game.timeGoal - 10000) {
+		onCountdown = true
         if (!game.playedHurryUp) {
           sound.add("hurryup")
           $("#timer").classList.add("hurry-up")
           game.playedHurryUp = true
         }
       } else {
+		onCountdown = false
 		if (game.playedHurryUp) {
 			$("#timer").classList.remove("hurry-up")
 		}
 		game.playedHurryUp = false
+      }
+	  if (game.piece.startingAre >= game.piece.startingAreLimit) {
+        countdownTimer += arg.ms
+        if (countdownTimer > 1000) {
+          countdownTimer -= 1000
+          if (onCountdown) {
+			  sound.add("countdown")
+		  }
+        }
       }
 	  updateTestMode()
       /* Might use this code later
@@ -866,6 +876,9 @@ export const loops = {
 	  game.timeGoal = 100000
 	  game.musicProgression = 0
 	  updateLockFlash()
+	  onCountdown = false
+	  countdownTimer = 0
+	  game.stack.trialMode = false
     },
   },
   trial2: {
@@ -919,16 +932,27 @@ export const loops = {
       updateLasts(arg)
 	  updateLockFlash()
 	  if (game.timePassed >= game.timeGoal - 10000) {
+		onCountdown = true
         if (!game.playedHurryUp) {
           sound.add("hurryup")
           $("#timer").classList.add("hurry-up")
           game.playedHurryUp = true
         }
       } else {
+		onCountdown = false
 		if (game.playedHurryUp) {
 			$("#timer").classList.remove("hurry-up")
 		}
 		game.playedHurryUp = false
+      }
+	  if (game.piece.startingAre >= game.piece.startingAreLimit) {
+        countdownTimer += arg.ms
+        if (countdownTimer > 1000) {
+          countdownTimer -= 1000
+          if (onCountdown) {
+			  sound.add("countdown")
+		  }
+        }
       }
 	  updateTestMode()
       /* Might use this code later
@@ -1114,6 +1138,9 @@ export const loops = {
 	  game.stat.grade = ""
 	  game.endingStats.grade = true
 	  updateLockFlash()
+	  onCountdown = false
+	  countdownTimer = 0
+	  game.stack.trialMode = true
     },
   },
 }

@@ -1,9 +1,11 @@
 {
   "usesReadyGoVoices": true,
   "files": [
+    "b2b_erase4",
     "alarm",
     "bravo",
     "collapse",
+	"cheer",
     "erase4",
     "erasenot4",
     "excellent",
@@ -15,7 +17,7 @@
 	"initialhold",
     "land",
     "levelup",
-	"hurryup",
+	"countdown",
     "lock",
 	"pause",
     "ready",
@@ -24,8 +26,6 @@
 	"tspin0",
     "tspin"
   ],
-  "ren": [
-    1
-  ],
+  "ren": [],
   "nextSoundbank": "tgm"
 }

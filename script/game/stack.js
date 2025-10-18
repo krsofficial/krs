@@ -43,6 +43,7 @@ export default class Stack extends GameModule {
 	this.toCollapseUnderwater = []
 	this.redrawOnHidden = false
 	this.underwaterHeight = 10
+	this.trialMode = false
   }
   removeFromArray(array, elementToRemove) {
 	  const indexToRemove = array.indexOf(elementToRemove)
@@ -206,6 +207,12 @@ export default class Stack extends GameModule {
           } else {
 			if (this.isHidden && this.isFrozen !== true) {
 				this.grid[xLocation][yLocation] = "hidden"
+			} else if (this.trialMode && this.isFrozen !== true) {
+				if (Math.random(1, 10) === 10) {
+					this.grid[xLocation][yLocation] = `${color}gem`
+				} else {
+					this.grid[xLocation][yLocation] = color
+				}
 			} else {
 				this.grid[xLocation][yLocation] = color
 			}
@@ -245,7 +252,7 @@ export default class Stack extends GameModule {
           for (let x = 0; x < this.grid.length; x++) {
 			if (this.grid[x][y].includes("gem")) {
 				playGemSound = true
-				this.parent.stat.score += 1000
+				this.parent.stat.score += 500
 			}
             if (this.isFrozen) {
 				if (this.grid[x][y] !== "frozen") {
