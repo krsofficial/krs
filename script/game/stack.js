@@ -177,7 +177,9 @@ export default class Stack extends GameModule {
 	if (this.isFading && this.isHidden === false) {
 		this.hidePlacedMinos()
 	}
-	this.trialGemInterval -= 1
+	if (this.wouldCauseLineClear() <= 0) {
+		this.trialGemInterval -= 1
+	}
 	if (this.trialGemInterval <= 0) {
 		this.trialGemInterval = 7 + Math.floor(Math.random() * 7)
 	}
@@ -220,7 +222,6 @@ export default class Stack extends GameModule {
 					this.grid[xLocation][yLocation] = `${color}gem`
 				} else {
 					this.grid[xLocation][yLocation] = color
-					this.trialGemInterval += 1
 				}
 			} else {
 				this.grid[xLocation][yLocation] = color
