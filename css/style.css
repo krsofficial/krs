@@ -1489,7 +1489,7 @@ body {
   margin-top: -5.25em;
 }
 
-.main-next-canvas hold-enabled {
+.main-next-canvas.hold-enabled {
   margin-left: -15em;
 }
 
@@ -1508,7 +1508,7 @@ body {
   margin-top: -5.25em;
 }
 
-.sub-next-canvas hold-enabled {
+.sub-next-canvas.hold-enabled {
   margin: 0;
   padding: 0;
   height: calc(4 * var(--cell-size) * .62);
@@ -1533,7 +1533,7 @@ body {
   margin-top: 2.75em;
 }
 
-.next-label hold-enabled {
+.next-label.hold-enabled {
   color: #84F78C;
   text-shadow: 1px 1px 5px #000000;
   text-align: left;
