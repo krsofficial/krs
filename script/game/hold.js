@@ -82,14 +82,14 @@ export default class Hold extends GameModule {
   draw() {
     if (this.isDisabled) {
       $("#hold-container").classList.add("hidden")
-	  $(".next-label").classList.remove("hold-enabled")
-	  $(".main-next-canvas").classList.remove("hold-enabled")
-	  $(".sub-next-canvas").classList.remove("hold-enabled")
+	  $(".next-label").classList.add("hold-disabled")
+	  $(".main-next-canvas").classList.add("hold-disabled")
+	  $(".sub-next-canvas").classList.add("hold-disabled")
     } else {
       $("#hold-container").classList.remove("hidden")
-	  $(".next-label").classList.add("hold-enabled")
-	  $(".main-next-canvas").classList.add("hold-enabled")
-	  $(".sub-next-canvas").classList.add("hold-enabled")
+	  $(".next-label").classList.remove("hold-disabled")
+	  $(".main-next-canvas").classList.remove("hold-disabled")
+	  $(".sub-next-canvas").classList.remove("hold-disabled")
     }
     if (this.useSkip) {
       if (this.parent.type !== "zen") {
