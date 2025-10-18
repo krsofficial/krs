@@ -46,7 +46,7 @@ export default class Stack extends GameModule {
 	this.trialMode = false
 	this.excavatorMode = false
 	this.gemsCleared = 0
-	this.trialGemInterval = 7 + Math.floor(Math.random() * 7)
+	this.trialgoldInterval = 7 + Math.floor(Math.random() * 7)
   }
   removeFromArray(array, elementToRemove) {
 	  const indexToRemove = array.indexOf(elementToRemove)
@@ -178,12 +178,12 @@ export default class Stack extends GameModule {
 		this.hidePlacedMinos()
 	}
 	if (this.wouldCauseLineClear() <= 0) {
-		this.trialGemInterval -= 1
+		this.trialgoldInterval -= 1
 	}
-	if (this.trialGemInterval <= 0) {
-		this.trialGemInterval = 7 + Math.floor(Math.random() * 7)
+	if (this.trialgoldInterval <= 0) {
+		this.trialgoldInterval = 7 + Math.floor(Math.random() * 7)
 	}
-	console.log(this.trialGemInterval)
+	console.log(this.trialgoldInterval)
     for (let y = 0; y < shape.length; y++) {
       for (let x = 0; x < shape[y].length; x++) {
         const isFilled = shape[y][x]
@@ -218,8 +218,8 @@ export default class Stack extends GameModule {
 			if (this.isHidden && this.isFrozen !== true) {
 				this.grid[xLocation][yLocation] = "hidden"
 			} else if (this.trialMode && this.isFrozen !== true) {
-				if (this.trialGemInterval <= 1 && this.excavatorMode !== true && this.wouldCauseLineClear() <= 0) {
-					this.grid[xLocation][yLocation] = `${color}gem`
+				if (this.trialgoldInterval <= 1 && this.wouldCauseLineClear() <= 0) {
+					this.grid[xLocation][yLocation] = "gold"
 				} else {
 					this.grid[xLocation][yLocation] = color
 				}
@@ -247,6 +247,7 @@ export default class Stack extends GameModule {
     }
 	
 	let playGemSound = false
+	let playGoldSound = false
     for (let y = 0; y < this.grid[0].length; y++) {
       for (let x = 0; x <= this.grid.length; x++) {
         if (x === this.grid.length) {
@@ -263,13 +264,13 @@ export default class Stack extends GameModule {
 			if (this.grid[x][y].includes("gem")) {
 				playGemSound = true
 				this.gemsCleared += 1
-				if (this.excavatorMode) {
-					this.parent.timePassedOffset += 1000
-					this.parent.timePassed -= 1000
-					this.parent.stat.score += 1000
-				} else {
-					this.parent.stat.score += 500
-				}
+				this.parent.timePassedOffset += 1000
+				this.parent.timePassed -= 1000
+				this.parent.stat.score += 100
+			}
+			if (this.grid[x][y] === "gold") {
+				playGoldSound = true
+				this.parent.stat.score += 400
 			}
             if (this.isFrozen) {
 				if (this.grid[x][y] !== "frozen") {
@@ -305,6 +306,9 @@ export default class Stack extends GameModule {
     }
 	if (playGemSound) {
       sound.add("gembonus")
+    }
+	if (playGoldSound) {
+      sound.add("goldbonus")
     }
     if (isSpin) {
       sound.add("tspinbonus")

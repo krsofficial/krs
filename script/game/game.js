@@ -1142,6 +1142,7 @@ export default class Game {
       "purplegem",
       "whitegem",
       "blackgem",
+	  "gold",
 	  "frozen",
 	  "hidden",
     ],
