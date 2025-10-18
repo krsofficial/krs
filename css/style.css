@@ -1486,6 +1486,11 @@ body {
 
 .main-next-canvas {
   margin-left: -15em;
+  margin-top: -5.25em;
+}
+
+.main-next-canvas hold-enabled {
+  margin-left: -15em;
 }
 
 .sub-next-container {
@@ -1496,6 +1501,14 @@ body {
 }
 
 .sub-next-canvas {
+  margin: 0;
+  padding: 0;
+  height: calc(4 * var(--cell-size) * .62);
+  width: calc(4 * var(--cell-size) * var(--next-count) * .62);
+  margin-top: -5.25em;
+}
+
+.sub-next-canvas hold-enabled {
   margin: 0;
   padding: 0;
   height: calc(4 * var(--cell-size) * .62);
@@ -1513,6 +1526,14 @@ body {
 }
 
 .next-label {
+  color: #84F78C;
+  text-shadow: 1px 1px 5px #000000;
+  text-align: left;
+  margin-left: -10.8em;
+  margin-top: 2.75em;
+}
+
+.next-label hold-enabled {
   color: #84F78C;
   text-shadow: 1px 1px 5px #000000;
   text-align: left;
