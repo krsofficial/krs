@@ -46,6 +46,7 @@ export default class Stack extends GameModule {
 	this.trialMode = false
 	this.excavatorMode = false
 	this.gemsCleared = 0
+	this.trialGemInterval = 8
   }
   removeFromArray(array, elementToRemove) {
 	  const indexToRemove = array.indexOf(elementToRemove)
@@ -176,6 +177,10 @@ export default class Stack extends GameModule {
 	if (this.isFading && this.isHidden === false) {
 		this.hidePlacedMinos()
 	}
+	this.trialGemInterval -= 1
+	if (this.trialGemInterval <= 0) {
+		trialGemInterval = 8
+	}
     for (let y = 0; y < shape.length; y++) {
       for (let x = 0; x < shape[y].length; x++) {
         const isFilled = shape[y][x]
@@ -210,7 +215,7 @@ export default class Stack extends GameModule {
 			if (this.isHidden && this.isFrozen !== true) {
 				this.grid[xLocation][yLocation] = "hidden"
 			} else if (this.trialMode && this.isFrozen !== true) {
-				if (Math.random(1, 10) === 10 && this.excavatorMode !== true) {
+				if (this.trialGemInterval <= 1 && this.excavatorMode !== true && this.wouldCauseLineClear <= 0) {
 					this.grid[xLocation][yLocation] = `${color}gem`
 				} else {
 					this.grid[xLocation][yLocation] = color
