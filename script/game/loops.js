@@ -82,7 +82,7 @@ const updateTestMode = () => {
 		}
 	}
 }
-const updateNextAndHold = () => {
+const updateGraphics = () => {
 	const game = gameHandler.game
 	if (game.currentEffect === "holdLock") {
 		$(".hold-canvas").classList.add("disabledeffect")
@@ -121,11 +121,36 @@ const updateNextAndHold = () => {
 	}
 	if (
 		game.currentEffect === "phantomBlock" || 
-		game.stack.isHidden !== false
+		game.stack.isHidden === true
 	) {
 		$(".stack-canvas").classList.add("phantomeffect")
 	} else {
 		$(".stack-canvas").classList.remove("phantomeffect")
+	}
+	if (game.stack.isFading) {
+		$(".stack-canvas").classList.remove("outlineoff")
+		$(".stack-canvas").classList.remove("invis")
+		$(".stack-canvas").classList.add("nodrop")
+	} else if (game.stack.isHidden) {
+		$(".stack-canvas").classList.remove("outlineoff")
+		$(".stack-canvas").classList.remove("nodrop")
+		$(".stack-canvas").classList.add("invis")
+	} else if (
+		game.currentEffect === "fadingBlock" || 
+		game.currentEffect === "xRay" ||
+		game.currentEffect === "phantomBlock"
+	) {
+		$(".stack-canvas").classList.remove("invis")
+		$(".stack-canvas").classList.remove("outlineoff")
+		$(".stack-canvas").classList.remove("nodrop")
+	} else if (game.useBoneBlocks || settings.settings.outline !== true) {
+		$(".stack-canvas").classList.remove("invis")
+		$(".stack-canvas").classList.remove("nodrop")
+		$(".stack-canvas").classList.add("outlineoff")
+	} else {
+		$(".stack-canvas").classList.remove("invis")
+		$(".stack-canvas").classList.remove("nodrop")
+		$(".stack-canvas").classList.remove("outlineoff")
 	}
 	if (testMode === false) {
 		$(".error-stack").classList.add("nontestmode")
@@ -376,7 +401,7 @@ export const loops = {
 		  }
         }
       }
-	  updateNextAndHold()
+	  updateGraphics()
 	  updateTestMode()
 	  game.useEffectBlocks = false
       /* Might use this code later
@@ -626,7 +651,7 @@ export const loops = {
 		  }
         }
       }
-	  updateNextAndHold()
+	  updateGraphics()
 	  updateTestMode()
 	  game.useEffectBlocks = true
       /* Might use this code later
@@ -882,7 +907,7 @@ export const loops = {
 		  }
         }
       }
-	  updateNextAndHold()
+	  updateGraphics()
 	  updateTestMode()
 	  game.useEffectBlocks = true
       /* Might use this code later
@@ -1109,7 +1134,7 @@ export const loops = {
 		  }
         }
       }
-	  updateNextAndHold()
+	  updateGraphics()
 	  updateTestMode()
 	  game.useEffectBlocks = false
       /* Might use this code later
@@ -1359,7 +1384,7 @@ export const loops = {
 		  }
         }
       }
-	  updateNextAndHold()
+	  updateGraphics()
 	  updateTestMode()
 	  game.useEffectBlocks = true
       /* Might use this code later
@@ -1621,7 +1646,7 @@ export const loops = {
 		  }
         }
       }
-	  updateNextAndHold()
+	  updateGraphics()
 	  updateTestMode()
 	  game.useEffectBlocks = true
       /* Might use this code later
@@ -1859,7 +1884,7 @@ export const loops = {
 		  }
         }
       }
-	  updateNextAndHold()
+	  updateGraphics()
 	  updateTestMode()
 	  game.useEffectBlocks = true
       /* Might use this code later

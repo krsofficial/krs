@@ -1961,6 +1961,15 @@ body {
   opacity: 0.25;
 }
 
+.stack-canvas.nodrop {
+  filter: 
+  drop-shadow(0em 0em 0em rgba(255,255,255,0))
+  drop-shadow(0em 0em 0em rgba(255,255,255,0))
+  drop-shadow(0em 0em 0em rgba(255,255,255,0))
+  drop-shadow(0em 0em 0em rgba(255,255,255,0))
+  ;
+}
+
 .stack-canvas.fadingeffect {
   filter: 
   drop-shadow(0em 0em 0em rgba(255,255,255,0))

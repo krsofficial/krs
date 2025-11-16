@@ -1029,25 +1029,6 @@ export default class Stack extends GameModule {
 		this.removeEffectBlocks()
 	}
 	let placedEffectBlock = false
-	if (this.parent.useBoneBlocks || settings.settings.outline !== true) {
-		$(".stack-canvas").classList.add("outlineoff")
-	} else {
-		$(".stack-canvas").classList.remove("outlineoff")
-	}
-	if (this.isFading || this.isHidden) {
-		$(".stack-canvas").classList.remove("outlineoff")
-		$(".stack-canvas").classList.add("invis")
-	} else if (this.parent.currentEffect === "fadingBlock" || this.parent.currentEffect === "xRay") {
-		$(".stack-canvas").classList.remove("outlineoff")
-		$(".stack-canvas").classList.remove("invis")
-	} else {
-		$(".stack-canvas").classList.remove("invis")
-		if (this.parent.useBoneBlocks || settings.settings.outline !== true) {
-			$(".stack-canvas").classList.add("outlineoff")
-		} else {
-			$(".stack-canvas").classList.remove("outlineoff")
-		}
-	}
 	this.resetLastPlacedBlocks()
     for (let y = 0; y < shape.length; y++) {
       for (let x = 0; x < shape[y].length; x++) {
