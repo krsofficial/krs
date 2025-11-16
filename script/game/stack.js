@@ -1097,6 +1097,7 @@ export default class Stack extends GameModule {
 				this.grid[xLocation][yLocation] = color
 			}
           }
+		  this.lastPlacedBlocks[xLocation][yLocation] = this.grid[xLocation][yLocation]
           this.dirtyCells.push([xLocation, yLocation])
           this.flashX.unshift(xLocation)
           this.flashY.unshift(yLocation)
