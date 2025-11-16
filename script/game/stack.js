@@ -1970,7 +1970,14 @@ export default class Stack extends GameModule {
     for (let i = 0; i < this.width; i++) {
       cells[i] = new Array(this.height + this.hiddenHeight)
     }
-    this.lastPlacedBlocks = cells
+	this.lastPlacedBlocks = cells
+	for (let x = 0; x < this.lastPlacedBlocks.length; x++) {
+      for (let y = 0; y < this.lastPlacedBlocks[x].length; y++) {
+        if (this.lastPlacedBlocks[x][y] != null) {
+			this.lastPlacedBlocks[x][y] = null
+		}
+      }
+    }
   }
   endRollStart() {
 	  sound.add("endingstart")
