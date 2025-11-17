@@ -74,14 +74,14 @@ let testMode = false
 let collapseUnderwater = false
 let noGradeUpdate = false
 let grades = [
-	$locale.getString("grades", "jester"),
-	$locale.getString("grades", "bronzeKnight"),
-	$locale.getString("grades", "silverKnight"),
-	$locale.getString("grades", "goldKnight"),
-	$locale.getString("grades", "prince"),
-	$locale.getString("grades", "princess"),
-	$locale.getString("grades", "king"),
-	$locale.getString("grades", "queen"),
+	locale.getString("grades", "jester"),
+	locale.getString("grades", "bronzeKnight"),
+	locale.getString("grades", "silverKnight"),
+	locale.getString("grades", "goldKnight"),
+	locale.getString("grades", "prince"),
+	locale.getString("grades", "princess"),
+	locale.getString("grades", "king"),
+	locale.getString("grades", "queen"),
 ]
 const updateTestMode = () => {
 	if (input.getGamePress("testModeKey")) {
