@@ -107,7 +107,7 @@
     "description": "Controls the style that the lock flash uses"
   },
   "lockFlashDesription": {
-    "message": "Select a lock flash style"
+    "message": "Flash the piece when it locks"
   },
   "shineLFOption": {
     "message": "Complex Shine",

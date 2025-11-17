@@ -178,5 +178,9 @@
   "flashingLights": {
     "message": "光の点滅",
     "description": "Used to warn the player of flashing lights"
+  },
+  "incomingEffect": {
+    "message": "着信アイテム！",
+    "description": "Used to warn the player of an incoming effect"
   }
 }

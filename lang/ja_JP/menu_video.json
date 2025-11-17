@@ -107,7 +107,7 @@
     "description": "Controls the style that the lock flash uses"
   },
   "lockFlashDesription": {
-    "message": "ロックフラッシュのスタイルを選択します"
+    "message": "ロックされたらその部品をフラッシュする。"
   },
   "shineLFOption": {
     "message": "コンプレックスシャイン",

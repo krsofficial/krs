@@ -1,0 +1,23 @@
+{
+  "bronzeKnight": {
+    "message": "BRONZE KNIGHT"
+  },
+  "silverKnight": {
+    "message": "SILVER KNIGHT"
+  },
+  "goldKnight": {
+    "message": "GOLD KNIGHT"
+  },
+  "platinumKnight": {
+    "message": "PLATINUM KNIGHT"
+  },
+  "king": {
+    "message": "KING OF TRIALS"
+  },
+  "queen": {
+    "message": "QUEEN OF TRIALS"
+  },
+  "jester": {
+    "message": "JESTER"
+  }
+}

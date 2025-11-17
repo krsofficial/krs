@@ -1,44 +1,44 @@
 {
   "hideNext": {
-    "message": "HIDE NEXT"
+    "message": "次を非表示"
   },
   "rotateLock": {
-    "message": "ROTATE LOCK"
+    "message": "回転ロック"
   },
   "holdLock": {
-    "message": "HOLD LOCK"
+    "message": "ホールドロック"
   },
   "mirrorBlock": {
-    "message": "MIRROR BLOCK"
+    "message": "ミラーブロック"
   },
   "fadingBlock": {
-    "message": "FADING BLOCK"
+    "message": "フェーディングブロック"
   },
   "laserBlock": {
-    "message": "LASER"
+    "message": "レーザー"
   },
   "garbageBlock": {
-    "message": "ゴミ"
+    "message": "ガベージ"
   },
   "flipBlock": {
-    "message": "180° FIELD"
+    "message": "180° フィールド"
   },
   "phantomBlock": {
-    "message": "PHANTOM BLOCK"
+    "message": "ファントムブロック"
   },
   "delFieldUp": {
-    "message": "SLICE FIELD"
+    "message": "スライスフィールド"
   },
   "delFieldDown": {
-    "message": "SLICE FIELD"
+    "message": "スライスフィールド"
   },
   "jewelBlock": {
-    "message": "JEWEL BLOCK"
+    "message": "ジュエルブロック"
   },
   "deathBlock": {
-    "message": "DEATH BLOCK"
+    "message": "デスブロック"
   },
   "xRay": {
-    "message": "X-RAY"
+    "message": "X線"
   }
 }

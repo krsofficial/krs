@@ -1,0 +1,23 @@
+{
+  "bronzeKnight": {
+    "message": "青铜骑士"
+  },
+  "silverKnight": {
+    "message": "银骑士"
+  },
+  "goldKnight": {
+    "message": "金骑士"
+  },
+  "platinumKnight": {
+    "message": "白金骑士"
+  },
+  "king": {
+    "message": "试炼之王"
+  },
+  "queen": {
+    "message": "试炼女王"
+  },
+  "jester": {
+    "message": "小丑"
+  }
+}

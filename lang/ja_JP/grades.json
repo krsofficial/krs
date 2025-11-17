@@ -1,0 +1,23 @@
+{
+  "bronzeKnight": {
+    "message": "ブロンズナイト"
+  },
+  "silverKnight": {
+    "message": "シルバーナイト"
+  },
+  "goldKnight": {
+    "message": "ゴールドナイト"
+  },
+  "platinumKnight": {
+    "message": "プラチナナイト"
+  },
+  "king": {
+    "message": "試練の王"
+  },
+  "queen": {
+    "message": "試練の女王"
+  },
+  "jester": {
+    "message": "道化師"
+  }
+}

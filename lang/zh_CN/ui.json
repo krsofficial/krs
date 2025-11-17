@@ -178,5 +178,9 @@
   "flashingLights": {
     "message": "闪光警告",
     "description": "Used to warn the player of flashing lights"
+  },
+  "incomingEffect": {
+    "message": "物品即将送达！",
+    "description": "Used to warn the player of an incoming effect"
   }
 }

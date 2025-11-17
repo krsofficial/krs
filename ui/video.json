@@ -25,6 +25,14 @@
       "action": "toggle",
       "setting": "outline",
       "settingType": "setting"
+    },
+	{
+      "string": "lockFlashLabel",
+      "stringDesc": "lockFlashDescription",
+      "type": "toggle",
+      "action": "toggle",
+      "setting": "toggleLockFlash",
+      "settingType": "setting"
     }
   ]
 }

@@ -107,7 +107,7 @@
     "description": "Controls the style that the lock flash uses"
   },
   "lockFlashDesription": {
-    "message": "选择方块锁定时闪烁效果的样式"
+    "message": "锁定时闪现该部件。"
   },
   "shineLFOption": {
     "message": "复杂",

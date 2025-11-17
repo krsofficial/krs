@@ -1697,18 +1697,18 @@ body {
   text-shadow: none;
 }
 
-.stats div.stat-group div diamond {
+.stats div.stat-group div diamondcrown {
   font-weight: bold;
   color: transparent;
-  background: linear-gradient(180deg,rgba(67, 255, 255, 1) 0%, rgba(127, 255, 255, 1) 50%, rgba(177, 255, 255, 1) 100%);
+  background: linear-gradient(180deg,rgba(255, 239, 67, 1) 0%, rgba(127, 255, 255, 1) 50%, rgba(177, 255, 255, 1) 100%);
   background-clip: text;
   text-shadow: none;
 }
 
-.stats div.stat-group div titanium {
+.stats div.stat-group div emeraldcrown {
   font-weight: bold;
   color: transparent;
-  background: linear-gradient(180deg,rgba(119, 214, 238, 1) 0%, rgba(154, 231, 244, 1) 50%, rgba(230, 250, 255, 1) 100%);
+  background: linear-gradient(180deg,rgba(255, 239, 67, 1) 0%, rgba(127, 255, 127, 1) 50%, rgba(177, 255, 177, 1) 100%);
   background-clip: text;
   text-shadow: none;
 }
@@ -1779,18 +1779,18 @@ body {
   text-shadow: none;
 }
 
-.stats div.stat-group div.big diamond {
+.stats div.stat-group div.big diamondcrown {
   font-weight: bold;
   color: transparent;
-  background: linear-gradient(180deg,rgba(67, 255, 255, 1) 0%, rgba(127, 255, 255, 1) 50%, rgba(177, 255, 255, 1) 100%);
+  background: linear-gradient(180deg,rgba(255, 239, 67, 1) 0%, rgba(127, 255, 255, 1) 50%, rgba(177, 255, 255, 1) 100%);
   background-clip: text;
   text-shadow: none;
 }
 
-.stats div.stat-group div.big titanium {
+.stats div.stat-group div.big emeraldcrown {
   font-weight: bold;
   color: transparent;
-  background: linear-gradient(180deg,rgba(119, 214, 238, 1) 0%, rgba(154, 231, 244, 1) 50%, rgba(230, 250, 255, 1) 100%);
+  background: linear-gradient(180deg,rgba(255, 239, 67, 1) 0%, rgba(127, 255, 127, 1) 50%, rgba(177, 255, 177, 1) 100%);
   background-clip: text;
   text-shadow: none;
 }
@@ -2611,18 +2611,18 @@ progress[value]::-moz-progress-bar {
   text-shadow: none;
 }
 
-.end-message-container .end-stats diamond {
+.end-message-container .end-stats diamondcrown {
   font-weight: bold;
   color: transparent;
-  background: linear-gradient(180deg,rgba(67, 255, 255, 1) 0%, rgba(127, 255, 255, 1) 50%, rgba(177, 255, 255, 1) 100%);
+  background: linear-gradient(180deg,rgba(255, 239, 67, 1) 0%, rgba(127, 255, 255, 1) 50%, rgba(177, 255, 255, 1) 100%);
   background-clip: text;
   text-shadow: none;
 }
 
-.end-message-container .end-stats titanium {
+.end-message-container .end-stats emeraldcrown {
   font-weight: bold;
   color: transparent;
-  background: linear-gradient(180deg,rgba(119, 214, 238, 1) 0%, rgba(154, 231, 244, 1) 50%, rgba(230, 250, 255, 1) 100%);
+  background: linear-gradient(180deg,rgba(255, 239, 67, 1) 0%, rgba(127, 255, 127, 1) 50%, rgba(177, 255, 177, 1) 100%);
   background-clip: text;
   text-shadow: none;
 }

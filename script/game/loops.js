@@ -73,6 +73,16 @@ let lastGemsCleared = 0
 let testMode = false
 let collapseUnderwater = false
 let noGradeUpdate = false
+let grades = [
+	$locale.getString("grades", "jester"),
+	$locale.getString("grades", "bronzeKnight"),
+	$locale.getString("grades", "silverKnight"),
+	$locale.getString("grades", "goldKnight"),
+	$locale.getString("grades", "prince"),
+	$locale.getString("grades", "princess"),
+	$locale.getString("grades", "king"),
+	$locale.getString("grades", "queen"),
+]
 const updateTestMode = () => {
 	if (input.getGamePress("testModeKey")) {
 		if (testMode !== false) {
@@ -84,6 +94,11 @@ const updateTestMode = () => {
 }
 const updateGraphics = () => {
 	const game = gameHandler.game
+	if (settings.settings.toggleLockFlash) {
+		settings.settings.lockFlash = "dim"
+	} else {
+		settings.settings.lockFlash = "off"
+	}
 	if (game.currentEffect === "holdLock") {
 		$(".hold-canvas").classList.add("disabledeffect")
 		$(".hold-lock").classList.add("disabledeffect")
@@ -591,21 +606,21 @@ export const loops = {
 			[22000*1.6, "10"],
 			[30000*1.6, "11"],
 			[40000*1.6, "12"],
-			[52000*1.6, "<bronze>BM</bronze>"],
-			[66000*1.6, "<silver>SM</silver>"],
-			[82000*1.6, "<gold>GM</gold>"],
-			[100000*1.6, "<platinum>TM</platinum>"],
-			[120000*1.6, "<diamond>KM</diamond>"],
+			[52000*1.6, `<bronze>${grades[1]}</bronze>`],
+			[66000*1.6, `<silver>${grades[2]}</silver>`],
+			[82000*1.6, `<gold>${grades[3]}</gold>`],
+			[100000*1.6, `<platinum>${grades[4]}</platinum>`],
+			[120000*1.6, `<emeraldcrown>${grades[5]}</emeraldcrown>`],
 		],
 		"1",
 		[
-			"<bronze>BM</bronze>",
-			"<silver>SM</silver>",
+			`<bronze>${grades[1]}</bronze>`,
+			`<silver>${grades[2]}</silver>`,
 		],
 		[
-			"<gold>GM</gold>",
-			"<platinum>TM</platinum>",
-			"<diamond>KM</diamond>",
+			`<gold>${grades[3]}</gold>`,
+			`<platinum>${grades[4]}</platinum>`,
+			`<emeraldcrown>${grades[5]}</emeraldcrown>`,
 		]
 	  )
       collapse(arg)
@@ -818,9 +833,9 @@ export const loops = {
       }
 	  if (game.stat.piece >= pieceRequirement * levelGoal) {
 		noGradeUpdate = true
-		if (game.stat.grade === "<diamond>KM</diamond>") {
+		if (game.stat.grade === `<emeraldcrown>${grades[5]}</emeraldcrown>`) {
 			sound.add("cheer")
-			game.stat.grade = "<titanium>KM+</titanium>"
+			game.stat.grade = `<diamondcrown>${grades[6]}</diamondcrown>`
 		}
 		game.stat.piece = pieceRequirement * levelGoal
 		$("#kill-message").textContent = locale.getString("ui", "excellent")
@@ -1324,21 +1339,21 @@ export const loops = {
 			[22000*3.2, "10"],
 			[30000*3.2, "11"],
 			[40000*3.2, "12"],
-			[52000*3.2, "<bronze>BM</bronze>"],
-			[66000*3.2, "<silver>SM</silver>"],
-			[82000*3.2, "<gold>GM</gold>"],
-			[100000*3.2, "<platinum>TM</platinum>"],
-			[120000*3.2, "<diamond>KM</diamond>"],
+			[52000*3.2, `<bronze>${grades[1]}</bronze>`],
+			[66000*3.2, `<silver>${grades[2]}</silver>`],
+			[82000*3.2, `<gold>${grades[3]}</gold>`],
+			[100000*3.2, `<platinum>${grades[4]}</platinum>`],
+			[120000*3.2, `<emeraldcrown>${grades[5]}</emeraldcrown>`],
 		],
 		"1",
 		[
-			"<bronze>BM</bronze>",
-			"<silver>SM</silver>",
+			`<bronze>${grades[1]}</bronze>`,
+			`<silver>${grades[2]}</silver>`,
 		],
 		[
-			"<gold>GM</gold>",
-			"<platinum>TM</platinum>",
-			"<diamond>KM</diamond>",
+			`<gold>${grades[3]}</gold>`,
+			`<platinum>${grades[4]}</platinum>`,
+			`<emeraldcrown>${grades[5]}</emeraldcrown>`,
 		]
 	  )
       collapse(arg)
@@ -1551,9 +1566,9 @@ export const loops = {
       }
 	  if (game.stat.piece >= pieceRequirement * levelGoal) {
 		noGradeUpdate = true
-		if (game.stat.grade === "<diamond>KM</diamond>") {
+		if (game.stat.grade === `<emeraldcrown>${grades[5]}</emeraldcrown>`) {
 			sound.add("cheer")
-			game.stat.grade = "<titanium>KM+</titanium>"
+			game.stat.grade = `<diamondcrown>${grades[6]}</diamondcrown>`
 		}
 		game.stat.piece = pieceRequirement * levelGoal
 		$("#kill-message").textContent = locale.getString("ui", "excellent")
