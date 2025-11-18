@@ -4487,7 +4487,7 @@ PIECE_OFFSETS.sega = PIECE_OFFSETS.ars
 PIECE_OFFSETS.krs = {
   I: PIECE_OFFSETS.tetrax.I,
   L: PIECE_OFFSETS.tetrax.L,
-  O: PIECE_OFFSETS.ascx.O,
+  O: PIECE_OFFSETS.tetrax.O,
   Z: PIECE_OFFSETS.tetrax.Z,
   T: PIECE_OFFSETS.tetrax.T,
   J: PIECE_OFFSETS.tetrax.J,
