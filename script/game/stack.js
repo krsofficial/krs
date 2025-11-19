@@ -1058,9 +1058,6 @@ export default class Stack extends GameModule {
           if (yLocation - this.hiddenHeight >= 0) {
             passedLockOut--
           }
-          if (this.parent.piece.useSpecialI && this.parent.piece.name === "I") {
-            this.grid[xLocation][yLocation] = "i" + shape[y][x]
-          } else {
 			if (
 				this.parent.useEffectBlocks &&
 				this.parent.pendingEffect !== "" &&
@@ -1077,7 +1074,6 @@ export default class Stack extends GameModule {
 			} else {
 				this.grid[xLocation][yLocation] = color
 			}
-          }
 		  this.lastPlacedBlocks[xLocation][yLocation] = this.grid[xLocation][yLocation]
           this.dirtyCells.push([xLocation, yLocation])
           this.flashX.unshift(xLocation)

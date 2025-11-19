@@ -299,10 +299,8 @@ export default class Piece extends GameModule {
 	let suffix = ""
     switch (type) {
       case "ghost":
-        if (this.parent.currentEffect === "rotateLock") {
-			document.getElementById(`piece`).classList.add("grayscale")
-		} else {
-			document.getElementById(`piece`).classList.remove("grayscale")
+        if (this.parent.currentEffect === "rotateLock" && color === "bone") {
+			color = "bonew"
 		}
 		if (this.parent.stack.deathAnimation < this.parent.stack.deathAnimationLimit) {
 			img = document.getElementById(`ghost-hidden`)
@@ -311,9 +309,9 @@ export default class Piece extends GameModule {
 		}
         break
       case "piece":
-        if (this.useSpecialI && this.name === "I") {
-          suffix = number
-        }
+		if (this.parent.currentEffect === "rotateLock" && color === "bone") {
+			color = "bonew"
+		}
 		if (this.parent.currentEffect === "rotateLock") {
 			document.getElementById(`piece`).classList.add("grayscale")
 		} else {

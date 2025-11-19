@@ -1235,8 +1235,7 @@ export default class Game {
 	  "frozen",
 	  "icegem",
 	  "bone",
-	  /*"rotateLocked",
-	  "rotateLockedBone",*/
+	  "bonew",
 	  "hidden",
 	  "hideNext",
 	  "rotateLock",
