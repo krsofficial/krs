@@ -143,29 +143,24 @@ const updateGraphics = () => {
 		$(".stack-canvas").classList.remove("phantomeffect")
 	}
 	if (game.stack.isFading) {
-		$(".stack-canvas").classList.remove("outlineoff")
+		$(".stack-canvas").classList.add("outlineoff")
 		$(".stack-canvas").classList.remove("invis")
-		$(".stack-canvas").classList.add("nodrop")
 	} else if (game.stack.isHidden) {
 		$(".stack-canvas").classList.remove("outlineoff")
-		$(".stack-canvas").classList.remove("nodrop")
 		$(".stack-canvas").classList.add("invis")
 	} else if (
 		game.currentEffect === "fadingBlock" || 
 		game.currentEffect === "xRay" ||
 		game.currentEffect === "phantomBlock"
 	) {
-		$(".stack-canvas").classList.remove("invis")
 		$(".stack-canvas").classList.remove("outlineoff")
-		$(".stack-canvas").classList.remove("nodrop")
+		$(".stack-canvas").classList.remove("invis")
 	} else if (game.useBoneBlocks || settings.settings.outline !== true) {
-		$(".stack-canvas").classList.remove("invis")
-		$(".stack-canvas").classList.remove("nodrop")
 		$(".stack-canvas").classList.add("outlineoff")
-	} else {
 		$(".stack-canvas").classList.remove("invis")
-		$(".stack-canvas").classList.remove("nodrop")
+	} else {
 		$(".stack-canvas").classList.remove("outlineoff")
+		$(".stack-canvas").classList.remove("invis")
 	}
 	if (testMode === false) {
 		$(".error-stack").classList.add("nontestmode")

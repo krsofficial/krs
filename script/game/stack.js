@@ -2109,6 +2109,7 @@ export default class Stack extends GameModule {
       }
     }
     // Flash
+	ctx = this.parent.piece.ctx
     if (this.flashTime < this.flashLimit) {
       for (let i = 0; i < this.flashX.length; i++) {
         ctx.globalCompositeOperation = "overlay"
@@ -2175,9 +2176,12 @@ export default class Stack extends GameModule {
         }
       }
     }
+	ctx = this.ctx
     // Line clear animation
+	let clearDirtyCells = true
     if (this.toCollapse.length > 0 && this.isFrozen !== true && this.parent.useBoneBlocks !== true) {
-      const brightness = Math.max(
+      clearDirtyCells = true
+	  const brightness = Math.max(
         0,
         1 -
           this.parent.piece.are /
@@ -2191,8 +2195,19 @@ export default class Stack extends GameModule {
         brightnessHex = "ff"
       }
       ctx.fillStyle = `#ffffff${brightnessHex}`
+	  let lineClearCtx = this.parent.piece.ctx
+	  lineClearCtx.fillStyle = ctx.fillStyle
       for (let i = 0; i < this.toCollapse.length; i++) {
         ctx.clearRect(
+          0,
+          Math.floor(
+            (this.toCollapse[i] - this.hiddenHeight) * cellSize +
+              buffer * cellSize
+          ),
+          cellSize * this.width,
+          cellSize
+        )
+		lineClearCtx.clearRect(
           0,
           Math.floor(
             (this.toCollapse[i] - this.hiddenHeight) * cellSize +
@@ -2219,7 +2234,7 @@ export default class Stack extends GameModule {
           Math.round(this.parent.piece.are / this.flashClearRate) % 2 !== 1 ||
           !this.flashLineClear
         ) {
-          ctx.fillRect(
+          lineClearCtx.fillRect(
             0,
             Math.floor(
               (this.toCollapse[i] - this.hiddenHeight) * cellSize +
@@ -2231,6 +2246,7 @@ export default class Stack extends GameModule {
         }
       }
   } else if (this.toCollapse.length > 0) {
+	  clearDirtyCells = false
 	  for (const i of this.toCollapse) {
 		this.parent.particle.generate({
           amount: 2,
@@ -2249,7 +2265,9 @@ export default class Stack extends GameModule {
 	  }
 	  this.reRenderStack()
   }
-    this.dirtyCells = []
+    if (clearDirtyCells) {
+		this.dirtyCells = []
+	}
   }
   linesToLevel(levelLimit, levelsPerSection) {
     const newLevel = Math.min(
