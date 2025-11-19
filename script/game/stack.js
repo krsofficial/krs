@@ -2026,6 +2026,8 @@ export default class Stack extends GameModule {
     const cellSize = this.parent.cellSize
     const buffer = this.parent.bufferPeek
     const ctx = this.ctx
+	let flashCtx = this.parent.piece.ctx
+	let lineClearCtx = this.parent.piece.ctx
     const flash = (
       "0" +
       Math.floor((1 - this.flashTime / this.flashLimit) * 255).toString(16)
@@ -2039,6 +2041,8 @@ export default class Stack extends GameModule {
       const x = cell[0] * cellSize
       const y = (cell[1] - this.hiddenHeight) * cellSize + buffer * cellSize
       ctx.clearRect(x, Math.floor(y), cellSize, cellSize)
+	  flashCtx.clearRect(x, Math.floor(y), cellSize, cellSize)
+	  lineClearCtx.clearRect(x, Math.floor(y), cellSize, cellSize)
     }
     /*
     for (let x = 0; x < this.grid.length; x++) {
@@ -2109,7 +2113,6 @@ export default class Stack extends GameModule {
       }
     }
     // Flash
-	let flashCtx = this.parent.piece.ctx
     if (this.flashTime < this.flashLimit) {
       for (let i = 0; i < this.flashX.length; i++) {
         flashCtx.globalCompositeOperation = "overlay"
@@ -2194,7 +2197,6 @@ export default class Stack extends GameModule {
         brightnessHex = "ff"
       }
       ctx.fillStyle = `#ffffff${brightnessHex}`
-	  let lineClearCtx = this.parent.piece.ctx
 	  lineClearCtx.fillStyle = ctx.fillStyle
       for (let i = 0; i < this.toCollapse.length; i++) {
         ctx.clearRect(
