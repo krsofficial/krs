@@ -94,10 +94,13 @@ const updateTestMode = () => {
 }
 const updateGraphics = () => {
 	const game = gameHandler.game
-	if (settings.settings.toggleLockFlash) {
-		settings.settings.lockFlash = "dim"
-	} else {
+	if (
+	settings.settings.toggleLockFlash === false || 
+	game.useBoneBlocks === true
+	) {
 		settings.settings.lockFlash = "off"
+	} else {
+		settings.settings.lockFlash = "dim"
 	}
 	if (game.currentEffect === "holdLock") {
 		$(".hold-canvas").classList.add("disabledeffect")
