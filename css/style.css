@@ -494,7 +494,7 @@
   }
 }
 
-@keyframes pulse {
+@keyframes pulse-backup {
   from {
     filter: brightness(1.1)
   }
@@ -504,13 +504,23 @@
   }
 }
 
+@keyframes pulse {
+  from {
+    filter: brightness(1.1)
+  }
+
+  to {
+    filter: brightness(1)
+  }
+}
+
 @keyframes pulse-grayscale {
   from {
     filter: brightness(1.1) grayscale(100%)
   }
 
   to {
-    filter: brightness(0.9) grayscale(100%)
+    filter: brightness(1) grayscale(100%)
   }
 }
 
@@ -1123,7 +1133,7 @@ body {
 #menu>.control>.control-bay>.set-control.conflict {
   color: #eb4034;
   border-color: #eb4034;
-  animation-name: pulse;
+  animation-name: pulse-backup;
   animation-duration: .2s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
