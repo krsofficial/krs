@@ -2041,8 +2041,6 @@ export default class Stack extends GameModule {
       const x = cell[0] * cellSize
       const y = (cell[1] - this.hiddenHeight) * cellSize + buffer * cellSize
       ctx.clearRect(x, Math.floor(y), cellSize, cellSize)
-	  flashCtx.clearRect(x, Math.floor(y), cellSize, cellSize)
-	  lineClearCtx.clearRect(x, Math.floor(y), cellSize, cellSize)
     }
     /*
     for (let x = 0; x < this.grid.length; x++) {
@@ -2121,6 +2119,7 @@ export default class Stack extends GameModule {
           this.flashY[i] * cellSize +
           cellSize * buffer -
           cellSize * this.hiddenHeight
+		flashCtx.clearRect(x, Math.floor(y), cellSize, cellSize)
         flashCtx.fillStyle = `#ffffff${flash}`
         if (
           settings.settings.lockFlash !== "off" &&
