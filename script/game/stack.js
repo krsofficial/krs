@@ -1,5 +1,5 @@
 import GameModule from "./game-module.js"
-import $, { negativeMod, resetAnimation, hsvToRgb } from "../shortcuts.js"
+import $, { negativeMod, resetAnimation, hsvToRgb, toCtx } from "../shortcuts.js"
 import sound from "../sound.js"
 import locale from "../lang.js"
 import settings from "../settings.js"
@@ -2022,8 +2022,10 @@ export default class Stack extends GameModule {
     const cellSize = this.parent.cellSize
     const buffer = this.parent.bufferPeek
     const ctx = this.ctx
-	let flashCtx = this.parent.piece.ctx
-	let lineClearCtx = this.parent.piece.ctx
+	/*let flashCtx = this.parent.piece.ctx
+	let lineClearCtx = this.parent.piece.ctx*/
+	let flashCtx = toCtx(document.getElementById("animate"))
+	let lineClearCtx = toCtx(document.getElementById("animate"))
     const flash = (
       "0" +
       Math.floor((1 - this.flashTime / this.flashLimit) * 255).toString(16)

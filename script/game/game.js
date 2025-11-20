@@ -1119,7 +1119,7 @@ export default class Game {
 			}
 			if (game.rotationSystem === "ds") {
 				game.piece.areLimit = 0
-				game.piece.areLineLimit = 0
+				game.piece.areLimitLineModifier = game.piece.areLineLimit
 			}
           }
           game.particle.update(msPassed)
