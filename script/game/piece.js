@@ -123,23 +123,6 @@ export default class Piece extends GameModule {
       }
     }
     this.parent.onPieceSpawn(this.parent)
-	if (
-	this.parent.rotationSystem === "drs" && 
-	(
-		input.getGameDown("specialKey") ||
-		input.getGameDown("moveLeft") ||
-		input.getGameDown("moveRight") ||
-		input.getGameDown("rotateLeft") ||
-		input.getGameDown("rotate180") ||
-		input.getGameDown("hold")
-	)
-	) {
-		this.parent.areLimit = 0
-		this.parent.areLineLimit = 0
-	}
-	if (game.rotationSystem === "ds") {
-		this.parent.areLimit = 0
-	}
     this.parent.updateMusic()
     this.parent.updateStats()
     $("#delay").innerHTML = `${this.lockDelayLimit} <b>ms</b>`
