@@ -4801,7 +4801,7 @@ export const SPIN_SETS = {
 export const SKIN_SETS = {
   asc: "standard",
   ascx: "standard",
-  srs: "sega",
+  srs: "srs",
   world: "world",
   tetrax: "standard",
   retro: "standard",
