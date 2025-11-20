@@ -1083,12 +1083,12 @@ SPAWN_OFFSETS.oshisaure = { ...SPAWN_OFFSETS.srs, downShift: 0 }
 SPAWN_OFFSETS.world = SPAWN_OFFSETS.srs
 SPAWN_OFFSETS.arsti = SPAWN_OFFSETS.ars
 SPAWN_OFFSETS.arsx = SPAWN_OFFSETS.ars
+SPAWN_OFFSETS.ace = SPAWN_OFFSETS.ars
+SPAWN_OFFSETS.ace2 = SPAWN_OFFSETS.ars
 SPAWN_OFFSETS.original = SPAWN_OFFSETS.retro
 SPAWN_OFFSETS.krs = SPAWN_OFFSETS.arsx
-SPAWN_OFFSETS.sega = SPAWN_OFFSETS.ars
-SPAWN_OFFSETS.arsk = SPAWN_OFFSETS.arsx
-SPAWN_OFFSETS.srsk = { ...SPAWN_OFFSETS.srs, downShift: 2, I: [2, -4] }
-SPAWN_OFFSETS.krsb = SPAWN_OFFSETS.krs
+SPAWN_OFFSETS.srsx = { ...SPAWN_OFFSETS.srs, downShift: 2, I: [2, -4] }
+SPAWN_OFFSETS.drs = SPAWN_OFFSETS.krs
 
 export const INITIAL_ORIENTATION = {
   srs: {
@@ -1121,11 +1121,11 @@ INITIAL_ORIENTATION.ars = INITIAL_ORIENTATION.retro
 INITIAL_ORIENTATION.original = INITIAL_ORIENTATION.retro
 INITIAL_ORIENTATION.arsti = INITIAL_ORIENTATION.ars
 INITIAL_ORIENTATION.arsx = INITIAL_ORIENTATION.ars
+INITIAL_ORIENTATION.ace = INITIAL_ORIENTATION.ars
+INITIAL_ORIENTATION.ace2 = INITIAL_ORIENTATION.ars
 INITIAL_ORIENTATION.krs = INITIAL_ORIENTATION.arsx
-INITIAL_ORIENTATION.sega = INITIAL_ORIENTATION.ars
-INITIAL_ORIENTATION.arsk = INITIAL_ORIENTATION.arsx
-INITIAL_ORIENTATION.srsk = INITIAL_ORIENTATION.srs
-INITIAL_ORIENTATION.krsb = INITIAL_ORIENTATION.krs
+INITIAL_ORIENTATION.srsx = INITIAL_ORIENTATION.srs
+INITIAL_ORIENTATION.drs = INITIAL_ORIENTATION.krs
 
 const KICK_TEMPLATES = {
   o: {
@@ -2882,127 +2882,6 @@ const KICK_TEMPLATES = {
       double: [[[0, 0]], [[0, 0]], [[0, 0]], [[0, 0]]],
     },
   },
-  sega: {
-    x: {
-      right: [
-        [
-          [0, 0],
-          [1, 0],
-          [-1, 0],
-        ],
-        [
-          [0, 0],
-          [1, 0],
-          [-1, 0],
-        ],
-        [
-          [0, 0],
-          [1, 0],
-          [-1, 0],
-        ],
-        [
-          [0, 0],
-          [1, 0],
-          [-1, 0],
-        ],
-      ],
-      left: [
-        [
-          [0, 0],
-          [1, 0],
-          [-1, 0],
-        ],
-        [
-          [0, 0],
-          [1, 0],
-          [-1, 0],
-        ],
-        [
-          [0, 0],
-          [1, 0],
-          [-1, 0],
-        ],
-        [
-          [0, 0],
-          [1, 0],
-          [-1, 0],
-        ],
-      ],
-      double: [
-        [
-          [0, 0],
-          [1, 0],
-          [-1, 0],
-        ],
-        [
-          [0, 0],
-          [1, 0],
-          [-1, 0],
-        ],
-        [
-          [0, 0],
-          [1, 0],
-          [-1, 0],
-        ],
-        [
-          [0, 0],
-          [1, 0],
-          [-1, 0],
-        ],
-      ],
-    },
-    I: {
-      right: [
-        [
-          [0, 0],
-          [0, -1],
-          [0, -2],
-        ],
-        [
-          [0, 0],
-          [1, 0],
-          [2, 0],
-          [-1, 0],
-        ],
-        [
-          [0, 0],
-          [0, -1],
-          [0, -2],
-        ],
-        [
-          [0, 0],
-          [1, 0],
-          [2, 0],
-          [-1, 0],
-        ],
-      ],
-      left: [
-        [
-          [0, 0],
-          [0, -1],
-          [0, -2],
-        ],
-        [
-          [0, 0],
-          [1, 0],
-          [2, 0],
-          [-1, 0],
-        ],
-        [
-          [0, 0],
-          [0, -1],
-          [0, -2],
-        ],
-        [
-          [0, 0],
-          [1, 0],
-          [2, 0],
-          [-1, 0],
-        ],
-      ],
-      double: [[[0, 0]], [[0, 0]], [[0, 0]], [[0, 0]]],
-    },
-  },
   none: {
     all: {
       right: [[[0, 0]], [[0, 0]], [[0, 0]], [[0, 0]]],
@@ -3679,7 +3558,7 @@ KICK_TEMPLATES.krs = {
   T: KICK_TEMPLATES.tetrax.x,
   O: KICK_TEMPLATES.tetrax.x,
 }
-KICK_TEMPLATES.krsb = KICK_TEMPLATES.krs
+KICK_TEMPLATES.drs = KICK_TEMPLATES.krs
 
 export const KICK_TABLES = {
   asc: {
@@ -3827,88 +3706,6 @@ export const KICK_TABLES = {
       ],
     },
   },
-  sega: {
-    I: KICK_TEMPLATES.sega.I,
-    L: KICK_TEMPLATES.sega.x,
-    O: KICK_TEMPLATES.o,
-    Z: KICK_TEMPLATES.sega.x,
-    T: KICK_TEMPLATES.sega.x,
-    J: KICK_TEMPLATES.sega.x,
-    S: KICK_TEMPLATES.sega.x,
-    exception: {
-      L: [
-        [
-          [1, 0],
-          [1, -1],
-        ],
-        [],
-        [
-          [1, 2],
-          [1, 0],
-        ],
-        [],
-      ],
-      J: [
-        [
-          [1, 0],
-          [1, -1],
-        ],
-        [],
-        [
-          [1, 2],
-          [1, 0],
-        ],
-        [],
-      ],
-      T: [[[1, -1]], [], [[1, 0]], []],
-    },
-    unlessToWith: {
-      L: [
-        [
-          [[]],
-          [[]],
-          [[]],
-          [
-            [0, -1],
-            [1, 0],
-          ],
-        ],
-        [[[]], [[]], [[]], [[]]],
-        [
-          [[]],
-          [[]],
-          [[]],
-          [
-            [0, 0],
-            [1, 2],
-          ],
-        ],
-        [[[]], [[]], [[]], [[]]],
-      ],
-      J: [
-        [
-          [[]],
-          [
-            [2, -1],
-            [1, 0],
-          ],
-          [[]],
-          [[]],
-        ],
-        [[[]], [[]], [[]], [[]]],
-        [
-          [[]],
-          [
-            [2, 0],
-            [1, 2],
-          ],
-          [[]],
-          [[]],
-        ],
-        [[[]], [[]], [[]], [[]]],
-      ],
-    },
-  },
   oshisaure: {
     I: KICK_TEMPLATES.oshisaure.I,
     L: KICK_TEMPLATES.oshisaure.x,
@@ -3950,6 +3747,8 @@ KICK_TABLES.arsx = {
   J: KICK_TEMPLATES.arsx.x,
   S: KICK_TEMPLATES.arsx.x,
 }
+KICK_TABLES.ace = KICK_TABLES.arsx
+KICK_TABLES.ace2 = KICK_TABLES.arsx
 KICK_TABLES.handheld = KICK_TABLES.retro
 KICK_TABLES.original = KICK_TABLES.retro
 KICK_TABLES.krs = {
@@ -3961,16 +3760,7 @@ KICK_TABLES.krs = {
   J: KICK_TEMPLATES.krs.LJ,
   S: KICK_TEMPLATES.krs.x,
 }
-KICK_TABLES.arsk = {
-  I: KICK_TABLES.arsx.I,
-  L: KICK_TABLES.arsx.L,
-  O: KICK_TABLES.arsx.O,
-  Z: KICK_TABLES.arsx.Z,
-  T: KICK_TABLES.arsx.T,
-  J: KICK_TABLES.arsx.J,
-  S: KICK_TABLES.arsx.S,
-}
-KICK_TABLES.srsk = {
+KICK_TABLES.srsx = {
   I: KICK_TABLES.srs.I,
   L: KICK_TABLES.srs.L,
   O: KICK_TABLES.srs.O,
@@ -3979,7 +3769,7 @@ KICK_TABLES.srsk = {
   J: KICK_TABLES.srs.J,
   S: KICK_TABLES.srs.S,
 }
-KICK_TABLES.krsb = KICK_TABLES.krs
+KICK_TABLES.drs = KICK_TABLES.krs
 
 export const PIECE_COLORS = {
   srs: {
@@ -4078,10 +3868,10 @@ PIECE_COLORS.ascx = PIECE_COLORS.srs
 PIECE_COLORS.world = PIECE_COLORS.srs
 PIECE_COLORS.arsti = PIECE_COLORS.ars
 PIECE_COLORS.arsx = PIECE_COLORS.ars
-PIECE_COLORS.sega = PIECE_COLORS.ars
+PIECE_COLORS.ace = PIECE_COLORS.srs
+PIECE_COLORS.ace2 = PIECE_COLORS.srs
 PIECE_COLORS.krs = PIECE_COLORS.arsx
-PIECE_COLORS.arsk = PIECE_COLORS.arsx
-PIECE_COLORS.srsk = PIECE_COLORS.srs
+PIECE_COLORS.srsx = PIECE_COLORS.srs
 PIECE_COLORS.dblox = {
 	I: "orange",
     L: "red",
@@ -4100,7 +3890,7 @@ PIECE_COLORS.nblox = {
     J: "purple",
     S: "lightBlue",
 }
-PIECE_COLORS.krsb = PIECE_COLORS.nblox
+PIECE_COLORS.drs = PIECE_COLORS.krs
 
 export const NEXT_OFFSETS = {
   monomino: {
@@ -4141,12 +3931,12 @@ NEXT_OFFSETS.deluxe = NEXT_OFFSETS.retro
 NEXT_OFFSETS.ars = NEXT_OFFSETS.retro
 NEXT_OFFSETS.arsti = NEXT_OFFSETS.ars
 NEXT_OFFSETS.arsx = NEXT_OFFSETS.ars
+NEXT_OFFSETS.ace = NEXT_OFFSETS.ars
+NEXT_OFFSETS.ace2 = NEXT_OFFSETS.ars
 NEXT_OFFSETS.original = NEXT_OFFSETS.retro
-NEXT_OFFSETS.sega = NEXT_OFFSETS.ars
 NEXT_OFFSETS.krs = NEXT_OFFSETS.arsx
-NEXT_OFFSETS.arsk = NEXT_OFFSETS.arsx
-NEXT_OFFSETS.srsk = NEXT_OFFSETS.srs
-NEXT_OFFSETS.krsb = NEXT_OFFSETS.krs
+NEXT_OFFSETS.srsx = NEXT_OFFSETS.srs
+NEXT_OFFSETS.drs = NEXT_OFFSETS.krs
 
 export const PIECE_OFFSETS = {
   asc: {
@@ -4482,8 +4272,9 @@ PIECE_OFFSETS.original = {
 PIECE_OFFSETS.world = PIECE_OFFSETS.srs
 PIECE_OFFSETS.tetrax = PIECE_OFFSETS.srs
 PIECE_OFFSETS.deluxe = PIECE_OFFSETS.srs
+PIECE_OFFSETS.ace = PIECE_OFFSETS.arsx
+PIECE_OFFSETS.ace2 = PIECE_OFFSETS.arsx
 PIECE_OFFSETS.arsti = PIECE_OFFSETS.ars
-PIECE_OFFSETS.sega = PIECE_OFFSETS.ars
 PIECE_OFFSETS.krs = {
   I: PIECE_OFFSETS.tetrax.I,
   L: PIECE_OFFSETS.tetrax.L,
@@ -4493,16 +4284,7 @@ PIECE_OFFSETS.krs = {
   J: PIECE_OFFSETS.tetrax.J,
   S: PIECE_OFFSETS.tetrax.S,
 }
-PIECE_OFFSETS.arsk = {
-  I: PIECE_OFFSETS.arsx.I,
-  L: PIECE_OFFSETS.arsx.L,
-  O: PIECE_OFFSETS.arsx.O,
-  Z: PIECE_OFFSETS.arsx.Z,
-  T: PIECE_OFFSETS.arsx.T,
-  J: PIECE_OFFSETS.arsx.J,
-  S: PIECE_OFFSETS.arsx.S,
-}
-PIECE_OFFSETS.srsk = {
+PIECE_OFFSETS.srsx = {
   I: PIECE_OFFSETS.srs.I,
   L: PIECE_OFFSETS.srs.L,
   O: PIECE_OFFSETS.srs.O,
@@ -4511,7 +4293,7 @@ PIECE_OFFSETS.srsk = {
   J: PIECE_OFFSETS.srs.J,
   S: PIECE_OFFSETS.srs.S,
 }
-PIECE_OFFSETS.krsb = PIECE_OFFSETS.krs
+PIECE_OFFSETS.drs = PIECE_OFFSETS.krs
 
 export const PIECE_BINARIES = {
   L: 0b000,
@@ -4641,20 +4423,6 @@ export const SCORE_TABLES = {
     b2bMultiplier: 1,
     b2bMultiplied: [],
     combo: 5,
-  },
-  sega: {
-    erase1: 100,
-    erase2: 400,
-    erase3: 900,
-    erase4: 2000,
-    softDrop: 1,
-    sonicDrop: 2,
-    hardDrop: 2,
-    updateSoftDropImmediately: false,
-    levelAdditive: 1,
-    levelMultiplied: ["erase1", "erase2", "erase3", "erase4"],
-    b2bMultiplier: 1,
-    b2bMultiplied: [],
   },
   krs: {
     erase1: 100,
@@ -5033,22 +4801,22 @@ export const SPIN_SETS = {
 export const SKIN_SETS = {
   asc: "standard",
   ascx: "standard",
-  srs: "srs",
-  world: "srs",
+  srs: "sega",
+  world: "world",
   tetrax: "standard",
   retro: "standard",
   handheld: "standard",
   deluxe: "standard",
   ars: "ars",
-  arsti: "ars",
-  arsx: "ars",
+  arsti: "arsti",
+  arsx: "arsx",
+  ace: "arsx",
+  ace2: "arsx",
   oshisaure: "standard",
   original: "standard",
-  sega: "standard",
   krs: "standard",
-  arsk: "ars",
-  srsk: "srs",
-  krsb: "standard",
+  srsx: "srsx",
+  drs: "dtet",
 }
 export const SOUND_SETS = {
   asc: "standard",
@@ -5062,11 +4830,11 @@ export const SOUND_SETS = {
   ars: "standard",
   arsti: "standard",
   arsx: "standard",
+  ace: "standard",
+  ace2: "standard",
   oshisaure: "standard",
   original: "standard",
-  sega: "standard",
   krs: "standard",
-  arsk: "standard",
-  srsk: "standard",
-  krsb: "standard",
+  srsx: "standard",
+  drs: "standard",
 }

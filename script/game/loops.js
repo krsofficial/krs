@@ -14,15 +14,10 @@ import { PIECE_COLORS, SOUND_SETS } from "../consts.js"
 import addStaticScore from "./loop-modules/add-static-score.js"
 import arcadeScore from "./loop-modules/arcade-score.js"
 import collapse from "./loop-modules/collapse.js"
-import firmDrop from "./loop-modules/firm-drop.js"
-import tgmSoftDrop from "./loop-modules/tgm-soft-drop.js"
 import krsSoftDrop from "./loop-modules/krs-soft-drop.js"
 import krsHardDrop from "./loop-modules/krs-hard-drop.js"
 import gameHandler from "./game-handler.js"
-import handheldDasAre from "./loop-modules/handheld-das-are.js"
-import hardDrop from "./loop-modules/hard-drop.js"
 import hold from "./loop-modules/hold.js"
-import hyperSoftDrop from "./loop-modules/hyper-soft-drop.js"
 import initialDas from "./loop-modules/initial-das.js"
 import initialHold from "./loop-modules/initial-hold.js"
 import initialRotation from "./loop-modules/initial-rotation.js"
@@ -32,11 +27,6 @@ import respawnPiece from "./loop-modules/respawn-piece.js"
 import rotate from "./loop-modules/rotate.js"
 import rotate180 from "./loop-modules/rotate-180.js"
 import shifting from "./loop-modules/shifting.js"
-import shiftingRetro from "./loop-modules/shifting-retro.js"
-import sonicDrop from "./loop-modules/sonic-drop.js"
-import softDrop from "./loop-modules/soft-drop.js"
-import softDropRetro from "./loop-modules/soft-drop-retro.js"
-import softDropNes from "./loop-modules/soft-drop-nes.js"
 import sound from "../sound.js"
 import updateLasts from "./loop-modules/update-lasts.js"
 import {
@@ -48,8 +38,6 @@ import {
   krsLockdown,
 } from "./loop-modules/lockdown.js"
 import updateFallSpeed from "./loop-modules/update-fallspeed.js"
-import shiftingNes from "./loop-modules/shifting-nes.js"
-import nesDasAre from "./loop-modules/nes-das-are.js"
 import settings from "../settings.js"
 import input from "../input.js"
 import locale from "../lang.js"
@@ -243,7 +231,7 @@ const krsGradingSystem = (
 
 const updateKrsBackgroundV1 = (game) => {
 	let backgroundTable = [
-		"back0",
+		"menu",
 		"back0",
 		"back1",
 		"back2",

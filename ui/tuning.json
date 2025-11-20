@@ -76,27 +76,63 @@
 	  "omitDescription": false,
       "selectOptions": [
         {
-          "label": "KRS-A",
+          "label": "KRS",
           "fixedText": true,
           "value": "krs",
 		  "omitDescription": true
         },
-        {
-          "label": "KRS-B",
+		{
+          "label": "SRS",
           "fixedText": true,
-          "value": "krsb",
+          "value": "srs",
+		  "omitDescription": true
+        },
+		{
+          "label": "ARS-TI",
+          "fixedText": true,
+          "value": "arsti",
+		  "omitDescription": true
+        },
+		{
+          "label": "WORLD-TI",
+          "fixedText": true,
+          "value": "world",
+		  "omitDescription": true
+        },
+		{
+          "label": "ACE-ARS",
+          "fixedText": true,
+          "value": "ace",
+		  "omitDescription": true
+        },
+		{
+          "label": "ACE-ARS2",
+          "fixedText": true,
+          "value": "ace2",
 		  "omitDescription": true
         },
 		{
           "label": "ARS-X",
           "fixedText": true,
-          "value": "arsk",
+          "value": "arsx",
+		  "omitDescription": true
+        },
+		{
+          "label": "DRS",
+          "fixedText": true,
+          "value": "drs",
 		  "omitDescription": true
         },
 		{
           "label": "SRS-X",
           "fixedText": true,
-          "value": "srsk",
+          "value": "srsx",
+		  "omitDescription": true
+        },
+		{
+          "label": "HEBORIS",
+          "fixedText": true,
+          "value": "ars",
 		  "omitDescription": true
         }
       ],

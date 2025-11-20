@@ -83,16 +83,31 @@ export function extendedLockdown(arg) {
 export function krsLockdown(arg) {
   const piece = arg.piece
   piece.lockdownType = "classic"
-  if (piece.isDead) {
+  if (piece.isDead || piece.isFrozen) {
     $("#lockdown").value = 0
-    return
+    if (piece.isDead) {
+      return
+    }
   }
-  piece.manipulations = 0
-  fallReset(piece, false)
+  fallReset(piece, true)
   tryLockdown(piece, arg)
   stepReset(piece, arg)
+
+  if (piece.manipulations >= piece.manipulationLimit) {
+    piece.lockDelay = piece.lockDelayLimit
+  }
   updateLockdownBar(piece)
   setLowestY(piece)
+  for (let i = 1; i <= piece.manipulationLimit; i++) {
+    $(`#pip-${i}`).classList.remove("disabled")
+  }
+  for (
+    let i = 1;
+    i <= Math.min(piece.manipulations, piece.manipulationLimit);
+    i++
+  ) {
+    $(`#pip-${i}`).classList.add("disabled")
+  }
 }
 export function classicLockdown(arg) {
   const piece = arg.piece
