@@ -150,6 +150,8 @@ export default class Game {
 	this.initialMedals = this.stat.medals
 	this.showMedals = false
 	this.onCustomDelay = false
+	this.bufferAre = null
+	this.bufferAreLine = null
     loadGameType(gametype)
       .then((gameData) => {
         gtag("event", "play", {
@@ -264,10 +266,18 @@ export default class Game {
 
         this.loop = loops[gametype].update
         this.onPieceSpawn = loops[gametype].onPieceSpawn
+		this.bufferAre = null
+		this.bufferAreLine = null
         for (const element of ["piece", "stack", "next", "hold"]) {
           if (gameData[element] != null) {
             for (const property of Object.keys(gameData[element])) {
               this[element][property] = gameData[element][property]
+			  if (element === "piece" && property === "areLimit") {
+				  this.bufferAre = gameData[element][property]
+			  }
+			  if (element === "piece" && property === "areLineLimit") {
+				  this.bufferAreLine = gameData[element][property]
+			  }
             }
           }
         }
@@ -1105,19 +1115,26 @@ export default class Game {
               hold: game.hold,
               particle: game.particle,
             })
-			if (
-			game.rotationSystem === "drs" && 
-			(
-			input.getGameDown("specialKey") ||
-			input.getGameDown("moveLeft") ||
-			input.getGameDown("moveRight") ||
-			input.getGameDown("rotateLeft") ||
-			input.getGameDown("rotate180") ||
-			input.getGameDown("hold")
-			)
-			) {
-				game.piece.areLimit = 0
-				game.piece.areLineLimit = 0
+			if (game.rotationSystem === "drs") {
+				if (
+				input.getGameDown("specialKey") ||
+				input.getGameDown("moveLeft") ||
+				input.getGameDown("moveRight") ||
+				input.getGameDown("rotateLeft") ||
+				input.getGameDown("rotate180") ||
+				input.getGameDown("hold")
+				) {
+					game.piece.areLimit = 0
+					game.piece.areLineLimit = 0
+					settings.settings.stillShowFullActionTextDespiteZeroLineClearAre = true
+				} else {
+					if (this.bufferAre !== null) {
+						game.piece.areLimit = this.bufferAre
+					}
+					if (this.bufferAreLine !== null) {
+						game.piece.areLineLimit = this.bufferAreLine
+					}
+				}
 			}
 			if (game.rotationSystem === "ds") {
 				game.piece.areLimit = 0
