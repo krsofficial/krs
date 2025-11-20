@@ -71,14 +71,20 @@ let grades = [
 	locale.getString("grades", "king"),
 	locale.getString("grades", "queen"),
 ]
-const updateTestMode = () => {
-	if (input.getGamePress("testModeKey")) {
-		if (testMode !== false) {
-			testMode = false
-		} else {
-			testMode = true
-		}
+const cancelAre = () => {
+	if (input.getGamePress("moveLeft")) {
+		return true
 	}
+	if (input.getGamePress("moveRight")) {
+		return true
+	}
+	if (input.getGameHold("moveLeft")) {
+		return true
+	}
+	if (input.getGameHold("moveRight")) {
+		return true
+	}
+	return false
 }
 const updateGraphics = () => {
 	const game = gameHandler.game
@@ -164,6 +170,25 @@ const updateLockDelay = (game, lockDelay) => {
 		game.piece.lockDelayLimit = Math.ceil(framesToMs(lockDelay))
 	} else {
 		game.piece.lockDelayLimit = Math.ceil(framesToMs(60))
+	}
+}
+const updateAre = (game, entry) => {
+	if (
+	(settings.settings.rotationSystem === "drs" && cancelAre()) || 
+	settings.settings.rotationSystem === "ds"
+	) {
+		game.piece.areLimit = 0
+	} else {
+		game.piece.areLimit = entry
+	}
+}
+const updateLineAre = (game, entry) => {
+	if (
+	settings.settings.rotationSystem === "drs" && cancelAre()
+	) {
+		game.piece.areLineLimit = 0
+	} else {
+		game.piece.areLineLimit = entry
 	}
 }
 const resetTimeLimit = (game) => {
