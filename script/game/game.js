@@ -1128,11 +1128,11 @@ export default class Game {
 					game.piece.areLineLimit = 0
 					settings.settings.stillShowFullActionTextDespiteZeroLineClearAre = true
 				} else {
-					if (this.bufferAre !== null) {
-						game.piece.areLimit = this.bufferAre
+					if (game.bufferAre !== null) {
+						game.piece.areLimit = game.bufferAre
 					}
-					if (this.bufferAreLine !== null) {
-						game.piece.areLineLimit = this.bufferAreLine
+					if (game.bufferAreLine !== null) {
+						game.piece.areLineLimit = game.bufferAreLine
 					}
 				}
 			}
