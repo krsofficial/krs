@@ -1114,11 +1114,11 @@ export default class Game {
 			input.getGameDown("hold")
 			)
 			) {
-				game.areLimit = 0
-				game.areLineLimit = 0
+				game.piece.areLimit = 0
+				game.piece.areLineLimit = 0
 			}
 			if (game.rotationSystem === "ds") {
-				game.areLimit = 0
+				game.piece.areLimit = 0
 			}
           }
           game.particle.update(msPassed)
