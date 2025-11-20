@@ -1103,7 +1103,8 @@ export default class Game {
               hold: game.hold,
               particle: game.particle,
             })
-			if (game.rotationSystem === "drs" && 
+			if (
+			game.rotationSystem === "drs" && 
 			(
 			input.getGameDown("specialKey") ||
 			input.getGameDown("moveLeft") ||
