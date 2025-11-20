@@ -1103,6 +1103,13 @@ export default class Game {
               hold: game.hold,
               particle: game.particle,
             })
+			if (game.rotationSystem === "drs") {
+				game.areLimit = 0
+				game.areLineLimit = 0
+			}
+			if (game.rotationSystem === "ds") {
+				game.areLimit = 0
+			}
           }
           game.particle.update(msPassed)
           game.updateMatrix(msPassed)
