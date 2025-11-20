@@ -81,21 +81,6 @@ const updateTestMode = () => {
 		}
 	}
 }
-const cancelAre = () => {
-	if (input.getGamePress("moveLeft")) {
-		return true
-	}
-	if (input.getGamePress("moveRight")) {
-		return true
-	}
-	if (input.getGameHold("moveLeft")) {
-		return true
-	}
-	if (input.getGameHold("moveRight")) {
-		return true
-	}
-	return false
-}
 const updateGraphics = () => {
 	const game = gameHandler.game
 	if (
@@ -184,7 +169,7 @@ const updateLockDelay = (game, lockDelay) => {
 }
 const updateAre = (game, entry) => {
 	if (
-	(settings.settings.rotationSystem === "drs" && cancelAre()) || 
+	settings.settings.rotationSystem === "drs" || 
 	settings.settings.rotationSystem === "ds"
 	) {
 		game.piece.areLimit = 0
@@ -194,7 +179,7 @@ const updateAre = (game, entry) => {
 }
 const updateLineAre = (game, entry) => {
 	if (
-	settings.settings.rotationSystem === "drs" && cancelAre()
+	settings.settings.rotationSystem === "drs"
 	) {
 		game.piece.areLineLimit = 0
 	} else {
