@@ -71,6 +71,16 @@ let grades = [
 	locale.getString("grades", "king"),
 	locale.getString("grades", "queen"),
 ]
+
+const updateTestMode = () => {
+	if (input.getGamePress("testModeKey")) {
+		if (testMode !== false) {
+			testMode = false
+		} else {
+			testMode = true
+		}
+	}
+}
 const cancelAre = () => {
 	if (input.getGamePress("moveLeft")) {
 		return true

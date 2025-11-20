@@ -3558,7 +3558,13 @@ KICK_TEMPLATES.krs = {
   T: KICK_TEMPLATES.tetrax.x,
   O: KICK_TEMPLATES.tetrax.x,
 }
-KICK_TEMPLATES.drs = KICK_TEMPLATES.krs
+KICK_TEMPLATES.drs = {
+  x: KICK_TEMPLATES.tetrax.x,  
+  I: KICK_TEMPLATES.tetrax.I,
+  LJ: KICK_TEMPLATES.asc.x,
+  T: KICK_TEMPLATES.asc.x,
+  O: KICK_TEMPLATES.tetrax.x,
+}
 
 export const KICK_TABLES = {
   asc: {
@@ -3769,7 +3775,15 @@ KICK_TABLES.srsx = {
   J: KICK_TABLES.srs.J,
   S: KICK_TABLES.srs.S,
 }
-KICK_TABLES.drs = KICK_TABLES.krs
+KICK_TABLES.drs = {
+  I: KICK_TEMPLATES.drs.I,
+  L: KICK_TEMPLATES.drs.LJ,
+  O: KICK_TEMPLATES.drs.O,
+  Z: KICK_TEMPLATES.drs.x,
+  T: KICK_TEMPLATES.drs.T,
+  J: KICK_TEMPLATES.drs.LJ,
+  S: KICK_TEMPLATES.drs.x,
+}
 
 export const PIECE_COLORS = {
   srs: {
