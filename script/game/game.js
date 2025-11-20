@@ -33,6 +33,7 @@ export default class Game {
     this.nextSubCanvas = $("#next-sub")
     this.holdCanvas = $("#hold")
     this.particleCanvas = $("#particle")
+	this.animateCanvas = document.getElementById("animate")
     this.bufferPeek = 0.25
     this.loop
     this.now
@@ -695,10 +696,11 @@ export default class Game {
       "nextSubCanvas",
       "holdCanvas",
       "particleCanvas",
+	  "animateCanvas",
     ]) {
       if
 	  ( 
-		(element === "pieceCanvas" || element === "stackCanvas" || element === "particleCanvas")
+		(element === "pieceCanvas" || element === "stackCanvas" || element === "particleCanvas" || element === "animateCanvas")
 		&&
 		(game.settings.height <= 10 && game.settings.width <= 5)
 	  )

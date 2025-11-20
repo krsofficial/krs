@@ -2024,8 +2024,8 @@ export default class Stack extends GameModule {
     const ctx = this.ctx
 	/*let flashCtx = this.parent.piece.ctx
 	let lineClearCtx = this.parent.piece.ctx*/
-	let flashCtx = toCtx(document.getElementById("animate"))
-	let lineClearCtx = toCtx(document.getElementById("animate"))
+	let flashCtx = toCtx(this.parent.animateCanvas)
+	let lineClearCtx = toCtx(this.parent.animateCanvas)
     const flash = (
       "0" +
       Math.floor((1 - this.flashTime / this.flashLimit) * 255).toString(16)
