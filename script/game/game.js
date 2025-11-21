@@ -150,8 +150,6 @@ export default class Game {
 	this.initialMedals = this.stat.medals
 	this.showMedals = false
 	this.onCustomDelay = false
-	this.bufferAre = null
-	this.bufferAreLine = null
     loadGameType(gametype)
       .then((gameData) => {
         gtag("event", "play", {
@@ -266,18 +264,10 @@ export default class Game {
 
         this.loop = loops[gametype].update
         this.onPieceSpawn = loops[gametype].onPieceSpawn
-		this.bufferAre = null
-		this.bufferAreLine = null
         for (const element of ["piece", "stack", "next", "hold"]) {
           if (gameData[element] != null) {
             for (const property of Object.keys(gameData[element])) {
               this[element][property] = gameData[element][property]
-			  if (element === "piece" && property === "areLimit") {
-				  this.bufferAre = gameData[element][property]
-			  }
-			  if (element === "piece" && property === "areLineLimit") {
-				  this.bufferAreLine = gameData[element][property]
-			  }
             }
           }
         }
@@ -1127,13 +1117,6 @@ export default class Game {
 					game.piece.areLimit = 0
 					game.piece.areLineLimit = 0
 					settings.settings.stillShowFullActionTextDespiteZeroLineClearAre = true
-				} else {
-					if (game.bufferAre !== null) {
-						game.piece.areLimit = game.bufferAre
-					}
-					if (game.bufferAreLine !== null) {
-						game.piece.areLineLimit = game.bufferAreLine
-					}
 				}
 			}
 			if (game.rotationSystem === "ds") {
