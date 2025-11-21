@@ -3561,8 +3561,8 @@ KICK_TEMPLATES.krs = {
 KICK_TEMPLATES.drs = {
   x: KICK_TEMPLATES.tetrax.x,  
   I: KICK_TEMPLATES.tetrax.I,
-  LJ: KICK_TEMPLATES.asc.x,
-  T: KICK_TEMPLATES.asc.x,
+  LJ: KICK_TEMPLATES.tetrax.x,
+  T: KICK_TEMPLATES.tetrax.x,
   O: KICK_TEMPLATES.tetrax.x,
 }
 
