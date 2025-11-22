@@ -4,12 +4,75 @@
   },
   "data": [
 	{
-      "label": "文/A",
-      "fixedText": true,
-      "description": "",
-      "action": "submenu",
-      "submenu": "languages"
+      "string": "ruleSetOverline",
+      "type": "overline"
     },
+	{
+      "label":"",
+	  "description": "dynamic(rotationSystem)",
+	  "fixedText": true,
+      "type": "select",
+      "action": "select",
+	  "omitDescription": false,
+      "selectOptions": [
+        {
+          "label": "KRS",
+          "fixedText": true,
+          "value": "krs",
+		  "omitDescription": true
+        },
+		{
+          "label": "SRS",
+          "fixedText": true,
+          "value": "srs",
+		  "omitDescription": true
+        },
+		{
+          "label": "ARS",
+          "fixedText": true,
+          "value": "ars",
+		  "omitDescription": true
+        },
+		{
+          "label": "ARS-TI",
+          "fixedText": true,
+          "value": "arsti",
+		  "omitDescription": true
+        },
+		{
+          "label": "WORLD-TI",
+          "fixedText": true,
+          "value": "world",
+		  "omitDescription": true
+        },
+		{
+          "label": "SRS-DS",
+          "fixedText": true,
+          "value": "ds",
+		  "omitDescription": true
+        },
+		{
+          "label": "DRS",
+          "fixedText": true,
+          "value": "drs",
+		  "omitDescription": true
+        },
+		{
+          "label": "SRS-X",
+          "fixedText": true,
+          "value": "srsx",
+		  "omitDescription": true
+        },
+		{
+          "label": "ARS-X",
+          "fixedText": true,
+          "value": "arsx",
+		  "omitDescription": true
+        }
+      ],
+      "setting": "rotationSystem",
+      "settingType": "setting"
+    }
     {
       "string": "gameModesOverline",
       "type": "overline"
@@ -83,6 +146,13 @@
       "stringDesc": "settingsDescription",
       "action": "submenu",
       "submenu": "settings"
+    },
+	{
+      "label": "文/A",
+      "fixedText": true,
+      "description": "",
+      "action": "submenu",
+      "submenu": "languages"
     }
   ]
 }

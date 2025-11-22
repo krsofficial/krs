@@ -1,0 +1,29 @@
+{
+  "krs": {
+    "message": "This is the default rotation system used in this game. Uses Sonic Drop and Fast Drop."
+  },
+  "srs": {
+    "message": "This rotation system is used in most games. You are likely familiar with this one. Uses Hard Drop and Soft Drop."
+  },
+  "srsx": {
+    "message": "Similar to SRS, but Zangi-moves are possible. Uses Sonic Drop and Fast Drop."
+  },
+  "ars": {
+    "message": "This rotation system is strict but easy to understand. Pieces cannot floor kick. Uses Sonic Drop and Fast Drop."
+  },
+  "arsti": {
+    "message": "Similar to ARS, but with modified T and I kicks. Uses Sonic Drop and Fast Drop."
+  },
+  "arsx": {
+    "message": "Similar to ARS-TI, but with less limitations. Uses Sonic Drop and Fast Drop."
+  },
+  "world": {
+    "message": "Similar to SRS, but with modified I kicks. Uses Hard Drop and Soft Drop."
+  },
+  "ds": {
+    "message": "Similar to SRS, but piece ARE is gone, making it beneficial on low gravity but detrimental on high gravity. Uses Hard Drop and Soft Drop."
+  },
+  "drs": {
+    "message": "This rotation system is where KRS originates from. Piece ARE and Line ARE can be canceled using DAS, making it beneficial on low gravity but detrimental on high gravity. Uses Hard Drop and Soft Drop."
+  }
+}

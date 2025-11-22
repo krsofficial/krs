@@ -1088,6 +1088,7 @@ SPAWN_OFFSETS.ace2 = SPAWN_OFFSETS.ars
 SPAWN_OFFSETS.original = SPAWN_OFFSETS.retro
 SPAWN_OFFSETS.krs = SPAWN_OFFSETS.arsx
 SPAWN_OFFSETS.srsx = { ...SPAWN_OFFSETS.srs, downShift: 2, I: [2, -4] }
+SPAWN_OFFSETS.ds = { ...SPAWN_OFFSETS.srs, downShift: 2, I: [2, -4] }
 SPAWN_OFFSETS.drs = SPAWN_OFFSETS.krs
 
 export const INITIAL_ORIENTATION = {
@@ -1125,6 +1126,7 @@ INITIAL_ORIENTATION.ace = INITIAL_ORIENTATION.ars
 INITIAL_ORIENTATION.ace2 = INITIAL_ORIENTATION.ars
 INITIAL_ORIENTATION.krs = INITIAL_ORIENTATION.arsx
 INITIAL_ORIENTATION.srsx = INITIAL_ORIENTATION.srs
+INITIAL_ORIENTATION.ds = INITIAL_ORIENTATION.srs
 INITIAL_ORIENTATION.drs = INITIAL_ORIENTATION.krs
 
 const KICK_TEMPLATES = {
@@ -3766,15 +3768,8 @@ KICK_TABLES.krs = {
   J: KICK_TEMPLATES.krs.LJ,
   S: KICK_TEMPLATES.krs.x,
 }
-KICK_TABLES.srsx = {
-  I: KICK_TABLES.srs.I,
-  L: KICK_TABLES.srs.L,
-  O: KICK_TABLES.srs.O,
-  Z: KICK_TABLES.srs.Z,
-  T: KICK_TABLES.srs.T,
-  J: KICK_TABLES.srs.J,
-  S: KICK_TABLES.srs.S,
-}
+KICK_TABLES.srsx = KICK_TABLES.srs
+KICK_TABLES.ds = KICK_TABLES.srs
 KICK_TABLES.drs = {
   I: KICK_TEMPLATES.drs.I,
   L: KICK_TEMPLATES.drs.LJ,
@@ -3886,6 +3881,7 @@ PIECE_COLORS.ace = PIECE_COLORS.srs
 PIECE_COLORS.ace2 = PIECE_COLORS.srs
 PIECE_COLORS.krs = PIECE_COLORS.arsx
 PIECE_COLORS.srsx = PIECE_COLORS.srs
+PIECE_COLORS.ds = PIECE_COLORS.srs
 PIECE_COLORS.dblox = {
 	I: "orange",
     L: "red",
@@ -3950,6 +3946,7 @@ NEXT_OFFSETS.ace2 = NEXT_OFFSETS.ars
 NEXT_OFFSETS.original = NEXT_OFFSETS.retro
 NEXT_OFFSETS.krs = NEXT_OFFSETS.arsx
 NEXT_OFFSETS.srsx = NEXT_OFFSETS.srs
+NEXT_OFFSETS.ds = NEXT_OFFSETS.srs
 NEXT_OFFSETS.drs = NEXT_OFFSETS.krs
 
 export const PIECE_OFFSETS = {
@@ -4298,16 +4295,17 @@ PIECE_OFFSETS.krs = {
   J: PIECE_OFFSETS.tetrax.J,
   S: PIECE_OFFSETS.tetrax.S,
 }
-PIECE_OFFSETS.srsx = {
-  I: PIECE_OFFSETS.srs.I,
-  L: PIECE_OFFSETS.srs.L,
-  O: PIECE_OFFSETS.srs.O,
-  Z: PIECE_OFFSETS.srs.Z,
-  T: PIECE_OFFSETS.srs.T,
-  J: PIECE_OFFSETS.srs.J,
-  S: PIECE_OFFSETS.srs.S,
+PIECE_OFFSETS.srsx = PIECE_OFFSETS.srs
+PIECE_OFFSETS.ds = PIECE_OFFSETS.srs
+PIECE_OFFSETS.drs = {
+  I: PIECE_OFFSETS.tetrax.I,
+  L: PIECE_OFFSETS.tetrax.L,
+  O: PIECE_OFFSETS.tetrax.O,
+  Z: PIECE_OFFSETS.tetrax.Z,
+  T: PIECE_OFFSETS.tetrax.T,
+  J: PIECE_OFFSETS.tetrax.J,
+  S: PIECE_OFFSETS.tetrax.S,
 }
-PIECE_OFFSETS.drs = PIECE_OFFSETS.krs
 
 export const PIECE_BINARIES = {
   L: 0b000,
@@ -4830,6 +4828,7 @@ export const SKIN_SETS = {
   original: "standard",
   krs: "standard",
   srsx: "srsx",
+  ds: "ds",
   drs: "dtet",
 }
 export const SOUND_SETS = {
@@ -4850,5 +4849,6 @@ export const SOUND_SETS = {
   original: "standard",
   krs: "standard",
   srsx: "standard",
+  ds: "standard",
   drs: "standard",
 }

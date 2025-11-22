@@ -1551,15 +1551,15 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #fff;
+  background: #fff4;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #fff;
+  background: #A4F7B588;
 }
 
 ::-webkit-scrollbar-thumb:active {
-  background: #fff;
+  background: #fff4;
 }
 
 ::-webkit-scrollbar-track {

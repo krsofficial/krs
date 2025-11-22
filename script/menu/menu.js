@@ -136,36 +136,7 @@ class Menu {
       })
   }
   updateBackground() {
-	let backgroundTable = [
-		"backmenu",
-		"back0",
-		"back1",
-		"back2",
-		"back3",
-		"back4",
-		"back5",
-		"back6",
-		"back7",
-		"back8",
-		"back9",
-		"back10",
-		"back11",
-		"back12",
-		"back13",
-		"back14",
-		"back15",
-		"back16",
-		"back17",
-		"back18",
-		"back19",
-	]
-	for (const name of backgroundTable) {
-		if (name === backgroundTable[0]) {
-			document.getElementById(name).style.opacity = 1
-		} else {
-			document.getElementById(name).style.opacity = 0
-		}
-	}
+	document.getElementById("backmenu").style.opacity = 1
   }
   close() {
     this.isLocked = true
@@ -717,7 +688,12 @@ class Menu {
             this.current.lang,
             this.current.data[number].stringDesc
           )
-        } else {
+        } else if (this.current.data[number].description === "dynamic(rotationSystem)") {
+		  $("#description").innerHTML = locale.getString(
+            this.current.lang,
+            settings.settings.rotationSystem
+          )
+		} else {
           $("#description").innerHTML = this.current.data[number].description
         }
       }

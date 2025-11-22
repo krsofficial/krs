@@ -65,7 +65,7 @@
     "description": "Miscellaneous, other"
   },
   "settingsLabel": {
-    "message": "Settings"
+    "message": "Configuration"
   },
   "settingsDescription": {
     "message": "Import and export your settings here"

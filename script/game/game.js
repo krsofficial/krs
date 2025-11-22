@@ -397,10 +397,12 @@ export default class Game {
   hide() {
     if (this.type === "nontwo") this.die()
     $("#game-container").classList.add("hidden")
+	document.getElementById("backmenu").style.opacity = 1
     this.isVisible = false
   }
   show() {
     $("#game-container").classList.remove("hidden")
+	document.getElementById("backmenu").style.opacity = 0
     this.isVisible = true
   }
   resetBeatStuff() {

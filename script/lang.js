@@ -25,6 +25,7 @@ class Locale {
       "mode-options",
 	  "effects",
 	  "grades",
+	  "rotation-systems",
     ]
     this.test = new Promise(function (resolve, reject) {
       resolve("test")
