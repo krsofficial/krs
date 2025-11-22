@@ -76,6 +76,9 @@
   "settingsDescription": {
     "message": "設定のインポートとエクスポートはこちらで行ってください"
   },
+  "rotationSystemOverline": {
+    "message": "ローテーションシステム"
+  },
   "normalLabel": {
     "message": "NORMAL"
   },
