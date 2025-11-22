@@ -354,7 +354,7 @@ class Menu {
           label.textContent = locale.getString(this.current.lang, currentData.string)
         } else if (currentData.description === "dynamic(rotationSystem)") {
 		  $("#description").innerHTML = locale.getString(
-            this.current.lang,
+            "rotation-system",
             settings.settings.rotationSystem
           )
 		} else {
@@ -506,7 +506,7 @@ class Menu {
             )
           } else if (currentData.description === "dynamic(rotationSystem)") {
 		  $("#description").innerHTML = locale.getString(
-            this.current.lang,
+            "rotation-system",
             settings.settings.rotationSystem
           )
 		  } else {
@@ -700,7 +700,7 @@ class Menu {
           )
 		} else if (this.current.data[number].description === "dynamic(rotationSystem)") {
 		  $("#description").innerHTML = locale.getString(
-            this.current.lang,
+            "rotation-system",
             settings.settings.rotationSystem
           )
 		} else {
