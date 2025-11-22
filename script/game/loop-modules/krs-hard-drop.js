@@ -14,6 +14,9 @@ const useWorldControls = () => {
   if (settings.settings.rotationSystem === "drs") {
 	result = true
   }
+  if (settings.settings.rotationSystem === "ds") {
+	result = true
+  }
   if (settings.settings.rotationSystem === "ace") {
 	result = true
   }
