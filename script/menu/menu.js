@@ -352,7 +352,7 @@ class Menu {
         }
         if (!currentData.fixedText) {
           label.textContent = locale.getString(this.current.lang, currentData.string)
-        } else if (this.current.data[number].description === "dynamic(rotationSystem)") {
+        } else if (currentData.description === "dynamic(rotationSystem)") {
 		  $("#description").innerHTML = locale.getString(
             this.current.lang,
             settings.settings.rotationSystem
@@ -504,12 +504,12 @@ class Menu {
               this.current.lang,
               currentData.stringDesc
             )
-          } else if (this.current.data[number].description === "dynamic(rotationSystem)") {
+          } else if (currentData.description === "dynamic(rotationSystem)") {
 		  $("#description").innerHTML = locale.getString(
             this.current.lang,
             settings.settings.rotationSystem
           )
-		} else {
+		  } else {
             $("#description").innerHTML = currentData.description
           }
         } else {
@@ -697,11 +697,6 @@ class Menu {
           $("#description").innerHTML = locale.getString(
             this.current.lang,
             this.current.data[number].stringDesc
-          )
-        } else if (this.current.data[number].description === "dynamic(rotationSystem)") {
-		  $("#description").innerHTML = locale.getString(
-            this.current.lang,
-            settings.settings.rotationSystem
           )
 		} else if (this.current.data[number].description === "dynamic(rotationSystem)") {
 		  $("#description").innerHTML = locale.getString(
