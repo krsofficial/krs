@@ -72,7 +72,7 @@
       ],
       "setting": "rotationSystem",
       "settingType": "setting"
-    }
+    },
     {
       "string": "gameModesOverline",
       "type": "overline"
