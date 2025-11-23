@@ -766,6 +766,12 @@ class Menu {
     }
     if (this.selectedData.type === "select") {
       $("#menu > .select-container.selected .arrow-right").onclick()
+	  if (this.selectedData.description === "dynamic(rotationSystem)") {
+		$("#description").innerHTML = locale.getString(
+			"rotation-systems",
+			settings.settings.rotationSystem
+        )  
+	  }
       return
     }
     this.select(negativeMod(this.selected + 1, this.length))
@@ -799,6 +805,12 @@ class Menu {
     }
     if (this.selectedData.type === "select") {
       $("#menu > .select-container.selected .arrow-left").onclick()
+	  if (this.selectedData.description === "dynamic(rotationSystem)") {
+		$("#description").innerHTML = locale.getString(
+			"rotation-systems",
+			settings.settings.rotationSystem
+        )  
+	  }
       return
     }
     this.select(negativeMod(this.selected - 1, this.length))
