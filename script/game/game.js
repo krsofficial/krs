@@ -177,6 +177,7 @@ export default class Game {
         $("#next-piece").classList.remove("immediate-death")
 		document.getElementById(`piece`).classList.remove("victory")
 		document.getElementById(`piece`).classList.remove("loss")
+		document.getElementById(`animate`).classList.remove("hideanims")
 
         this.resetBeatStuff()
 
@@ -533,10 +534,12 @@ export default class Game {
     sound.killBgm()
     sound.killAllLoops()
     if (victory) {
+		document.getElementById(`animate`).classList.add("hideanims")
 		$("#game").classList.add("victory")
 		$(".stack-canvas").classList.add("victory")
 		document.getElementById(`piece`).classList.add("victory")
 	} else {
+		document.getElementById(`animate`).classList.add("hideanims")
 		$("#game").classList.add("loss")
 		$(".stack-canvas").classList.add("loss")
 		document.getElementById(`piece`).classList.add("loss")

@@ -1925,6 +1925,10 @@ body {
   animation-timing-function: ease-in-out;
 }
 
+.game-canvas.hideanims {
+  opacity: 0;
+}
+
 .game-canvas.loss {
   opacity: 1;
   filter: grayscale(0%) brightness(1) blur(0em);
