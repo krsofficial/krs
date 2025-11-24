@@ -123,10 +123,12 @@ export default class Stack extends GameModule {
         if (this.grid[x][y] != null) {
 			if (this.parent.effectsRoster.includes(this.grid[x][y]) === true || this.grid[x][y] === "gold") {
 				this.grid[x][y] = "goldgem"
+			} else if (this.grid[x][y] === "silver") {
+				this.grid[x][y] = "silvergem"
 			} else if (this.grid[x][y] === "frozen") {
 				this.grid[x][y] = "icegem"
 			} else if (this.grid[x][y].includes("bonus")) {
-				this.grid[x][y] = `${color.replace("bonus", "")}gem`
+				this.grid[x][y] = `${this.grid[x][y].replace("bonus", "")}gem`
 			} else if (this.grid[x][y] === color) {
 				this.grid[x][y] = `${color}gem`
 			}
@@ -866,7 +868,6 @@ export default class Stack extends GameModule {
 		let underwaterEffectsRoster = [
 			"rotateLock",
 			"holdLock",
-			"deathBlock",
 			"hideNext",
 			"fadingBlock",
 			"xRay",
@@ -885,11 +886,10 @@ export default class Stack extends GameModule {
 			}
 			while (
 					(
-						this.parent.pendingEffect === "rotateLock" || 
-						this.parent.pendingEffect === "deathBlock"
+						this.parent.pendingEffect === "rotateLock"
 					) && reRollsLeft >= 1
 				) {
-				//Re-rolls if it lands on rotateLock or on deathBlock to reduce the chances of getting it.
+				//Re-rolls if it lands on rotateLock to reduce the chances of getting it.
 				this.parent.pendingEffect = underwaterEffectsRoster[Math.max(
 					0,
 					Math.floor(Math.random() * underwaterEffectsRoster.length) - 1
@@ -915,7 +915,6 @@ export default class Stack extends GameModule {
 			"delFieldUp",
 			"delFieldDown",
 			"jewelBlock",
-			"deathBlock",
 		]
 		if (frozenEffectsRoster.includes(this.parent.pendingEffect) !== true) {
 			this.parent.pendingEffect = frozenEffectsRoster[Math.max(
@@ -938,7 +937,6 @@ export default class Stack extends GameModule {
 		if (this.isUnderwater) {
 			effectsRoster = [
 				"holdLock",
-				"deathBlock",
 				"hideNext",
 				"fadingBlock",
 				"xRay",
@@ -1612,12 +1610,6 @@ export default class Stack extends GameModule {
 		} else {
 			this.mirrorGrid()
 		}
-	}
-	if (this.parent.currentEffect === "deathBlock") {
-		$("#kill-message").textContent = locale.getString("ui", "topOut")
-        sound.killVox()
-        sound.add("voxtopout")
-        this.parent.end()
 	}
 	if (this.parent.currentEffect === "" && this.parent.useEffectBlocks) {
 		this.displayedEffectText = false

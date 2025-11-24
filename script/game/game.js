@@ -142,7 +142,6 @@ export default class Game {
 		"phantomBlock",
 		"delFieldUp",
 		"delFieldDown",
-		"deathBlock",
 		"xRay",
 	]
 	this.lastMedals = this.stat.medals
@@ -1272,7 +1271,7 @@ export default class Game {
 	  "phantomBlock",
 	  "delFieldUp",
 	  "delFieldDown",
-	  "deathBlock",
+	  "jewelBlock",
 	  "xRay",
     ],
     types = ["mino", "ghost"],
