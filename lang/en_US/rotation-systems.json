@@ -24,6 +24,6 @@
     "message": "Similar to SRS, but piece ARE is gone, making it harder on high gravity. Uses Hard Drop and Soft Drop."
   },
   "drs": {
-    "message": "This rotation system is where KRS originates from. Piece ARE and Line ARE can be cancelled using DAS, making it harder on high gravity. Uses Hard Drop and Soft Drop."
+    "message": "The rotation system KRS is based on. Both piece ARE and line ARE can be cancelled using DAS. Uses Hard Drop and Soft Drop."
   }
 }
