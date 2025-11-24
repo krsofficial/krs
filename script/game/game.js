@@ -142,7 +142,6 @@ export default class Game {
 		"phantomBlock",
 		"delFieldUp",
 		"delFieldDown",
-		"jewelBlock",
 		"deathBlock",
 		"xRay",
 	]
@@ -1273,7 +1272,6 @@ export default class Game {
 	  "phantomBlock",
 	  "delFieldUp",
 	  "delFieldDown",
-	  "jewelBlock",
 	  "deathBlock",
 	  "xRay",
     ],
