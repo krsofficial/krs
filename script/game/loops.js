@@ -449,6 +449,7 @@ export const loops = {
 		[10, 30],
 		[11, 30],
 		[12, 30],
+		[999, 30],
       ]
 	  const areLineModifierTable = [
         [10, -4],
@@ -468,6 +469,7 @@ export const loops = {
 		[10, 30],
 		[11, 30],
 		[12, 30],
+		[999, 30],
       ]
 	  const lockDelayTable = [
 		[10, 30],
@@ -709,6 +711,7 @@ export const loops = {
 		[18, 10],
 		[19, 8],
 		[20, 8],
+		[999, 8],
       ]
 	  const areLineModifierTable = [
         [10, -4],
@@ -728,6 +731,7 @@ export const loops = {
 		[18, 10],
 		[19, 8],
 		[20, 8],
+		[999, 8],
       ]
 	  const lockDelayTable = [
 		[10, 30],
@@ -950,6 +954,7 @@ export const loops = {
 		[13, 8],
 		[16, 6],
 		[21, 6],
+		[999, 6],
       ]
 	  const areLineModifierTable = [
         [10, -4],
@@ -970,6 +975,7 @@ export const loops = {
 		[13, 8],
 		[16, 6],
 		[21, 6],
+		[999, 6],
       ]
 	  const lockDelayTable = [
 		[1, 30],
@@ -1182,6 +1188,7 @@ export const loops = {
 		[10, 30],
 		[11, 30],
 		[12, 30],
+		[999, 30],
       ]
 	  const areLineModifierTable = [
         [10, -4],
@@ -1201,6 +1208,7 @@ export const loops = {
 		[10, 30],
 		[11, 30],
 		[12, 30],
+		[999, 30],
       ]
 	  const lockDelayTable = [
 		[10, 30],
@@ -1442,6 +1450,7 @@ export const loops = {
 		[18, 10],
 		[19, 8],
 		[20, 8],
+		[999, 8],
       ]
 	  const areLineModifierTable = [
         [10, -4],
@@ -1461,6 +1470,7 @@ export const loops = {
 		[18, 10],
 		[19, 8],
 		[20, 8],
+		[999, 8],
       ]
 	  const lockDelayTable = [
 		[10, 30],
@@ -1684,6 +1694,7 @@ export const loops = {
 		[11, 6],
 		[16, 6],
 		[21, 6],
+		[999, 6],
       ]
 	  const areLineModifierTable = [
         [10, -4],
@@ -1699,6 +1710,7 @@ export const loops = {
 		[11, 6],
 		[16, 6],
 		[21, 6],
+		[999, 6],
       ]
 	  const lockDelayTable = [
 		[1, 24],
@@ -1936,6 +1948,7 @@ export const loops = {
         [19, 6],
 		[27, 12],
 		[40, 12],
+		[999, 12],
       ]
       const areLineModifierTable = [
         [7, -4],
@@ -1951,6 +1964,7 @@ export const loops = {
         [19, 5],
 		[27, 5],
 		[40, 5],
+		[999, 5],
       ]
       const lockDelayTable = [
         [1, 20],
