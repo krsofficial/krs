@@ -907,6 +907,7 @@ export default class Stack extends GameModule {
 		}
 	}
 	if (this.isFrozen) {
+		let reRollsLeft = 3
 		let frozenEffectsRoster = [
 			"rotateLock",
 			"holdLock",
@@ -931,7 +932,26 @@ export default class Stack extends GameModule {
 					Math.floor(Math.random() * frozenEffectsRoster.length) - 1
 				)]
 			}
+			while (
+					(
+						this.parent.pendingEffect === "rotateLock"
+					) && reRollsLeft >= 1
+				) {
+				//Re-rolls if it lands on rotateLock to reduce the chances of getting it.
+				this.parent.pendingEffect = frozenEffectsRoster[Math.max(
+					0,
+					Math.floor(Math.random() * frozenEffectsRoster.length) - 1
+				)]
+				while (this.parent.pendingEffect === this.lastEffect) {
+					this.parent.pendingEffect = frozenEffectsRoster[Math.max(
+						0,
+						Math.floor(Math.random() * frozenEffectsRoster.length) - 1
+					)]
+				}
+				reRollsLeft -= 1
+			}
 		}
+		
 	}
 	if (this.lastEffect === "rotateLock") {
 		let effectsRoster = [
