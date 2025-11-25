@@ -1833,7 +1833,13 @@ export default class Stack extends GameModule {
         for (let shiftY = y; shiftY >= 0; shiftY--) { 
 		  if (this.noFrozenMinos() === true) {
 			this.grid[x][shiftY] = this.grid[x][shiftY - 1]
-			this.resetLastPlacedBlocks()
+			//this.resetLastPlacedBlocks()
+			for (const entry of this.lastPlacedBlocks) {
+				let index = this.lastPlacedBlocks.indexOf(entry)
+				let oldY = entry[1]
+				let newY = oldY - 1
+				this.lastPlacedBlocks[index][1] = newY
+			}
 			if (
 				this.grid[x][shiftY] != null &&
 				this.grid[x][shiftY - 1] != null
@@ -1843,7 +1849,13 @@ export default class Stack extends GameModule {
 			this.dirtyCells.push([x, shiftY + 1])
 		  } else if (y === bottomLine && this.lineClear >= 4) {
 			this.grid[x][shiftY] = this.grid[x][shiftY - 1]
-			this.resetLastPlacedBlocks()
+			//this.resetLastPlacedBlocks()
+			for (const entry of this.lastPlacedBlocks) {
+				let index = this.lastPlacedBlocks.indexOf(entry)
+				let oldY = entry[1]
+				let newY = oldY - 1
+				this.lastPlacedBlocks[index][1] = newY
+			}
 			if (
 				this.grid[x][shiftY] != null &&
 				this.grid[x][shiftY - 1] != null
@@ -1866,7 +1878,13 @@ export default class Stack extends GameModule {
       for (let x = 0; x < this.grid.length; x++) {
         for (let shiftY = y; shiftY >= 0; shiftY--) {
           this.grid[x][shiftY] = this.grid[x][shiftY - 1]
-		  this.resetLastPlacedBlocks()
+		  //this.resetLastPlacedBlocks()
+		  for (const entry of this.lastPlacedBlocks) {
+				let index = this.lastPlacedBlocks.indexOf(entry)
+				let oldY = entry[1]
+				let newY = oldY - 1
+				this.lastPlacedBlocks[index][1] = newY
+		  }
           if (
             this.grid[x][shiftY] != null &&
             this.grid[x][shiftY - 1] != null
