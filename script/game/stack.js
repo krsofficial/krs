@@ -916,6 +916,8 @@ export default class Stack extends GameModule {
 			"phantomBlock",
 			"delFieldUp",
 			"delFieldDown",
+			"jewelBlock",  //Increased chances of jewelBlock to make frozen section more manageable
+			"jewelBlock",
 			"jewelBlock",
 		]
 		if (frozenEffectsRoster.includes(this.parent.pendingEffect) !== true) {
@@ -1811,7 +1813,7 @@ export default class Stack extends GameModule {
         for (let shiftY = y; shiftY >= 0; shiftY--) { 
 		  if (this.noFrozenMinos() === true) {
 			this.grid[x][shiftY] = this.grid[x][shiftY - 1]
-			this.lastPlacedBlocks[x][shiftY] = this.lastPlacedBlocks[x][shiftY - 1]
+			this.resetLastPlacedBlocks()
 			if (
 				this.grid[x][shiftY] != null &&
 				this.grid[x][shiftY - 1] != null
@@ -1821,7 +1823,7 @@ export default class Stack extends GameModule {
 			this.dirtyCells.push([x, shiftY + 1])
 		  } else if (y === bottomLine && this.lineClear >= 4) {
 			this.grid[x][shiftY] = this.grid[x][shiftY - 1]
-			this.lastPlacedBlocks[x][shiftY] = this.lastPlacedBlocks[x][shiftY - 1]
+			this.resetLastPlacedBlocks()
 			if (
 				this.grid[x][shiftY] != null &&
 				this.grid[x][shiftY - 1] != null
@@ -1844,7 +1846,7 @@ export default class Stack extends GameModule {
       for (let x = 0; x < this.grid.length; x++) {
         for (let shiftY = y; shiftY >= 0; shiftY--) {
           this.grid[x][shiftY] = this.grid[x][shiftY - 1]
-		  this.lastPlacedBlocks[x][shiftY] = this.lastPlacedBlocks[x][shiftY - 1]
+		  this.resetLastPlacedBlocks()
           if (
             this.grid[x][shiftY] != null &&
             this.grid[x][shiftY - 1] != null
