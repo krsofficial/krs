@@ -96,7 +96,8 @@ export default class Stack extends GameModule {
         if (this.grid[x][y] != null) {
 			if (
 				this.parent.effectsRoster.includes(this.grid[x][y]) !== true &&
-				this.lastPlacedBlocks[x][y] === null
+				this.arrayContains(this.lastPlacedBlocks, [x, y]) !== true
+				//this.lastPlacedBlocks[x][y] === null
 			) {
 				this.grid[x][y] = "frozen"
 			}
@@ -145,7 +146,8 @@ export default class Stack extends GameModule {
 			if (
 				this.parent.effectsRoster.includes(this.grid[x][y]) !== true && 
 				this.grid[x][y] !== "gold" &&
-				this.lastPlacedBlocks[x][y] === null
+				this.arrayContains(this.lastPlacedBlocks, [x, y]) !== true
+				//this.lastPlacedBlocks[x][y] === null
 			) {
 				this.grid[x][y] = "hidden"
 			}
@@ -1072,7 +1074,8 @@ export default class Stack extends GameModule {
 			} else {
 				this.grid[xLocation][yLocation] = color
 			}
-		  this.lastPlacedBlocks[xLocation][yLocation] = this.grid[xLocation][yLocation]
+		  this.dirtyCells.push([xLocation, yLocation])
+		  //this.lastPlacedBlocks[xLocation][yLocation] = this.grid[xLocation][yLocation]
           this.dirtyCells.push([xLocation, yLocation])
           this.flashX.unshift(xLocation)
           this.flashY.unshift(yLocation)
@@ -1935,7 +1938,8 @@ export default class Stack extends GameModule {
     this.grid = cells
   }
   resetLastPlacedBlocks() {
-    const cells = new Array(this.width)
+	this.lastPlacedBlocks = []
+    /*const cells = new Array(this.width)
     for (let i = 0; i < this.width; i++) {
       cells[i] = new Array(this.height + this.hiddenHeight)
     }
@@ -1946,7 +1950,7 @@ export default class Stack extends GameModule {
 			this.lastPlacedBlocks[x][y] = null
 		}
       }
-    }
+    }*/
   }
   endRollStart() {
 	  sound.add("endingstart")
