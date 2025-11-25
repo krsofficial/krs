@@ -96,7 +96,7 @@ export default class Stack extends GameModule {
         if (this.grid[x][y] != null) {
 			if (
 				this.parent.effectsRoster.includes(this.grid[x][y]) !== true &&
-				this.arrayContains(this.lastPlacedBlocks, [x, y]) !== true
+				this.isLastPlacedBlock(x, y) !== true
 				//this.lastPlacedBlocks[x][y] === null
 			) {
 				this.grid[x][y] = "frozen"
@@ -146,7 +146,7 @@ export default class Stack extends GameModule {
 			if (
 				this.parent.effectsRoster.includes(this.grid[x][y]) !== true && 
 				this.grid[x][y] !== "gold" &&
-				this.arrayContains(this.lastPlacedBlocks, [x, y]) !== true
+				this.isLastPlacedBlock(x, y) !== true
 				//this.lastPlacedBlocks[x][y] === null
 			) {
 				this.grid[x][y] = "hidden"
@@ -1051,7 +1051,9 @@ export default class Stack extends GameModule {
 		this.removeEffectBlocks()
 	}
 	let placedEffectBlock = false
-	this.resetLastPlacedBlocks()
+	if (this.wouldCauseLineClear() <= 0) {
+		this.resetLastPlacedBlocks()
+	}
     for (let y = 0; y < shape.length; y++) {
       for (let x = 0; x < shape[y].length; x++) {
         const isFilled = shape[y][x]
@@ -1834,11 +1836,13 @@ export default class Stack extends GameModule {
 		  if (this.noFrozenMinos() === true) {
 			this.grid[x][shiftY] = this.grid[x][shiftY - 1]
 			//this.resetLastPlacedBlocks()
-			for (const entry of this.lastPlacedBlocks) {
-				let index = this.lastPlacedBlocks.indexOf(entry)
-				let oldY = entry[1]
-				let newY = oldY - 1
-				this.lastPlacedBlocks[index][1] = newY
+			for (let index = 0; indeindex < this.lastPlacedBlocks.length; index++) {
+				if (
+				this.lastPlacedBlocks[index][0] === x &&
+				this.lastPlacedBlocks[index][1] === shiftY
+				) {
+					this.lastPlacedBlocks[index][1] = shiftY + 1
+				}
 			}
 			if (
 				this.grid[x][shiftY] != null &&
@@ -1850,11 +1854,13 @@ export default class Stack extends GameModule {
 		  } else if (y === bottomLine && this.lineClear >= 4) {
 			this.grid[x][shiftY] = this.grid[x][shiftY - 1]
 			//this.resetLastPlacedBlocks()
-			for (const entry of this.lastPlacedBlocks) {
-				let index = this.lastPlacedBlocks.indexOf(entry)
-				let oldY = entry[1]
-				let newY = oldY - 1
-				this.lastPlacedBlocks[index][1] = newY
+			for (let index = 0; indeindex < this.lastPlacedBlocks.length; index++) {
+				if (
+				this.lastPlacedBlocks[index][0] === x &&
+				this.lastPlacedBlocks[index][1] === shiftY
+				) {
+					this.lastPlacedBlocks[index][1] = shiftY + 1
+				}
 			}
 			if (
 				this.grid[x][shiftY] != null &&
@@ -1879,11 +1885,13 @@ export default class Stack extends GameModule {
         for (let shiftY = y; shiftY >= 0; shiftY--) {
           this.grid[x][shiftY] = this.grid[x][shiftY - 1]
 		  //this.resetLastPlacedBlocks()
-		  for (const entry of this.lastPlacedBlocks) {
-				let index = this.lastPlacedBlocks.indexOf(entry)
-				let oldY = entry[1]
-				let newY = oldY - 1
-				this.lastPlacedBlocks[index][1] = newY
+		  for (let index = 0; indeindex < this.lastPlacedBlocks.length; index++) {
+				if (
+				this.lastPlacedBlocks[index][0] === x &&
+				this.lastPlacedBlocks[index][1] === shiftY
+				) {
+					this.lastPlacedBlocks[index][1] = shiftY + 1
+				}
 		  }
           if (
             this.grid[x][shiftY] != null &&
@@ -1977,20 +1985,17 @@ export default class Stack extends GameModule {
     }
     this.grid = cells
   }
+  isLastPlacedBlock(x, y) {
+	  let result = false
+	  for (const block of this.lastPlacedBlocks) {
+		  if (block[0] === x && block[1] === y) {
+			  result = true
+		  }			  
+	  }
+	  return result
+  }
   resetLastPlacedBlocks() {
 	this.lastPlacedBlocks = []
-    /*const cells = new Array(this.width)
-    for (let i = 0; i < this.width; i++) {
-      cells[i] = new Array(this.height + this.hiddenHeight)
-    }
-	this.lastPlacedBlocks = cells
-	for (let x = 0; x < this.lastPlacedBlocks.length; x++) {
-      for (let y = 0; y < this.lastPlacedBlocks[x].length; y++) {
-        if (this.lastPlacedBlocks[x][y] != null) {
-			this.lastPlacedBlocks[x][y] = null
-		}
-      }
-    }*/
   }
   endRollStart() {
 	  sound.add("endingstart")
