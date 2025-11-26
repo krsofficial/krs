@@ -2224,7 +2224,7 @@ export default class Stack extends GameModule {
     }
     // Line clear animation
 	let clearDirtyCells = true
-    if (this.toCollapse.length > 0 && this.isFrozen !== true && this.parent.useBoneBlocks !== true) {
+    if (this.toCollapse.length > 0 && this.parent.useBoneBlocks !== true) {
       clearDirtyCells = true
 	  const brightness = Math.max(
         0,
@@ -2242,6 +2242,7 @@ export default class Stack extends GameModule {
       ctx.fillStyle = `#ffffff${brightnessHex}`
 	  lineClearCtx.fillStyle = ctx.fillStyle
       for (let i = 0; i < this.toCollapse.length; i++) {
+		if (this.isFrozen !== true) {
         ctx.clearRect(
           0,
           Math.floor(
@@ -2251,6 +2252,7 @@ export default class Stack extends GameModule {
           cellSize * this.width,
           cellSize
         )
+		}
 		lineClearCtx.clearRect(
           0,
           Math.floor(
