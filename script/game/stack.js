@@ -2252,6 +2252,8 @@ export default class Stack extends GameModule {
           cellSize * this.width,
           cellSize
         )
+		} else {
+		clearDirtyCells = false
 		}
 		lineClearCtx.clearRect(
           0,
