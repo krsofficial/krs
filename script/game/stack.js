@@ -917,7 +917,11 @@ export default class Stack extends GameModule {
 			"phantomBlock",
 			"delFieldUp",
 			"delFieldDown",
-			"jewelBlock",  //Increased chances of jewelBlock to make frozen section more manageable
+			"delFieldUp",
+			"delFieldDown",
+			"delFieldUp",
+			"delFieldDown",
+			"jewelBlock",
 			"jewelBlock",
 			"jewelBlock",
 		]
