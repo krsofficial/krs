@@ -475,7 +475,7 @@ class Menu {
             element.textContent = currentData.label
           }
         }
-        if (currentData.label === "Import") {
+        if (/*currentData.label === "Import"*/ currentData.action === "settingsimport") {
           const inputThingy = document.createElement("input")
           inputThingy.id = "import-settings"
           inputThingy.type = "file"
