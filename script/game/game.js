@@ -1123,8 +1123,10 @@ export default class Game {
 				}
 			}
 			if (game.rotationSystem === "ds") {
+				if (game.piece.areLimit > 0) {
+					game.piece.areLimitLineModifier = game.piece.areLimit
+				}
 				game.piece.areLimit = 0
-				game.piece.areLimitLineModifier = game.piece.areLineLimit
 			}
           }
           game.particle.update(msPassed)
@@ -1134,6 +1136,18 @@ export default class Game {
 			game.stack.isDirty = true
 			game.stack.deathAnimation += msPassed
 			console.log(game.stack.deathAnimation)
+		  }
+		  if (game.stack.mirrorAnimation < game.stack.mirrorAnimationLimit) {
+			game.stack.makeAllDirty()
+			game.stack.isDirty = true
+			game.stack.mirrorAnimation += msPassed
+			console.log(game.stack.mirrorAnimation)
+		  }
+		  if (game.stack.flipAnimation < game.stack.flipAnimationLimit) {
+			game.stack.makeAllDirty()
+			game.stack.isDirty = true
+			game.stack.flipAnimation += msPassed
+			console.log(game.stack.flipAnimation)
 		  }
 		  if (game.currentEffect === "xRay") {
 			  game.stack.xRayAnimation += 1

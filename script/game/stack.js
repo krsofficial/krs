@@ -26,6 +26,10 @@ export default class Stack extends GameModule {
     this.xRayAnimation = 0
 	this.deathAnimation = 3400
 	this.deathAnimationLimit = 1700
+	this.mirrorAnimation = 1000
+	this.mirrorAnimationLimit = 500
+	this.flipAnimation = 1000
+	this.flipAnimationLimit = 500
     this.flashOnTetris = false
     this.alarmIsOn = false
     this.isInvisible = false
@@ -60,6 +64,7 @@ export default class Stack extends GameModule {
 	this.sectionGauge = 0
 	this.levelGauge = 1
 	this.levelPieceRequirement = 40
+	this.playFlipSound = false
 	this.resetLastPlacedBlocks()
 	$("#message").classList.remove("effectactivated")
   }
@@ -338,6 +343,7 @@ export default class Stack extends GameModule {
 		)]
     }
 	// Grid particles
+	this.mirrorAnimation = 0
 	let cellSize = this.parent.cellSize
 	this.parent.particle.generateIgnoreSettings({
 		red: 255,
@@ -506,6 +512,7 @@ export default class Stack extends GameModule {
       }
     }
 	//Grid particles
+	this.flipAnimation = 0
 	let cellSize = this.parent.cellSize
 	this.parent.particle.generateIgnoreSettings({
 		red: 255,
@@ -641,8 +648,8 @@ export default class Stack extends GameModule {
       lifeVariance: 80,
     })
 	//this.gridParticles()
-	sound.add("collapse")
-	sound.add("collapse4")
+	//sound.add("collapse")
+	//sound.add("collapse4")
 	this.reRenderStack()
 	delayFinished = true
 	//To do: Add a 250ms delay here if possible
@@ -2254,6 +2261,10 @@ export default class Stack extends GameModule {
     */
 	const deathAnimationLength =
       (this.height * this.deathAnimation) / this.deathAnimationLimit
+	const mirrorAnimationLength =
+      (this.width * this.mirrorAnimation) / this.mirrorAnimationLimit
+	const flipAnimationLength =
+      (this.height * this.flipAnimation) / this.flipAnimationLimit
     for (const cell of this.dirtyCells) {
       const x = cell[0]
       const y = cell[1]
@@ -2265,6 +2276,25 @@ export default class Stack extends GameModule {
           name = "mino"
         }
         let suffix = ""
+		if (this.mirrorAnimation < this.mirrorAnimationLimit) {
+          if (x >= flipAnimationLength) {
+		    color = "hidden"
+		  }
+		  suffix = ""
+        }
+		if (this.flipAnimation < this.mirrorAnimationLimit) {
+          if (y - (this.hiddenHeight - 1) >= flipAnimationLength) {
+		    color = "hidden"
+		  }
+		  suffix = ""
+		  this.playFlipSound = true
+        } else {
+		  if (this.playFlipSound) {
+			  this.playFlipSound = false
+			  sound.add("collapse")
+			  sound.add("collapse4")
+		  }
+		}
 		if (this.isHidden && this.redrawOnHidden) {
 			color = "hidden"
 			suffix = ""
@@ -2279,10 +2309,10 @@ export default class Stack extends GameModule {
 			}
 		}
 		if (this.deathAnimation < 3400) {
-          if (y - 4 <= deathAnimationLength) {
+          if (y - (this.hiddenHeight - 1) <= deathAnimationLength) {
 		    color = "black"
 		  }
-		  if (this.deathAnimation >= this.deathAnimationLimit - 1) {
+		  if (this.deathAnimation > this.deathAnimationLimit) {
 			  color = "black"
 		  }
 		  suffix = ""

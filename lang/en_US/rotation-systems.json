@@ -21,9 +21,9 @@
     "message": "Similar to SRS, but with modified I kicks. Uses Hard Drop and Soft Drop."
   },
   "ds": {
-    "message": "Similar to SRS, but piece ARE is gone, making it harder on high gravity. Uses Hard Drop and Soft Drop."
+    "message": "Similar to SRS, but ARE is gone, making it harder on high gravity. Uses Hard Drop and Soft Drop."
   },
   "drs": {
-    "message": "The rotation system KRS is based on. Both piece ARE and line ARE can be cancelled using DAS. Uses Hard Drop and Soft Drop."
+    "message": "The rotation system KRS is based on. ARE can be cancelled using DAS. Uses Hard Drop and Soft Drop."
   }
 }

@@ -452,9 +452,12 @@ export const loops = {
 		[999, 30],
       ]
 	  const areLineModifierTable = [
-        [10, -4],
-        [13, -4],
-        [15, -4],
+        [1, 0],
+		[5, 0],
+        [10, 0],
+        [15, 0],
+		[20, 0],
+		[999, 0],
       ]
       const areLineTable = [
 		[1, 30],
@@ -714,9 +717,12 @@ export const loops = {
 		[999, 8],
       ]
 	  const areLineModifierTable = [
-        [10, -4],
-        [12, -6],
-        [14, 0],
+        [1, 0],
+		[5, 0],
+        [10, 0],
+        [15, 0],
+		[20, 0],
+		[999, 0],
       ]
       const areLineTable = [
 		[6, 30],
@@ -957,9 +963,12 @@ export const loops = {
 		[999, 6],
       ]
 	  const areLineModifierTable = [
-        [10, -4],
-        [12, -6],
-        [14, 0],
+        [1, 0],
+		[5, 0],
+        [10, 0],
+        [15, 0],
+		[20, 0],
+		[999, 0],
       ]
       const areLineTable = [
         [1, 20],
@@ -1697,9 +1706,12 @@ export const loops = {
 		[999, 6],
       ]
 	  const areLineModifierTable = [
-        [10, -4],
-        [12, -6],
-        [14, 0],
+        [1, 0],
+		[5, 0],
+        [10, 0],
+        [15, 0],
+		[20, 0],
+		[999, 0],
       ]
       const areLineTable = [
         [1, 10],
@@ -1951,9 +1963,12 @@ export const loops = {
 		[999, 12],
       ]
       const areLineModifierTable = [
-        [7, -4],
-        [15, -6],
-        [27, 0],
+        [1, 0],
+		[5, 0],
+        [10, 0],
+        [15, 0],
+		[20, 0],
+		[999, 0],
       ]
       const areLineTable = [
         [7, 8],
