@@ -1013,13 +1013,13 @@ export default class Game {
           }
           if (!game.noUpdate) {
             if (!game.piece.inAre) {
-              if (!game.onCustomDelay) {
+              if (!game.piece.inEffectAre) {
 				  game.timePassed += msPassed
 			  } else {
 				  game.timePassedAre += msPassed
 			  }
             } else if (game.piece.startingAre >= game.piece.startingAreLimit) {
-              if (!game.onCustomDelay) {
+              if (!game.piece.inEffectAre) {
 				  game.timePassedAre += msPassed
 				  game.timePassed += msPassed
 			  } else {
@@ -1131,6 +1131,11 @@ export default class Game {
           }
           game.particle.update(msPassed)
           game.updateMatrix(msPassed)
+		  if (game.piece.areEffect < game.piece.areEffectLimit) {
+			if (!game.piece.inPieceAre) {
+				game.piece.areEffect += msPassed
+			}
+		  }
 		  if (game.stack.deathAnimation < game.stack.deathAnimationLimit) {
 			game.stack.makeAllDirty()
 			game.stack.isDirty = true

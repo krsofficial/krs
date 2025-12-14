@@ -56,6 +56,8 @@ export default class Piece extends GameModule {
     this.areLimit = 0
     this.areLineLimit = 0
     this.areLimitLineModifier = 0
+	this.areEffect = 1000
+	this.areEffectLimit = 500
     this.isDead = true
     this.ire = 0
     this.hasIas = false
@@ -1484,7 +1486,12 @@ export default class Piece extends GameModule {
       return false
     }
   }
-  get inAre() {
+  get inEffectAre() {
+    return (
+      this.areEffect < this.areEffectLimit
+    )
+  }
+  get inPieceAre() {
     if (this.startingAre < this.startingAreLimit) {
       // return true;
     }
@@ -1495,8 +1502,13 @@ export default class Piece extends GameModule {
     }
     return (
       this.are < this.areLimit + areMod ||
-      this.startingAre < this.startingAreLimit ||
-	  this.parent.onCustomDelay
+      this.startingAre < this.startingAreLimit
+    )
+  }
+  get inAre() {
+    return (
+      this.inPieceAre ||
+	  this.inEffectAre
     )
   }
 }
