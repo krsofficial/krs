@@ -506,6 +506,126 @@ export default class Stack extends GameModule {
       }
     }
 	//Grid particles
+	let cellSize = this.parent.cellSize
+	this.parent.particle.generateIgnoreSettings({
+		red: 255,
+		blue: 128,
+		green: 128,
+		amount: 200,
+		x: 0,
+		y: 0,
+		xRange: cellSize * this.width,
+		yRange: cellSize * (this.height + this.hiddenHeight),
+		xVelocity: 0,
+		yVelocity: 0,
+		xVariance: 10,
+		yVariance: 10,
+		xDampening: 1,
+		yDampening: 1,
+		lifeVariance: 0,
+    })
+	this.parent.particle.generateIgnoreSettings({
+		red: 128,
+		blue: 255,
+		green: 128,
+		amount: 200,
+		x: 0,
+		y: 0,
+		xRange: cellSize * this.width,
+		yRange: cellSize * (this.height + this.hiddenHeight),
+		xVelocity: 0,
+		yVelocity: 0,
+		xVariance: 10,
+		yVariance: 10,
+		xDampening: 1,
+		yDampening: 1,
+		lifeVariance: 0,
+    })
+	this.parent.particle.generateIgnoreSettings({
+		red: 128,
+		blue: 128,
+		green: 255,
+		amount: 200,
+		x: 0,
+		y: 0,
+		xRange: cellSize * this.width,
+		yRange: cellSize * (this.height + this.hiddenHeight),
+		xVelocity: 0,
+		yVelocity: 0,
+		xVariance: 10,
+		yVariance: 10,
+		xDampening: 1,
+		yDampening: 1,
+		lifeVariance: 0,
+    })
+	this.parent.particle.generateIgnoreSettings({
+		red: 255,
+		blue: 255,
+		green: 128,
+		amount: 200,
+		x: 0,
+		y: 0,
+		xRange: cellSize * this.width,
+		yRange: cellSize * (this.height + this.hiddenHeight),
+		xVelocity: 0,
+		yVelocity: 0,
+		xVariance: 10,
+		yVariance: 10,
+		xDampening: 1,
+		yDampening: 1,
+		lifeVariance: 0,
+    })
+	this.parent.particle.generateIgnoreSettings({
+		red: 128,
+		blue: 255,
+		green: 255,
+		amount: 200,
+		x: 0,
+		y: 0,
+		xRange: cellSize * this.width,
+		yRange: cellSize * (this.height + this.hiddenHeight),
+		xVelocity: 0,
+		yVelocity: 0,
+		xVariance: 10,
+		yVariance: 10,
+		xDampening: 1,
+		yDampening: 1,
+		lifeVariance: 0,
+    })
+	this.parent.particle.generateIgnoreSettings({
+		red: 255,
+		blue: 128,
+		green: 255,
+		amount: 200,
+		x: 0,
+		y: 0,
+		xRange: cellSize * this.width,
+		yRange: cellSize * (this.height + this.hiddenHeight),
+		xVelocity: 0,
+		yVelocity: 0,
+		xVariance: 10,
+		yVariance: 10,
+		xDampening: 1,
+		yDampening: 1,
+		lifeVariance: 0,
+    })
+	this.parent.particle.generateIgnoreSettings({
+		red: 255,
+		blue: 128,
+		green: 195,
+		amount: 200,
+		x: 0,
+		y: 0,
+		xRange: cellSize * this.width,
+		yRange: cellSize * (this.height + this.hiddenHeight),
+		xVelocity: 0,
+		yVelocity: 0,
+		xVariance: 10,
+		yVariance: 10,
+		xDampening: 1,
+		yDampening: 1,
+		lifeVariance: 0,
+    })
 	this.parent.particle.generate({
       amount: 100,
       x: 0,
@@ -540,6 +660,9 @@ export default class Stack extends GameModule {
         if (this.grid[x][y] != null) {
 			if (y < targetPoint) {
 				delete this.grid[x][y]
+				if (this.arrayContains(this.toCollapse, y) !== true) {
+					this.toCollapse.push(y)
+				}
 			}
 		}
       }
@@ -549,6 +672,7 @@ export default class Stack extends GameModule {
 	let cellSize = this.parent.cellSize
     let buffer = this.parent.bufferPeek
     let ctx = this.ctx
+	/*
 	this.parent.particle.generateIgnoreSettings({
 		red: 255,
 		blue: 128,
@@ -566,6 +690,7 @@ export default class Stack extends GameModule {
 		yDampening: 1,
 		lifeVariance: 0,
     })
+	*/
 	//this.gridParticles()
 	this.reRenderStack()
 	delayFinished = true
@@ -587,6 +712,9 @@ export default class Stack extends GameModule {
         if (this.grid[x][y] != null) {
 			if (y >= targetPoint) {
 				delete this.grid[x][y]
+				if (this.arrayContains(this.toCollapse, y) !== true) {
+					this.toCollapse.push(y)
+				}
 			}
 		}
       }
@@ -596,6 +724,7 @@ export default class Stack extends GameModule {
 	let cellSize = this.parent.cellSize
     let buffer = this.parent.bufferPeek
     let ctx = this.ctx
+	/*
 	this.parent.particle.generateIgnoreSettings({
 		red: 255,
 		blue: 128,
@@ -613,9 +742,11 @@ export default class Stack extends GameModule {
 		yDampening: 1,
 		lifeVariance: 0,
     })
+	*/
 	delayFinished = true
 	//To do: Add a 250ms delay here if possible
 	//Were not done yet. We still have to move the stack to the bottom of the board.
+	/*
 	let tempGrid = this.grid
 	this.new()
 	let highestPoint = 0
@@ -655,6 +786,7 @@ export default class Stack extends GameModule {
       gravityAccceleration: 1.05,
       lifeVariance: 80,
     })
+	*/
 	//this.gridParticles()
 	sound.add("collapse")
 	sound.add("collapse4")
@@ -1633,6 +1765,7 @@ export default class Stack extends GameModule {
 		}
 		this.parent.stat.effect = ""
 	}
+	/*
 	if (this.parent.currentEffect === "mirrorBlock" && this.toCollapse.length <= 0) {
 		if (this.parent.useEffectBlocks) {
 			if (this.effectBlockInterval < 16) {
@@ -1642,6 +1775,7 @@ export default class Stack extends GameModule {
 			this.mirrorGrid()
 		}
 	}
+	*/
 	if (this.parent.currentEffect === "" && this.parent.useEffectBlocks) {
 		this.displayedEffectText = false
 		$("#message").classList.remove("effectactivated")
@@ -1798,6 +1932,18 @@ export default class Stack extends GameModule {
   }
   collapse() {
     if (this.toCollapse.length === 0) {
+	  if (
+	  this.parent.currentEffect === "mirrorBlock" && 
+	  this.toCollapse.length <= 0
+	  ) {
+		if (this.parent.useEffectBlocks) {
+		  if (this.effectBlockInterval < 16) {
+			this.mirrorGrid()
+		  }
+		} else {
+		  this.mirrorGrid()
+		}
+	  }
 	  return
     }
 	//console.log(this.toCollapse)
