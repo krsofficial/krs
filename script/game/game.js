@@ -1015,7 +1015,7 @@ export default class Game {
             if (!game.piece.inAre) {
               if (game.isEndRoll) {
 				  game.timePassedOffset += msPassed
-			  } else if () {
+			  } else if (game.piece.inEffectAre) {
 				  game.timePassedAre += msPassed
 			  } else {
 				  game.timePassed += msPassed
