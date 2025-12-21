@@ -248,6 +248,7 @@ const updateKrsBackgroundV1 = (game) => {
 		"back13",
 		"back14",
 		"back15",
+		"back15",
 		"back16",
 		"back17",
 		"back18",

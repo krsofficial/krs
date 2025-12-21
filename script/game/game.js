@@ -701,43 +701,8 @@ export default class Game {
       "particleCanvas",
 	  "animateCanvas",
     ]) {
-      if
-	  ( 
-		(element === "pieceCanvas" || element === "stackCanvas" || element === "particleCanvas" || element === "animateCanvas")
-		&&
-		(game.settings.height <= 10 && game.settings.width <= 5)
-	  )
-	  {
-	  let gameWidth =
-      $("#game > .game-left").offsetWidth +
-      $("#game > .game-center").offsetWidth +
-      $("#game > .game-right").offsetWidth
-      let gameAspectRatio = gameWidth / $("#game > .game-center").offsetHeight
-      let base = Math.min(
-        window.innerWidth / gameAspectRatio,
-        window.innerHeight
-      )
-	  let cellSize1 = Math.floor(((base / 1.2 / game.settings.height) * (game.userSettings.size * 0.875)) / 100)
-	  let cellSize2 = Math.floor(((base / 1.2 / game.settings.height) * (game.userSettings.size * 0.875)) / 100)
-	  if (game.settings.height <= 10 && game.settings.width <= 5) {
-	    cellSize2 = Math.floor(((base / 1.2 / (game.settings.height * 2)) * (game.userSettings.size * 0.875)) / 100)
-	  } else {
-	    cellSize2 = Math.floor(((base / 1.2 / game.settings.height) * (game.userSettings.size * 0.875)) / 100)
-	  }
-	  let cellSizeRatio = cellSize1 / cellSize2
-	  console.log(cellSizeRatio)
-	  game[element].width = Math.max(
-	  (game[element].clientWidth * cellSizeRatio) / 4,
-	  game[element].clientWidth / 2
-	  )
-	  game[element].height = Math.max(
-	  (game[element].clientHeight * cellSizeRatio) / 4,
-	  game[element].clientHeight / 2
-	  )
-	  } else {
-	  game[element].width = game[element].clientWidth
+      game[element].width = game[element].clientWidth
       game[element].height = game[element].clientHeight
-	  }
     }
     let holdLabelSelection = "hold"
     if (game.hold.useSkip) {
