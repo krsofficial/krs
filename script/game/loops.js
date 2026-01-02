@@ -910,10 +910,47 @@ export const loops = {
 		  }
         }
       }
+	  let garbageRate = 10000
+	  if (game.stat.level >= 9) {
+		  garbageRate = 9500
+	  }
+	  if (game.stat.level >= 10) {
+		  garbageRate = 9000
+	  }
+	  if (game.stat.level >= 11) {
+		  garbageRate = 8500
+	  }
+	  if (game.stat.level >= 12) {
+		  garbageRate = 8000
+	  }
+	  if (game.stat.level >= 13) {
+		  garbageRate = 7500
+	  }
+	  if (game.stat.level >= 14) {
+		  garbageRate = 6250
+	  }
+	  if (game.stat.level >= 15) {
+		  garbageRate = 5000
+	  }
+	  if (game.stat.level >= 16) {
+		  garbageRate = 4500
+	  }
+	  if (game.stat.level >= 17) {
+		  garbageRate = 4000
+	  }
+	  if (game.stat.level >= 18) {
+		  garbageRate = 3500
+	  }
+	  if (game.stat.level >= 19) {
+		  garbageRate = 3000
+	  }
+	  if (game.stat.level >= 20) {
+		  garbageRate = 2500
+	  }
 	  if (arg.piece.startingAre >= arg.piece.startingAreLimit) {
         garbageTimer += arg.ms
-        if (garbageTimer > 10000) {
-          garbageTimer -= 10000
+        if (garbageTimer > garbageRate) {
+          garbageTimer = arg.ms
           if (game.stat.level >= 8) {
 			  arg.stack.addGarbageToCounter(1)
 		  }
@@ -1658,10 +1695,59 @@ export const loops = {
 		  }
         }
       }
+	  let garbageRate = 10000
+	  if (game.stat.level >= 5) {
+		  garbageRate = 9500
+	  }
+	  if (game.stat.level >= 6) {
+		  garbageRate = 9000
+	  }
+	  if (game.stat.level >= 7) {
+		  garbageRate = 8500
+	  }
+	  if (game.stat.level >= 8) {
+		  garbageRate = 8000
+	  }
+	  if (game.stat.level >= 9) {
+		  garbageRate = 7500
+	  }
+	  if (game.stat.level >= 10) {
+		  garbageRate = 7000
+	  }
+	  if (game.stat.level >= 11) {
+		  garbageRate = 6500
+	  }
+	  if (game.stat.level >= 12) {
+		  garbageRate = 6000
+	  }
+	  if (game.stat.level >= 13) {
+		  garbageRate = 5500
+	  }
+	  if (game.stat.level >= 14) {
+		  garbageRate = 5000
+	  }
+	  if (game.stat.level >= 15) {
+		  garbageRate = 4500
+	  }
+	  if (game.stat.level >= 16) {
+		  garbageRate = 4000
+	  }
+	  if (game.stat.level >= 17) {
+		  garbageRate = 3500
+	  }
+	  if (game.stat.level >= 18) {
+		  garbageRate = 3000
+	  }
+	  if (game.stat.level >= 19) {
+		  garbageRate = 2500
+	  }
+	  if (game.stat.level >= 20) {
+		  garbageRate = 1250
+	  }
 	  if (arg.piece.startingAre >= arg.piece.startingAreLimit) {
         garbageTimer += arg.ms
-        if (garbageTimer > 10000) {
-          garbageTimer -= 10000
+        if (garbageTimer > garbageRate) {
+          garbageTimer = arg.ms
           if (game.stat.level >= 4) {
 			  arg.stack.addGarbageToCounter(1)
 		  }
@@ -1901,10 +1987,29 @@ export const loops = {
 		  }
         }
       }
+	  let garbageRate = 10000
+	  if (game.stat.level >= 2) {
+		  garbageRate = 8750
+	  }
+	  if (game.stat.level >= 3) {
+		  garbageRate = 7500
+	  }
+	  if (game.stat.level >= 4) {
+		  garbageRate = 6250
+	  }
+	  if (game.stat.level >= 5) {
+		  garbageRate = 5000
+	  }
+	  if (game.stat.level >= 6) {
+		  garbageRate = 3750
+	  }
+	  if (game.stat.level >= 7) {
+		  garbageRate = 2500
+	  }
 	  if (arg.piece.startingAre >= arg.piece.startingAreLimit) {
         garbageTimer += arg.ms
-        if (garbageTimer > 10000) {
-          garbageTimer -= 10000
+        if (garbageTimer > garbageRate) {
+          garbageTimer = arg.ms
           if (game.stat.level <= 7) {
 			  arg.stack.addGarbageToCounter(1)
 		  }
