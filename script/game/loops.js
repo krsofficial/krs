@@ -1697,49 +1697,49 @@ export const loops = {
       }
 	  let garbageRate = 10000
 	  if (game.stat.level >= 5) {
-		  garbageRate = 9500
-	  }
-	  if (game.stat.level >= 6) {
 		  garbageRate = 9000
 	  }
-	  if (game.stat.level >= 7) {
-		  garbageRate = 8500
-	  }
-	  if (game.stat.level >= 8) {
+	  if (game.stat.level >= 6) {
 		  garbageRate = 8000
 	  }
-	  if (game.stat.level >= 9) {
+	  if (game.stat.level >= 7) {
 		  garbageRate = 7500
 	  }
-	  if (game.stat.level >= 10) {
+	  if (game.stat.level >= 8) {
 		  garbageRate = 7000
 	  }
-	  if (game.stat.level >= 11) {
-		  garbageRate = 6500
-	  }
-	  if (game.stat.level >= 12) {
+	  if (game.stat.level >= 9) {
 		  garbageRate = 6000
 	  }
-	  if (game.stat.level >= 13) {
-		  garbageRate = 5500
-	  }
-	  if (game.stat.level >= 14) {
+	  if (game.stat.level >= 10) {
 		  garbageRate = 5000
 	  }
-	  if (game.stat.level >= 15) {
-		  garbageRate = 4500
-	  }
-	  if (game.stat.level >= 16) {
+	  if (game.stat.level >= 11) {
 		  garbageRate = 4000
 	  }
-	  if (game.stat.level >= 17) {
+	  if (game.stat.level >= 12) {
 		  garbageRate = 3500
 	  }
-	  if (game.stat.level >= 18) {
+	  if (game.stat.level >= 13) {
 		  garbageRate = 3000
 	  }
-	  if (game.stat.level >= 19) {
+	  if (game.stat.level >= 14) {
+		  garbageRate = 2750
+	  }
+	  if (game.stat.level >= 15) {
 		  garbageRate = 2500
+	  }
+	  if (game.stat.level >= 16) {
+		  garbageRate = 2250
+	  }
+	  if (game.stat.level >= 17) {
+		  garbageRate = 2000
+	  }
+	  if (game.stat.level >= 18) {
+		  garbageRate = 1750
+	  }
+	  if (game.stat.level >= 19) {
+		  garbageRate = 1500
 	  }
 	  if (game.stat.level >= 20) {
 		  garbageRate = 1250
