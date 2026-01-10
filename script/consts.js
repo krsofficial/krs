@@ -1075,20 +1075,29 @@ export const SPAWN_OFFSETS = {
     J: [3, -1],
     S: [2, -1],
   },
+  world: {
+    downShift: 0,
+    I: [2, -2],
+    L: [3, 0],
+    O: [3, -1],
+    Z: [3, 0],
+    T: [2, -1],
+    J: [3, 0],
+    S: [2, -1],
+  },
 }
 SPAWN_OFFSETS.asc = SPAWN_OFFSETS.srs
 SPAWN_OFFSETS.ascx = SPAWN_OFFSETS.srs
 SPAWN_OFFSETS.tetrax = { ...SPAWN_OFFSETS.srs, downShift: 2, I: [2, -4] }
 SPAWN_OFFSETS.oshisaure = { ...SPAWN_OFFSETS.srs, downShift: 0 }
-SPAWN_OFFSETS.world = { ...SPAWN_OFFSETS.srs, downShift: 2, I: [2, -4] }
 SPAWN_OFFSETS.arsti = SPAWN_OFFSETS.ars
 SPAWN_OFFSETS.arsx = SPAWN_OFFSETS.ars
 SPAWN_OFFSETS.ace = SPAWN_OFFSETS.ars
 SPAWN_OFFSETS.ace2 = SPAWN_OFFSETS.ars
 SPAWN_OFFSETS.original = SPAWN_OFFSETS.retro
 SPAWN_OFFSETS.krs = SPAWN_OFFSETS.arsx
-SPAWN_OFFSETS.srsx = { ...SPAWN_OFFSETS.srs, downShift: 2, I: [2, -4] }
-SPAWN_OFFSETS.ds = { ...SPAWN_OFFSETS.srs, downShift: 2, I: [2, -4] }
+SPAWN_OFFSETS.srsx = SPAWN_OFFSETS.world
+SPAWN_OFFSETS.ds = SPAWN_OFFSETS.world
 SPAWN_OFFSETS.drs = SPAWN_OFFSETS.krs
 
 export const INITIAL_ORIENTATION = {

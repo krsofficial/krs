@@ -34,7 +34,7 @@ export default class Game {
     this.holdCanvas = $("#hold")
     this.particleCanvas = $("#particle")
 	this.animateCanvas = document.getElementById("animate")
-    this.bufferPeek = 0.25
+    this.bufferPeek = 0
     this.loop
     this.now
     this.deltaTime
