@@ -123,5 +123,8 @@
   },
   "excavator2Description": {
     "message": "如果你打败了EXCAVATOR，试试这个。"
+  },
+  "footerLabel": {
+    "message": ""
   }
 }

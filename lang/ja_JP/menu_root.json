@@ -135,5 +135,8 @@
   },
   "excavator2Description": {
     "message": "EXCAVATORをクリアしたら、これを試してみてください。"
+  },
+  "footerLabel": {
+    "message": ""
   }
 }

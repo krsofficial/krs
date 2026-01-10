@@ -129,5 +129,8 @@
   },
   "excavator2Description": {
     "message": "If you beat Excavator, try this."
+  },
+  "footerLabel": {
+    "message": ""
   }
 }
