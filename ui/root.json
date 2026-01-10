@@ -8,6 +8,7 @@
       "type": "overline"
     },
 	{
+	  "string": "rotationSystemLabel",
 	  "stringDesc": "dynamic(rotationSystem)",
       "type": "select",
       "action": "select",
