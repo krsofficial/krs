@@ -65,6 +65,9 @@
     "message": "在此导入和导出您的设置"
   },
   "rotationSystemOverline": {
+    "message": "游戏规则"
+  },
+  "rotationSystemLabel": {
     "message": "轮换制度"
   },
   "normalLabel": {

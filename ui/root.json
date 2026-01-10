@@ -8,8 +8,8 @@
       "type": "overline"
     },
 	{
-	  "description": "dynamic(rotationSystem)",
-	  "fixedText": true,
+	  "string": "rotationSystemLabel",
+	  "stringDesc": "dynamic(rotationSystem)",
       "type": "select",
       "action": "select",
 	  "omitDescription": false,

@@ -351,12 +351,7 @@ class Menu {
           passedElement.textContent = text
         }
         if (!currentData.fixedText) {
-          label.textContent = locale.getString(this.current.lang, currentData.string)
-        } else if (currentData.description === "dynamic(rotationSystem)") {
-		  $("#description").innerHTML = locale.getString(
-            "rotation-systems",
-            settings.settings.rotationSystem
-          )
+		  label.textContent = locale.getString(this.current.lang, currentData.string)
 		} else {
           label.textContent = currentData.label
           $("#description").innerHTML = currentData.description
@@ -392,16 +387,16 @@ class Menu {
         }
         arrowLeft.onclick = () => {
           adjust(-1)
-		  if (this.selectedData.description === "dynamic(rotationSystem)") {
+		  if (this.selectedData.stringDesc === "dynamic(rotationSystem)") {
 			$("#description").innerHTML = locale.getString(
 			  "rotation-systems",
 			  settings.settings.rotationSystem
-			)  
+			)
 		  }
         }
         arrowRight.onclick = () => {
           adjust(1)
-		  if (this.selectedData.description === "dynamic(rotationSystem)") {
+		  if (this.selectedData.stringDesc === "dynamic(rotationSystem)") {
 			$("#description").innerHTML = locale.getString(
 			  "rotation-systems",
 			  settings.settings.rotationSystem
@@ -512,15 +507,17 @@ class Menu {
         element.scrollIntoView({ block: "center" })
         if (!currentData.omitDescription) {
           if (!currentData.fixedText) {
-            $("#description").innerHTML = locale.getString(
-              this.current.lang,
-              currentData.stringDesc
-            )
-          } else if (currentData.description === "dynamic(rotationSystem)") {
-		  $("#description").innerHTML = locale.getString(
-            "rotation-systems",
-            settings.settings.rotationSystem
-          )
+			if (currentData.stringDesc === "dynamic(rotationSystem)") {
+			  $("#description").innerHTML = locale.getString(
+				"rotation-systems",
+				settings.settings.rotationSystem
+			  )
+			} else {
+              $("#description").innerHTML = locale.getString(
+                this.current.lang,
+                currentData.stringDesc
+              )
+			}
 		  } else {
             $("#description").innerHTML = currentData.description
           }
@@ -706,15 +703,17 @@ class Menu {
         )
       } else {
         if (!this.current.data[number].fixedText) {
+		if (this.current.data[number].stringDesc === "dynamic(rotationSystem)") {
+		  $("#description").innerHTML = locale.getString(
+            "rotation-systems",
+            settings.settings.rotationSystem
+		  )
+		else {
           $("#description").innerHTML = locale.getString(
             this.current.lang,
             this.current.data[number].stringDesc
           )
-		} else if (this.current.data[number].description === "dynamic(rotationSystem)") {
-		  $("#description").innerHTML = locale.getString(
-            "rotation-systems",
-            settings.settings.rotationSystem
-          )
+		}
 		} else {
           $("#description").innerHTML = this.current.data[number].description
         }
