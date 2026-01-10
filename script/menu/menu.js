@@ -507,17 +507,17 @@ class Menu {
         element.scrollIntoView({ block: "center" })
         if (!currentData.omitDescription) {
           if (!currentData.fixedText) {
-			if (currentData.stringDesc === "dynamic(rotationSystem)") {
+		  if (currentData.stringDesc === "dynamic(rotationSystem)") {
 			  $("#description").innerHTML = locale.getString(
 				"rotation-systems",
 				settings.settings.rotationSystem
 			  )
-			} else {
+		  } else {
               $("#description").innerHTML = locale.getString(
                 this.current.lang,
                 currentData.stringDesc
               )
-			}
+		  }
 		  } else {
             $("#description").innerHTML = currentData.description
           }
@@ -708,7 +708,7 @@ class Menu {
             "rotation-systems",
             settings.settings.rotationSystem
 		  )
-		else {
+		} else {
           $("#description").innerHTML = locale.getString(
             this.current.lang,
             this.current.data[number].stringDesc
