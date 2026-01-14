@@ -934,11 +934,11 @@ export default class Game {
       window.innerWidth / gameAspectRatio,
       window.innerHeight
     )
-	let resultingCellSize = Math.floor(((base / 1.2 / this.settings.height) * (this.userSettings.size * 0.875)) / 100)
+	let resultingCellSize = Math.floor(((base / 1.2 / this.settings.height) * (this.userSettings.size * 0.9)) / 100)
 	if (this.settings.height <= 10 && this.settings.width <= 5) {
-	resultingCellSize = Math.floor(((base / 1.2 / (this.settings.height * 2)) * (this.userSettings.size * 0.875)) / 100)
+	resultingCellSize = Math.floor(((base / 1.2 / (this.settings.height * 2)) * (this.userSettings.size * 0.9)) / 100)
 	} else {
-	resultingCellSize = Math.floor(((base / 1.2 / this.settings.height) * (this.userSettings.size * 0.875)) / 100)
+	resultingCellSize = Math.floor(((base / 1.2 / this.settings.height) * (this.userSettings.size * 0.9)) / 100)
 	}
     return resultingCellSize
   }
