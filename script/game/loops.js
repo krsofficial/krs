@@ -153,6 +153,14 @@ const updateGraphics = () => {
 		$(".stack-canvas").classList.remove("outlineoff")
 		$(".stack-canvas").classList.remove("invis")
 	}
+	if (
+		game.stack.mirrorAnimation < game.stack.mirrorAnimationLimit || 
+		game.stack.flipAnimation < game.stack.flipAnimationLimit
+	) {
+		$(".stack-canvas").classList.add("onanim")
+	} else {
+		$(".stack-canvas").classList.remove("onanim")
+	}
 	if (testMode === false) {
 		$(".error-stack").classList.add("nontestmode")
 	} else {
@@ -1822,7 +1830,9 @@ export const loops = {
 		[8, 16],
 		[12, 14],
 		[16, 12],
-		[20, 10],
+		[19, 10],
+		[20, 9],
+		[30, 9],
       ]
 	  const musicProgressionTable = [
         [3.8, 1],

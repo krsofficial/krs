@@ -65,6 +65,7 @@ export default class Stack extends GameModule {
 	this.levelGauge = 1
 	this.levelPieceRequirement = 40
 	this.playFlipSound = false
+	this.doMirror = false
 	this.resetLastPlacedBlocks()
 	$("#message").classList.remove("effectactivated")
   }
@@ -1765,17 +1766,15 @@ export default class Stack extends GameModule {
 		}
 		this.parent.stat.effect = ""
 	}
-	/*
 	if (this.parent.currentEffect === "mirrorBlock" && this.toCollapse.length <= 0) {
 		if (this.parent.useEffectBlocks) {
 			if (this.effectBlockInterval < 16) {
-				this.mirrorGrid()
+				this.doMirror = true
 			}
 		} else {
-			this.mirrorGrid()
+			this.doMirror = true
 		}
 	}
-	*/
 	if (this.parent.currentEffect === "" && this.parent.useEffectBlocks) {
 		this.displayedEffectText = false
 		$("#message").classList.remove("effectactivated")
@@ -1938,10 +1937,16 @@ export default class Stack extends GameModule {
 	  ) {
 		if (this.parent.useEffectBlocks) {
 		  if (this.effectBlockInterval < 16) {
-			this.mirrorGrid()
+			if (this.doMirror === true) {
+				this.doMirror = false
+				this.mirrorGrid()
+			}
 		  }
 		} else {
-		  this.mirrorGrid()
+		  if (this.doMirror === true) {
+			  this.doMirror = false
+			  this.mirrorGrid()
+		  }
 		}
 	  }
 	  return
@@ -2275,7 +2280,7 @@ export default class Stack extends GameModule {
 		  }
 		  suffix = ""
         }
-		if (this.flipAnimation < this.mirrorAnimationLimit) {
+		if (this.flipAnimation < this.flipAnimationLimit) {
           if (y - (this.hiddenHeight - 1) >= flipAnimationLength) {
 		    color = "hidden"
 		  }
