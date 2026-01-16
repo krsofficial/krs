@@ -744,9 +744,17 @@ export default class Stack extends GameModule {
     })
 	this.reRenderStack()
 	
-	//To do: Add a 250ms delay here if possible
-
 	//Were not done yet. We still have to move the stack to the bottom of the board.
+	//Moved to playPseudoCollapse()
+	
+	this.effectAre(500)
+	this.pseudoCollapse = true
+	
+	//this.parent.onCustomDelay = false
+  }
+  playPseudoCollapse() {
+
+	//We have to move the stack to the bottom of the board.
 	let tempGrid = this.grid
 	this.new()
 	let highestPoint = 0
@@ -772,13 +780,6 @@ export default class Stack extends GameModule {
       }
     }
 	
-	this.effectAre(500)
-	//this.reRenderStack()
-	this.pseudoCollapse = true
-	
-	//this.parent.onCustomDelay = false
-  }
-  playPseudoCollapse() {
 	//Grid particles
 	this.parent.particle.generate({
       amount: 100,
