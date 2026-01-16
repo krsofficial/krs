@@ -67,7 +67,7 @@ export default class Stack extends GameModule {
 	this.playFlipSound = false
 	this.doMirror = false
 	this.resetLastPlacedBlocks()
-	this.redrawOnPieceSpawn = false
+	this.pseudoCollapse = false
 	$("#message").classList.remove("effectactivated")
   }
   effectAre(msDuration) {
@@ -772,6 +772,13 @@ export default class Stack extends GameModule {
       }
     }
 	
+	this.effectAre(500)
+	//this.reRenderStack()
+	this.pseudoCollapse = true
+	
+	//this.parent.onCustomDelay = false
+  }
+  playPseudoCollapse() {
 	//Grid particles
 	this.parent.particle.generate({
       amount: 100,
@@ -788,14 +795,9 @@ export default class Stack extends GameModule {
       lifeVariance: 80,
     })
 	//this.gridParticles()
+	this.reRenderStack()
 	sound.add("collapse")
 	sound.add("collapse4")
-	
-	this.effectAre(500)
-	//this.reRenderStack()
-	this.redrawOnPieceSpawn = true
-	
-	//this.parent.onCustomDelay = false
   }
   updateMedals() {
 	  let newMedals = this.parent.stat.medals
