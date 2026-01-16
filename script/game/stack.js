@@ -742,6 +742,7 @@ export default class Stack extends GameModule {
 		yDampening: 1,
 		lifeVariance: 0,
     })
+	this.reRenderStack()
 	
 	//To do: Add a 250ms delay here if possible
 
@@ -770,7 +771,7 @@ export default class Stack extends GameModule {
 		)]
       }
     }
-	this.reRenderStack()
+	
 	//Grid particles
 	this.parent.particle.generate({
       amount: 100,
