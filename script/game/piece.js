@@ -125,6 +125,10 @@ export default class Piece extends GameModule {
       }
     }
     this.parent.onPieceSpawn(this.parent)
+	if (this.parent.stack.redrawOnPieceSpawn === true) {
+		this.parent.stack.redrawOnPieceSpawn = false
+		this.parent.stack.reRenderStack()
+	}
     this.parent.updateMusic()
     this.parent.updateStats()
     $("#delay").innerHTML = `${this.lockDelayLimit} <b>ms</b>`
