@@ -2275,7 +2275,7 @@ export default class Stack extends GameModule {
         }
         let suffix = ""
 		if (this.mirrorAnimation < this.mirrorAnimationLimit) {
-          if (x >= flipAnimationLength) {
+          if (x >= mirrorAnimationLength) {
 		    color = "hidden"
 		  }
 		  suffix = ""
