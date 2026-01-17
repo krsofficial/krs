@@ -419,7 +419,7 @@ export const loops = {
       */
     },
     onPieceSpawn: (game) => {
-	  const levelRequirement = 48
+	  const levelRequirement = 64
 	  const levelGoal = 15
       const x = game.stat.level
       const gravityEquation = (0.8 - (x - 1) * 0.007) ** (x - 1)
@@ -673,7 +673,7 @@ export const loops = {
       */
     },
     onPieceSpawn: (game) => {
-	  const levelRequirement = 48
+	  const levelRequirement = 64
 	  const levelGoal = 15
       const x = game.stat.level
       const gravityEquation = (0.8 - (x - 1) * 0.007) ** (x - 1)
@@ -970,7 +970,7 @@ export const loops = {
       */
     },
     onPieceSpawn: (game) => {
-	  const levelRequirement = 48
+	  const levelRequirement = 64
 	  const levelGoal = 20
       const x = game.stat.level
       const gravityEquation = (0.8 - (x - 1) * 0.007) ** (x - 1)
@@ -1201,7 +1201,7 @@ export const loops = {
       */
     },
     onPieceSpawn: (game) => {
-	  const levelRequirement = 48
+	  const levelRequirement = 64
 	  const levelGoal = 20
       const x = game.stat.level
       const gravityEquation = (0.8 - (x - 1) * 0.007) ** (x - 1)
@@ -1452,7 +1452,7 @@ export const loops = {
       */
     },
     onPieceSpawn: (game) => {
-	  const levelRequirement = 48
+	  const levelRequirement = 64
 	  const levelGoal = 20
       const x = game.stat.level
       const gravityEquation = (0.8 - (x - 1) * 0.007) ** (x - 1)
@@ -1764,7 +1764,7 @@ export const loops = {
       */
     },
     onPieceSpawn: (game) => {
-	  const levelRequirement = 48
+	  const levelRequirement = 64
 	  const levelGoal = 25
       const x = game.stat.level
       const gravityEquation = (0.8 - (x - 1) * 0.007) ** (x - 1)
@@ -2027,7 +2027,7 @@ export const loops = {
       */
     },
     onPieceSpawn: (game) => {
-	  const levelRequirement = 48
+	  const levelRequirement = 64
 	  const levelGoal = 40
       const x = game.stat.level
       const gravityEquation = (0.8 - (x - 1) * 0.007) ** (x - 1)
