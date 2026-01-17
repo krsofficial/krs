@@ -185,10 +185,9 @@ const resetTimePassed = (game) => {
 const updateLockFlash = () => {
 	settings.settings.lockFlash = "dim"
 }
-const krsLevelSystem = (game, pieceRequirement = 40, levelGoal = 20) => {
+const krsLevelSystem = (game, levelRequirement = 40, levelGoal = 15) => {
 	let returnValue = false
-	game.stack.levelPieceRequirement = pieceRequirement
-	game.stat.level = Math.floor(game.stat.piece / pieceRequirement) + 1
+	game.stat.level = Math.floor((game.stat.piece + game.stat.line) / levelRequirement) + 1
 	if (game.stat.level !== lastLevel) {
 		if (game.stat.level <= levelGoal) {
 			sound.add("levelup")
@@ -420,13 +419,13 @@ export const loops = {
       */
     },
     onPieceSpawn: (game) => {
-	  const pieceRequirement = 40
+	  const levelRequirement = 48
 	  const levelGoal = 15
       const x = game.stat.level
       const gravityEquation = (0.8 - (x - 1) * 0.007) ** (x - 1)
       game.piece.gravity = Math.max((gravityEquation * 1000) / Math.max(((game.stat.level - 1) * 5), 1), framesToMs(1 / 20))
       updateFallSpeed(game)
-      if (krsLevelSystem(game, pieceRequirement, levelGoal)) {
+      if (krsLevelSystem(game, levelRequirement, levelGoal)) {
 		resetTimeLimit(game)
 	  }
 	  const timeLimitTable = [
@@ -503,7 +502,7 @@ export const loops = {
 	  for (const pair of musicProgressionTable) {
         const level = pair[0]
         const entry = pair[1]
-        if (game.stat.piece >= Math.floor((level - 1) * pieceRequirement) && game.musicProgression < entry) {
+        if ((game.stat.piece + game.stat.line) >= Math.floor((level - 1) * levelRequirement) && game.musicProgression < entry) {
           switch (entry) {
             case 1:
 			  sound.killBgm()
@@ -560,8 +559,7 @@ export const loops = {
           break
         }
       }
-	  if (game.stat.piece >= pieceRequirement * levelGoal) {
-		game.stat.piece = pieceRequirement * levelGoal
+	  if ((game.stat.piece + game.stat.line) >= levelRequirement * levelGoal) {
 		$("#kill-message").textContent = locale.getString("ui", "excellent")
         sound.killVox()
         sound.add("voxexcellent")
@@ -675,7 +673,7 @@ export const loops = {
       */
     },
     onPieceSpawn: (game) => {
-	  const pieceRequirement = 40
+	  const levelRequirement = 48
 	  const levelGoal = 15
       const x = game.stat.level
       const gravityEquation = (0.8 - (x - 1) * 0.007) ** (x - 1)
@@ -685,7 +683,7 @@ export const loops = {
 		  game.piece.gravity = framesToMs(1 / 20)
 	  }
       updateFallSpeed(game)
-      if (krsLevelSystem(game, pieceRequirement, levelGoal)) {
+      if (krsLevelSystem(game, levelRequirement, levelGoal)) {
 		resetTimeLimit(game)
 	  }
 	  const timeLimitTable = [
@@ -770,7 +768,7 @@ export const loops = {
 	  for (const pair of musicProgressionTable) {
         const level = pair[0]
         const entry = pair[1]
-        if (game.stat.piece >= Math.floor((level - 1) * pieceRequirement) && game.musicProgression < entry) {
+        if ((game.stat.piece + game.stat.line) >= Math.floor((level - 1) * levelRequirement) && game.musicProgression < entry) {
           switch (entry) {
             case 1:
 			  sound.killBgm()
@@ -835,13 +833,12 @@ export const loops = {
           break
         }
       }
-	  if (game.stat.piece >= pieceRequirement * levelGoal) {
+	  if ((game.stat.piece + game.stat.line) >= levelRequirement * levelGoal) {
 		noGradeUpdate = true
 		if (game.stat.grade === `<emeraldcrown>${grades[5]}</emeraldcrown>`) {
 			sound.add("cheer")
 			game.stat.grade = `<diamondcrown>${grades[6]}</diamondcrown>`
 		}
-		game.stat.piece = pieceRequirement * levelGoal
 		$("#kill-message").textContent = locale.getString("ui", "excellent")
         sound.killVox()
         sound.add("voxexcellent")
@@ -973,13 +970,13 @@ export const loops = {
       */
     },
     onPieceSpawn: (game) => {
-	  const pieceRequirement = 40
+	  const levelRequirement = 48
 	  const levelGoal = 20
       const x = game.stat.level
       const gravityEquation = (0.8 - (x - 1) * 0.007) ** (x - 1)
       game.piece.gravity = framesToMs(1 / 20)
       updateFallSpeed(game)
-      if (krsLevelSystem(game, pieceRequirement, levelGoal)) {
+      if (krsLevelSystem(game, levelRequirement, levelGoal)) {
 		resetTimeLimit(game)
 	  }
 	  const timeLimitTable = [
@@ -1054,7 +1051,7 @@ export const loops = {
 	  for (const pair of musicProgressionTable) {
         const level = pair[0]
         const entry = pair[1]
-        if (game.stat.piece >= Math.floor((level - 1) * pieceRequirement) && game.musicProgression < entry) {
+        if ((game.stat.piece + game.stat.line) >= Math.floor((level - 1) * levelRequirement) && game.musicProgression < entry) {
           switch (entry) {
             case 1:
 			  sound.killBgm()
@@ -1119,8 +1116,7 @@ export const loops = {
           break
         }
       }
-	  if (game.stat.piece >= pieceRequirement * levelGoal) {
-		game.stat.piece = pieceRequirement * levelGoal
+	  if ((game.stat.piece + game.stat.line) >= levelRequirement * levelGoal) {
 		$("#kill-message").textContent = locale.getString("ui", "excellent")
         sound.killVox()
         sound.add("voxexcellent")
@@ -1205,13 +1201,13 @@ export const loops = {
       */
     },
     onPieceSpawn: (game) => {
-	  const pieceRequirement = 40
+	  const levelRequirement = 48
 	  const levelGoal = 20
       const x = game.stat.level
       const gravityEquation = (0.8 - (x - 1) * 0.007) ** (x - 1)
       game.piece.gravity = Math.max((gravityEquation * 1000) / Math.max(((game.stat.level - 1) * 5), 1), framesToMs(1 / 20))
       updateFallSpeed(game)
-      if (krsLevelSystem(game, pieceRequirement, levelGoal)) {
+      if (krsLevelSystem(game, levelRequirement, levelGoal)) {
 		resetTimeLimit(game)
 	  }
 	  const timeLimitTable = [
@@ -1285,7 +1281,7 @@ export const loops = {
 	  for (const pair of musicProgressionTable) {
         const level = pair[0]
         const entry = pair[1]
-        if (game.stat.piece >= Math.floor((level - 1) * pieceRequirement) && game.musicProgression < entry) {
+        if ((game.stat.piece + game.stat.line) >= Math.floor((level - 1) * levelRequirement) && game.musicProgression < entry) {
           switch (entry) {
             case 1:
 			  sound.killBgm()
@@ -1342,8 +1338,7 @@ export const loops = {
           break
         }
       }
-	  if (game.stat.piece >= pieceRequirement * levelGoal) {
-		game.stat.piece = pieceRequirement * levelGoal
+	  if ((game.stat.piece + game.stat.line) >= levelRequirement * levelGoal) {
 		$("#kill-message").textContent = locale.getString("ui", "excellent")
         sound.killVox()
         sound.add("voxexcellent")
@@ -1457,7 +1452,7 @@ export const loops = {
       */
     },
     onPieceSpawn: (game) => {
-	  const pieceRequirement = 40
+	  const levelRequirement = 48
 	  const levelGoal = 20
       const x = game.stat.level
       const gravityEquation = (0.8 - (x - 1) * 0.007) ** (x - 1)
@@ -1467,7 +1462,7 @@ export const loops = {
 		  game.piece.gravity = framesToMs(1 / 20)
 	  }
       updateFallSpeed(game)
-      if (krsLevelSystem(game, pieceRequirement, levelGoal)) {
+      if (krsLevelSystem(game, levelRequirement, levelGoal)) {
 		resetTimeLimit(game)
 	  }
 	  const timeLimitTable = [
@@ -1549,7 +1544,7 @@ export const loops = {
 	  for (const pair of musicProgressionTable) {
         const level = pair[0]
         const entry = pair[1]
-        if (game.stat.piece >= Math.floor((level - 1) * pieceRequirement) && game.musicProgression < entry) {
+        if ((game.stat.piece + game.stat.line) >= Math.floor((level - 1) * levelRequirement) && game.musicProgression < entry) {
           switch (entry) {
             case 1:
 			  sound.killBgm()
@@ -1614,13 +1609,12 @@ export const loops = {
           break
         }
       }
-	  if (game.stat.piece >= pieceRequirement * levelGoal) {
+	  if ((game.stat.piece + game.stat.line) >= levelRequirement * levelGoal) {
 		noGradeUpdate = true
 		if (game.stat.grade === `<emeraldcrown>${grades[5]}</emeraldcrown>`) {
 			sound.add("cheer")
 			game.stat.grade = `<diamondcrown>${grades[6]}</diamondcrown>`
 		}
-		game.stat.piece = pieceRequirement * levelGoal
 		$("#kill-message").textContent = locale.getString("ui", "excellent")
         sound.killVox()
         sound.add("voxexcellent")
@@ -1770,13 +1764,13 @@ export const loops = {
       */
     },
     onPieceSpawn: (game) => {
-	  const pieceRequirement = 40
+	  const levelRequirement = 48
 	  const levelGoal = 25
       const x = game.stat.level
       const gravityEquation = (0.8 - (x - 1) * 0.007) ** (x - 1)
       game.piece.gravity = framesToMs(1 / 20)
       updateFallSpeed(game)
-      if (krsLevelSystem(game, pieceRequirement, levelGoal)) {
+      if (krsLevelSystem(game, levelRequirement, levelGoal)) {
 		resetTimeLimit(game)
 	  }
 	  const timeLimitTable = [
@@ -1845,7 +1839,7 @@ export const loops = {
 	  for (const pair of musicProgressionTable) {
         const level = pair[0]
         const entry = pair[1]
-        if (game.stat.piece >= Math.floor((level - 1) * pieceRequirement) && game.musicProgression < entry) {
+        if ((game.stat.piece + game.stat.line) >= Math.floor((level - 1) * levelRequirement) && game.musicProgression < entry) {
           switch (entry) {
             case 1:
 			  sound.killBgm()
@@ -1919,8 +1913,7 @@ export const loops = {
           break
         }
       }
-	  if (game.stat.piece >= pieceRequirement * levelGoal) {
-		game.stat.piece = pieceRequirement * levelGoal
+	  if ((game.stat.piece + game.stat.line) >= levelRequirement * levelGoal) {
 		$("#kill-message").textContent = locale.getString("ui", "excellent")
         sound.killVox()
         sound.add("voxexcellent")
@@ -2034,13 +2027,13 @@ export const loops = {
       */
     },
     onPieceSpawn: (game) => {
-	  const pieceRequirement = 40
+	  const levelRequirement = 48
 	  const levelGoal = 40
       const x = game.stat.level
       const gravityEquation = (0.8 - (x - 1) * 0.007) ** (x - 1)
       game.piece.gravity = framesToMs(1 / 20)
       updateFallSpeed(game)
-      if (krsLevelSystem(game, pieceRequirement, levelGoal)) {
+      if (krsLevelSystem(game, levelRequirement, levelGoal)) {
 		resetTimeLimit(game)
 		if (collapseUnderwater) {
 			game.stack.clearUnderwaterRows()
@@ -2144,7 +2137,7 @@ export const loops = {
 	  for (const pair of musicProgressionTable) {
         const level = pair[0]
         const entry = pair[1]
-        if (game.stat.piece >= Math.floor((level - 1) * pieceRequirement) && game.musicProgression < entry) {
+        if ((game.stat.piece + game.stat.line) >= Math.floor((level - 1) * levelRequirement) && game.musicProgression < entry) {
           switch (entry) {
             case 1:
 			  sound.killBgm()
@@ -2244,8 +2237,7 @@ export const loops = {
           break
         }
       }
-	  if (game.stat.piece >= pieceRequirement * levelGoal) {
-		game.stat.piece = pieceRequirement * levelGoal
+	  if ((game.stat.piece + game.stat.line) >= levelRequirement * levelGoal) {
 		$("#kill-message").textContent = locale.getString("ui", "excellent")
         sound.killVox()
         sound.add("voxexcellent")
