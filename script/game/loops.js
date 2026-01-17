@@ -66,8 +66,7 @@ let grades = [
 	locale.getString("grades", "bronzeKnight"),
 	locale.getString("grades", "silverKnight"),
 	locale.getString("grades", "goldKnight"),
-	locale.getString("grades", "prince"),
-	locale.getString("grades", "princess"),
+	locale.getString("grades", "platinumKnight"),
 	locale.getString("grades", "king"),
 	locale.getString("grades", "queen"),
 ]
