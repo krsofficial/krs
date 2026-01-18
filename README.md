@@ -1,8 +1,8 @@
 # KRStacker
-KRStacker is a work in progress Tetra Legends fork inspired the likes of the Sega arcade games and the TGM series.
+KRStacker is a work in progress browser game inspired the likes of the Sega arcade games and the TGM series.
 
-KRStackerは進行中のプロジェクトであり、SEGAのアーケードゲームやTGMシリーズにインスパイアされたTETRA LEGENDSのフォークです。
+KRStackerは、セガのアーケードゲームやTGMシリーズにインスパイアされた、開発中のブラウザゲームです。
 
-KRStacker是一款正在开发的Tetra Legends分支作品，其灵感源自Sega街机游戏及TGM系列。
+KRStacker是一款正在开发中的浏览器游戏，其灵感源自世嘉街机游戏及TGM系列作品。
 
 https://krstacker.github.io/
