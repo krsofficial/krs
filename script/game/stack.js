@@ -67,7 +67,6 @@ export default class Stack extends GameModule {
 	this.playFlipSound = false
 	this.doMirror = false
 	this.resetLastPlacedBlocks()
-	this.pseudoCollapse = false
 	$("#message").classList.remove("effectactivated")
   }
   effectAre(msDuration) {
@@ -745,15 +744,6 @@ export default class Stack extends GameModule {
 	this.reRenderStack()
 	
 	//Were not done yet. We still have to move the stack to the bottom of the board.
-	//Moved to playPseudoCollapse()
-	
-	this.effectAre(500)
-	this.pseudoCollapse = true
-	
-	//this.parent.onCustomDelay = false
-  }
-  playPseudoCollapse() {
-
 	//We have to move the stack to the bottom of the board.
 	let tempGrid = this.grid
 	this.new()
@@ -797,8 +787,10 @@ export default class Stack extends GameModule {
     })
 	//this.gridParticles()
 	this.reRenderStack()
-	sound.add("collapse")
-	sound.add("collapse4")
+	
+	this.effectAre(500)
+	
+	//this.parent.onCustomDelay = false
   }
   updateMedals() {
 	  let newMedals = this.parent.stat.medals

@@ -125,10 +125,6 @@ export default class Piece extends GameModule {
       }
     }
     this.parent.onPieceSpawn(this.parent)
-	if (this.parent.stack.pseudoCollapse === true) {
-		this.parent.stack.pseudoCollapse = false
-		this.parent.stack.playPseudoCollapse()
-	}
     this.parent.updateMusic()
     this.parent.updateStats()
     $("#delay").innerHTML = `${this.lockDelayLimit} <b>ms</b>`
