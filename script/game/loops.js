@@ -185,7 +185,7 @@ const resetTimePassed = (game) => {
 const updateLockFlash = () => {
 	settings.settings.lockFlash = "dim"
 }
-const krsLevelSystem = (game, levelRequirement = 40, levelGoal = 15) => {
+const krsLevelSystem = (game, levelRequirement = 50, levelGoal = 15) => {
 	let returnValue = false
 	game.stat.level = Math.floor((game.stat.piece + game.stat.line) / levelRequirement) + 1
 	if (game.stat.level !== lastLevel) {
@@ -419,7 +419,7 @@ export const loops = {
       */
     },
     onPieceSpawn: (game) => {
-	  const levelRequirement = 52
+	  const levelRequirement = 50
 	  const levelGoal = 15
       const x = game.stat.level
       const gravityEquation = (0.8 - (x - 1) * 0.007) ** (x - 1)
@@ -673,7 +673,7 @@ export const loops = {
       */
     },
     onPieceSpawn: (game) => {
-	  const levelRequirement = 52
+	  const levelRequirement = 50
 	  const levelGoal = 15
       const x = game.stat.level
       const gravityEquation = (0.8 - (x - 1) * 0.007) ** (x - 1)
@@ -970,7 +970,7 @@ export const loops = {
       */
     },
     onPieceSpawn: (game) => {
-	  const levelRequirement = 52
+	  const levelRequirement = 50
 	  const levelGoal = 20
       const x = game.stat.level
       const gravityEquation = (0.8 - (x - 1) * 0.007) ** (x - 1)
@@ -1201,7 +1201,7 @@ export const loops = {
       */
     },
     onPieceSpawn: (game) => {
-	  const levelRequirement = 52
+	  const levelRequirement = 50
 	  const levelGoal = 20
       const x = game.stat.level
       const gravityEquation = (0.8 - (x - 1) * 0.007) ** (x - 1)
@@ -1452,7 +1452,7 @@ export const loops = {
       */
     },
     onPieceSpawn: (game) => {
-	  const levelRequirement = 52
+	  const levelRequirement = 50
 	  const levelGoal = 20
       const x = game.stat.level
       const gravityEquation = (0.8 - (x - 1) * 0.007) ** (x - 1)
@@ -1764,7 +1764,7 @@ export const loops = {
       */
     },
     onPieceSpawn: (game) => {
-	  const levelRequirement = 52
+	  const levelRequirement = 50
 	  const levelGoal = 25
       const x = game.stat.level
       const gravityEquation = (0.8 - (x - 1) * 0.007) ** (x - 1)
@@ -2027,7 +2027,7 @@ export const loops = {
       */
     },
     onPieceSpawn: (game) => {
-	  const levelRequirement = 52
+	  const levelRequirement = 50
 	  const levelGoal = 40
       const x = game.stat.level
       const gravityEquation = (0.8 - (x - 1) * 0.007) ** (x - 1)
