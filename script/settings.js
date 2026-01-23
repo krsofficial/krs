@@ -37,7 +37,7 @@ class Settings {
       ghost: "color",
       backgroundOpacity: 30,
       gridStyle: "none",
-      lockFlash: "dim",
+      lockFlash: "flash",
 	  toggleLockFlash: true,
       actionText: true,
       matrixSwayScale: 0,

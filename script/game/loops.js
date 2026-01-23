@@ -87,7 +87,7 @@ const updateGraphics = () => {
 	) {
 		settings.settings.lockFlash = "off"
 	} else {
-		settings.settings.lockFlash = "dim"
+		settings.settings.lockFlash = "flash"
 	}
 	if (game.currentEffect === "holdLock") {
 		$(".hold-canvas").classList.add("disabledeffect")
