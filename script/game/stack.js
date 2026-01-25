@@ -5,7 +5,6 @@ import locale from "../lang.js"
 import settings from "../settings.js"
 import { SCORE_TABLES } from "../consts.js"
 let effectTimeout = null
-let effectDelay = 150
 export default class Stack extends GameModule {
   constructor(parent, ctx) {
     super(parent)
@@ -30,9 +29,9 @@ export default class Stack extends GameModule {
 	this.deathAnimation = 3400
 	this.deathAnimationLimit = 1700
 	this.mirrorAnimation = 1000
-	this.mirrorAnimationLimit = 500 - effectDelay
+	this.mirrorAnimationLimit = 400
 	this.flipAnimation = 1000
-	this.flipAnimationLimit = 500 - effectDelay
+	this.flipAnimationLimit = 400
     this.flashOnTetris = false
     this.alarmIsOn = false
     this.isInvisible = false
@@ -141,6 +140,9 @@ export default class Stack extends GameModule {
 	return result
   }
   gemIfyPlacedMinos() {
+	this.effectAre(800)
+	this.resetTimeout()
+	effectTimeout = setTimeout(() => {
 	let color = this.targetColor
     for (let x = 0; x < this.grid.length; x++) {
       for (let y = 0; y < this.grid[x].length; y++) {
@@ -159,9 +161,9 @@ export default class Stack extends GameModule {
 		}
       }
     }
-	this.effectAre(500)
 	this.gridParticles()
 	this.reRenderStack()
+	}, 400)
   }
   fadePlacedMinos() {
     for (let x = 0; x < this.grid.length; x++) {
@@ -183,7 +185,7 @@ export default class Stack extends GameModule {
   laserGrid() {
 	//this.parent.onCustomDelay = true
 	
-	this.effectAre(500)
+	this.effectAre(800)
 	this.resetTimeout()
 	effectTimeout = setTimeout(() => {
 	let targetColumn = Math.max(
@@ -224,7 +226,7 @@ export default class Stack extends GameModule {
 	
 	this.reRenderStack()
 	
-	}, effectDelay)
+	}, 400)
 	//this.parent.onCustomDelay = false
   }
   gridParticles() {
@@ -353,7 +355,7 @@ export default class Stack extends GameModule {
   mirrorGrid() {
 	//this.parent.onCustomDelay = true
 	
-	this.effectAre(500)
+	this.effectAre(800)
 	this.resetTimeout()
 	effectTimeout = setTimeout(() => {
 	let tempGrid = this.grid
@@ -488,13 +490,13 @@ export default class Stack extends GameModule {
 	//this.reRenderStack()
 	this.mirrorAnimation = 0
 	
-	}, effectDelay)
+	}, 400)
 	//this.parent.onCustomDelay = false
   }
   flipGrid() {
 	//this.parent.onCustomDelay = true
 	
-	this.effectAre(500)
+	this.effectAre(800)
 	this.resetTimeout()
 	effectTimeout = setTimeout(() => {
 	let tempGrid = this.grid
@@ -674,13 +676,13 @@ export default class Stack extends GameModule {
 	//this.reRenderStack()
 	this.flipAnimation = 0
 	
-	}, effectDelay)
+	}, 400)
 	//this.parent.onCustomDelay = false
   }
   sliceGridTop() {
 	//this.parent.onCustomDelay = true
 	
-	this.effectAre(500)
+	this.effectAre(800)
 	this.resetTimeout()
 	effectTimeout = setTimeout(() => {
 	let targetPoint = (this.height + this.hiddenHeight) - 4
@@ -717,13 +719,13 @@ export default class Stack extends GameModule {
 	//this.gridParticles()
 	this.reRenderStack()
 	
-	}, effectDelay)
+	}, 400)
 	//this.parent.onCustomDelay = false
   }
   sliceGridBottom() {
 	//this.parent.onCustomDelay = true
 	
-	this.effectAre(500)
+	this.effectAre(1200)
 	this.resetTimeout()
 	effectTimeout = setTimeout(() => {
 	let targetPoint = (this.height + this.hiddenHeight) - 4
@@ -811,10 +813,10 @@ export default class Stack extends GameModule {
 	sound.add('collapse')
 	//this.gridParticles()
 	this.reRenderStack()
-	}, effectDelay)
+	}, 400)
 	//Second timeout end
 	
-	}, effectDelay)
+	}, 400)
 	//this.parent.onCustomDelay = false
   }
   updateMedals() {

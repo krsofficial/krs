@@ -56,8 +56,8 @@ export default class Piece extends GameModule {
     this.areLimit = 0
     this.areLineLimit = 0
     this.areLimitLineModifier = 0
-	this.areEffect = 2000
-	this.areEffectLimit = 1000
+	this.areEffect = 1000
+	this.areEffectLimit = 500
     this.isDead = true
     this.ire = 0
     this.hasIas = false
