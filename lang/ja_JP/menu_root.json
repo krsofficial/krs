@@ -83,58 +83,58 @@
     "message": "ローテーションシステム"
   },
   "normalLabel": {
-    "message": "NORMAL"
+    "message": "カジュアル"
   },
   "normalDescription": {
     "message": "最初はゆっくりですが、次第に速くなります。初心者向けです。"
   },
   "trialLabel": {
-    "message": "TRIAL"
+    "message": "トライアル"
   },
   "trialDescription": {
     "message": "プレイの出来栄えで評価されます。あらゆるスキルレベルのプレイヤーを対象としています。"
   },
   "virtuosoLabel": {
-    "message": "VIRTUOSO"
+    "message": "れんごく"
   },
   "virtuosoDescription": {
     "message": "信じられない速さのスタックと狂気的な効果！ついてこられるか？上級者向け。"
   },
   "excavatorLabel": {
-    "message": "EXCAVATOR"
+    "message": "サクラ"
   },
   "excavatorDescription": {
     "message": "制限時間内にすべての宝石を消せ！あらゆるスキルレベルのプレイヤー向け。"
   },
   "normal2Label": {
-    "message": "NORMAL II"
+    "message": "カジュアルII"
   },
   "normal2Description": {
-    "message": "NORMALをクリアしたら、これを試してみてください。"
+    "message": "カジュアルをクリアしたら、これを試してみてください。"
   },
   "trial2Label": {
-    "message": "TRIAL II"
+    "message": "トライアルII"
   },
   "trial2Description": {
-    "message": "TRIALをクリアしたら、これを試してみてください。"
+    "message": "トライアルをクリアしたら、これを試してみてください。"
   },
   "virtuoso2Label": {
-    "message": "VIRTUOSO II"
+    "message": "れんごくII"
   },
   "virtuoso2Description": {
-    "message": "VIRTUOSOをクリアしたら、これを試してみてください。"
+    "message": "れんごくをクリアしたら、これを試してみてください。"
   },
   "virtuoso3Label": {
-    "message": "VIRTUOSO III"
+    "message": "れんごくIII"
   },
   "virtuoso3Description": {
-    "message": "VIRTUOSO IIをクリアしたら、これを試してみてください。"
+    "message": "れんごくIIをクリアしたら、これを試してみてください。"
   },
   "excavator2Label": {
-    "message": "EXCAVATOR II"
+    "message": "サクラII"
   },
   "excavator2Description": {
-    "message": "EXCAVATORをクリアしたら、これを試してみてください。"
+    "message": "サクラをクリアしたら、これを試してみてください。"
   },
   "footerLabel": {
     "message": ""

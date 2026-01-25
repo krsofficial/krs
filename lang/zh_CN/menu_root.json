@@ -71,58 +71,58 @@
     "message": "轮换制度"
   },
   "normalLabel": {
-    "message": "NORMAL"
+    "message": "正常"
   },
   "normalDescription": {
     "message": "起初节奏较慢，但逐渐加快。适合初学者。"
   },
   "trialLabel": {
-    "message": "TRIAL"
+    "message": "审判"
   },
   "trialDescription": {
     "message": "你的评分取决于你的游戏表现。适合所有技能水平的玩家。"
   },
   "virtuosoLabel": {
-    "message": "VIRTUOSO"
+    "message": "王朝"
   },
   "virtuosoDescription": {
     "message": "疯狂的堆叠速度与炫目特效！你能跟上吗？专为资深玩家打造。"
   },
   "excavatorLabel": {
-    "message": "EXCAVATOR"
+    "message": "挖掘"
   },
   "excavatorDescription": {
     "message": "在时间耗尽前清除所有宝石！适合所有技能水平的玩家。"
   },
   "normal2Label": {
-    "message": "NORMAL II"
+    "message": "正常 II"
   },
   "normal2Description": {
-    "message": "如果你打败了NORMAL，试试这个。"
+    "message": "如果你打败了正常，试试这个。"
   },
   "trial2Label": {
-    "message": "TRIAL II"
+    "message": "审判 II"
   },
   "trial2Description": {
-    "message": "如果你打败了TRIAL，试试这个。"
+    "message": "如果你打败了审判，试试这个。"
   },
   "virtuoso2Label": {
-    "message": "VIRTUOSO II"
+    "message": "王朝 II"
   },
   "virtuoso2Description": {
-    "message": "如果你打败了VIRTUOSO，试试这个。"
+    "message": "如果你打败了王朝，试试这个。"
   },
   "virtuoso3Label": {
-    "message": "VIRTUOSO III"
+    "message": "王朝 III"
   },
   "virtuoso3Description": {
-    "message": "如果你打败了VIRTUOSO II，试试这个。"
+    "message": "如果你打败了王朝 II，试试这个。"
   },
   "excavator2Label": {
-    "message": "EXCAVATOR II"
+    "message": "挖掘 II"
   },
   "excavator2Description": {
-    "message": "如果你打败了EXCAVATOR，试试这个。"
+    "message": "如果你打败了挖掘，试试这个。"
   },
   "footerLabel": {
     "message": ""
