@@ -8,8 +8,8 @@ let effectTimeout = null
 let effectDelay = 150
 export default class Stack extends GameModule {
   constructor(parent, ctx) {
-	this.resetTimeout()
     super(parent)
+	this.resetTimeout()
     this.width = this.parent.settings.width
     this.height = this.parent.settings.height
     this.hiddenHeight = this.parent.settings.hiddenHeight
